@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Triệu phú tri thức</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏆</text></svg>">
+<style>
+/* ─── EMBEDDED FONTS ─── */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+  --font-display: 'Baloo 2', 'Segoe UI', cursive;
+  --font-body: 'Nunito', 'Segoe UI', sans-serif;
+  --gold: #FFD700; --gold2: #FFA500; --red: #FF4757; --green: #2ED573; --blue: #1E90FF;
+  --bg-dark: #0A0A2E; --bg-card: #1A1A4E; --text: #FFFFFF; --text-dim: #B0B8D0;
+  --correct: #2ED573; --wrong: #FF4757; --timer-ok: #2ED573; --timer-warn: #FFA500; --timer-danger: #FF4757;
+  --ui-scale: 1;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: calc(16px * var(--ui-scale)); }
+body { font-family: var(--font-body); background: var(--bg-dark); color: var(--text); min-height: 100vh; overflow-x: hidden; background-image: radial-gradient(ellipse at 20% 20%, rgba(255,215,0,0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(30,144,255,0.08) 0%, transparent 50%); }
+
+/* ─── UI COMPONENTS ─── */
+.stars { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+.star { position: absolute; background: #fff; border-radius: 50%; animation: twinkle linear infinite; }
+@keyframes twinkle { 0%,100% { opacity: 0.2; transform: scale(1); } 50% { opacity: 1; transform: scale(1.4); } }
+
+.screen { display: none; position: relative; z-index: 1; min-height: 100vh; padding: 20px; align-items: center; justify-content: center; flex-direction: column; }
+.screen.active { display: flex; }
+
+.logo-wrap { text-align: center; margin-bottom: 10px; animation: bounceIn 0.8s cubic-bezier(.36,.07,.19,.97); }
+@keyframes bounceIn { 0% { transform: scale(0.3); opacity: 0; } 60% { transform: scale(1.1); } 100% { transform: scale(1); opacity: 1; } }
+.logo-emoji { font-size: 70px; display: block; filter: drop-shadow(0 0 20px gold); }
+.logo-title { font-family: var(--font-display); font-size: clamp(2.2rem, 6vw, 3.8rem); font-weight: 800; background: linear-gradient(135deg, #FFD700, #FF8C00, #FFD700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 2px 8px rgba(255,215,0,0.5)); letter-spacing: 2px; line-height: 1.1; }
+.logo-sub { font-size: clamp(0.9rem, 2.5vw, 1.3rem); color: #FFD700; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+
+.card { background: var(--bg-card); border: 2px solid rgba(255,215,0,0.3); border-radius: 24px; padding: 28px; width: 100%; max-width: 520px; box-shadow: 0 8px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1); animation: fadeUp 0.5s ease; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+.form-label { display: block; font-size: 1rem; font-weight: 700; color: var(--gold); margin-bottom: 8px; }
+.form-input { width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.07); border: 2px solid rgba(255,215,0,0.3); border-radius: 14px; color: #fff; font-family: var(--font-body); font-size: 1.1rem; font-weight: 700; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
+.form-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(255,215,0,0.2); }
+.form-input::placeholder { color: rgba(255,255,255,0.3); }
+.form-group { margin-bottom: 18px; }
+
+.info-icon { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; background: rgba(30, 144, 255, 0.2); color: #74b9ff; border: 1px solid #74b9ff; border-radius: 50%; font-size: 0.75rem; font-weight: bold; cursor: pointer; margin-left: 6px; font-family: monospace; vertical-align: super; transition: all 0.2s; }
+.info-icon:hover { background: #74b9ff; color: #000; transform: scale(1.1); }
+
+.choices { display: flex; gap: 10px; flex-wrap: wrap; }
+.choice-btn { flex: 1; min-width: 80px; padding: 10px 8px; background: rgba(255,255,255,0.07); border: 2px solid rgba(255,215,0,0.3); border-radius: 14px; color: var(--text-dim); font-family: var(--font-body); font-size: 1.05rem; font-weight: 800; cursor: pointer; transition: all 0.2s; }
+.choice-btn:hover { border-color: var(--gold); color: var(--gold); }
+.choice-btn.selected { background: var(--gold); border-color: var(--gold); color: #000; box-shadow: 0 0 20px rgba(255,215,0,0.5); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 0 22px; height: 44px; border: none; border-radius: 50px; font-family: var(--font-display); font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.2s; text-decoration: none; white-space: nowrap; }
+.btn-primary { background: linear-gradient(135deg, #FFD700, #FFA500); color: #000; box-shadow: 0 4px 20px rgba(255,165,0,0.5); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(255,165,0,0.7); }
+.btn-secondary { background: rgba(255,255,255,0.1); color: var(--text-dim); border: 2px solid rgba(255,255,255,0.2); }
+.btn-secondary:hover { background: rgba(255,255,255,0.15); color: #fff; }
+.btn-danger { background: rgba(255,71,87,0.2); color: var(--red); border: 2px solid rgba(255,71,87,0.3); }
+.btn-sm { height: 40px; padding: 0 18px; font-size: 0.92rem; }
+.btn-upload-file { width: fit-content; margin: 0 auto; display: inline-flex; }
+.btn-full { width: 100%; justify-content: center; }
+.home-btns { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
+.home-btns .btn { width: 100%; max-width: 160px; font-size: 1.1rem; }
+
+/* GAME UI */
+#screen-game { padding-top: 20px; justify-content: flex-start; }
+.game-header { width: 100%; max-width: 700px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.player-badge { background: rgba(255,215,0,0.15); border: 2px solid rgba(255,215,0,0.4); border-radius: 50px; padding: 7px 14px; font-weight: 800; font-size: 0.95rem; color: var(--gold); }
+.score-board { display: flex; gap: 10px; }
+.score-item { text-align: center; background: rgba(255,255,255,0.07); border-radius: 12px; padding: 5px 12px; }
+.score-val { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; color: var(--gold); line-height: 1; }
+.score-lbl { font-size: 0.7rem; color: var(--text-dim); font-weight: 600; text-transform: uppercase; }
+
+.progress-wrap { width: 100%; max-width: 700px; margin-bottom: 12px; }
+.progress-info { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-dim); font-weight: 700; margin-bottom: 6px; }
+.progress-bar { height: 8px; background: rgba(255,255,255,0.1); border-radius: 99px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, #FFD700, #FFA500); transition: width 0.4s ease; }
+
+.timer-wrap { width: 100%; max-width: 700px; display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.timer-circle { width: 68px; height: 68px; border-radius: 50%; border: 4px solid var(--timer-ok); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--timer-ok); }
+.timer-circle.warn { border-color: var(--timer-warn); color: var(--timer-warn); }
+.timer-circle.danger { border-color: var(--timer-danger); color: var(--timer-danger); animation: pulse 0.5s infinite; }
+@keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+.timer-bar-wrap { flex: 1; height: 12px; background: rgba(255,255,255,0.1); border-radius: 99px; overflow: hidden; }
+.timer-bar-fill { height: 100%; background: var(--timer-ok); transition: width 1s linear; }
+.timer-bar-fill.warn { background: var(--timer-warn); }
+.timer-bar-fill.danger { background: var(--timer-danger); }
+
+.question-card { width: 100%; max-width: 700px; background: var(--bg-card); border: 2px solid rgba(255,215,0,0.25); border-radius: 24px; padding: 26px; margin-bottom: 14px; box-shadow: 0 8px 40px rgba(0,0,0,0.4); }
+.q-number { font-size: 0.85rem; color: var(--gold); font-weight: 800; text-transform: uppercase; margin-bottom: 10px; }
+.q-category { display: inline-block; background: rgba(255,215,0,0.15); color: var(--gold); border-radius: 50px; padding: 3px 12px; font-size: 0.78rem; font-weight: 700; margin-bottom: 12px; }
+.q-lang-badge { display: inline-block; background: rgba(30,144,255,0.2); color: #74b9ff; border-radius: 50px; padding: 3px 10px; font-size: 0.72rem; font-weight: 700; margin-left: 6px; }
+.q-text { font-family: var(--font-display); font-size: clamp(1.1rem, 3vw, 1.4rem); font-weight: 600; line-height: 1.5; color: #fff; margin-top:10px; }
+
+.answers-grid { width: 100%; max-width: 700px; display: grid; gap: 10px; }
+.answer-btn { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: rgba(255,255,255,0.06); border: 2px solid rgba(255,255,255,0.12); border-radius: 16px; color: #fff; font-family: var(--font-body); font-size: 1.05rem; font-weight: 700; cursor: pointer; text-align: left; transition: all 0.2s; width: 100%; }
+.answer-btn:hover:not(:disabled) { border-color: var(--gold); background: rgba(255,215,0,0.1); }
+.answer-btn .letter { min-width: 36px; height: 36px; border-radius: 50%; background: rgba(255,215,0,0.2); border: 2px solid rgba(255,215,0,0.4); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 0.95rem; color: var(--gold); flex-shrink:0; }
+.answer-btn.correct { background: rgba(46,213,115,0.2); border-color: var(--correct); }
+.answer-btn.correct .letter { background: var(--correct); border-color: var(--correct); color: #000; }
+.answer-btn.wrong { background: rgba(255,71,87,0.2); border-color: var(--wrong); }
+.answer-btn.wrong .letter { background: var(--wrong); border-color: var(--wrong); color: #fff; }
+
+.streak-warn { position: fixed; top: 20px; left: 50%; transform: translateX(-50%) translateY(-100px); background: rgba(255,71,87,0.95); color: #fff; padding: 12px 24px; border-radius: 50px; font-weight: 800; z-index: 999; transition: transform 0.4s; }
+.streak-warn.show { transform: translateX(-50%) translateY(0); }
+
+/* RESULT & LEADERBOARD */
+#screen-result { text-align: center; }
+.result-emoji { font-size: 100px; margin-bottom: 12px; animation: bounceIn 0.6s ease; display: block; }
+.result-title { font-family: var(--font-display); font-size: clamp(2.2rem, 6vw, 3.5rem); font-weight: 800; background: linear-gradient(135deg, #FFD700, #FF8C00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; animation: bounceIn 0.7s 0.1s both ease; }
+.result-msg { font-size: 1.25rem; line-height: 1.8; color: #fff; max-width: 520px; margin: 0 auto 24px; font-weight: 700; font-family: var(--font-display); background: rgba(255,255,255,0.06); border-radius: 20px; padding: 22px 28px; border: 2px solid rgba(255,215,0,0.2); animation: fadeUp 0.6s 0.2s both ease; }
+.result-msg .msg-highlight { color: var(--gold); font-size: 1.45rem; }
+.custom-reward-box { background: rgba(46,213,115,0.15); padding: 18px; border-radius: 12px; border: 2px dashed #2ED573; margin-top: 18px; animation: pulse 2s infinite; }
+.result-footer { background: rgba(0,0,0,0.2); border-top: 1px solid rgba(255,255,255,0.1); padding: 12px; margin-top: 20px; border-radius: 12px; font-size: 0.85rem; color: var(--text-dim); text-align: center; line-height: 1.6; }
+.result-footer span { color: var(--gold); font-weight: 800; }
+.result-stats { display: flex; gap: 16px; justify-content: center; margin-bottom: 28px; flex-wrap: wrap; }
+.stat-box { background: var(--bg-card); border: 2px solid rgba(255,215,0,0.2); border-radius: 18px; padding: 16px 22px; min-width: 100px; }
+.stat-val { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--gold); }
+.stat-lbl { font-size: 0.78rem; color: var(--text-dim); font-weight: 700; text-transform: uppercase; }
+
+#screen-leaderboard { justify-content: flex-start; padding-top: 30px; }
+.lb-title { font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; color: var(--gold); text-align: center; margin-bottom: 20px; }
+.lb-table { width: 100%; max-width: 650px; background: var(--bg-card); border: 2px solid rgba(255,215,0,0.2); border-radius: 20px; overflow: hidden; margin-bottom: 20px; }
+.lb-row { display: grid; grid-template-columns: 40px 1fr 100px 90px 70px; padding: 13px 15px; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.06); gap: 10px; }
+.lb-row:hover { background: rgba(255,215,0,0.05); }
+.lb-row.header span { font-size: 0.8rem; color: var(--gold); font-weight: 800; text-transform: uppercase; text-align: center; }
+.lb-row.header span:nth-child(2) { text-align: left; }
+.lb-rank { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; text-align: center; }
+.rank-1 { color: #FFD700; } .rank-2 { color: #C0C0C0; } .rank-3 { color: #CD7F32; }
+.lb-name { font-weight: 700; text-align: left; }
+.lb-date { font-size: 0.75rem; color: var(--text-dim); text-align: center; line-height: 1.3; }
+.lb-score { font-family: var(--font-display); font-weight: 800; color: var(--gold); text-align: center; font-size: 1.2rem;}
+.lb-correct { font-weight: 700; color: var(--correct); text-align: center; }
+.lb-empty { text-align: center; padding: 40px; color: var(--text-dim); font-size: 1rem; }
+
+/* INVENTORY MODAL & GRIDS */
+.section-title { font-family: var(--font-display); font-size: 1rem; font-weight: 800; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; border-bottom: 1px dashed rgba(255,215,0,0.3); padding-bottom: 5px;}
+.grid-3-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.grid-2-cols { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+@media (max-width: 600px) { .grid-3-cols, .grid-2-cols { grid-template-columns: 1fr; } }
+
+.redeemed-box { background: rgba(255,255,255,0.05); border: 1px solid var(--correct); border-radius: 12px; padding: 15px; font-size: 0.95rem; line-height: 1.8; color: #fff; text-align: left; }
+.redeemed-item { color: var(--correct); text-decoration: none; font-weight: 700; cursor: pointer; transition: opacity 0.2s; white-space: nowrap; }
+.redeemed-item:hover { opacity: 0.7; text-decoration: underline; }
+
+.history-table { width: 100%; border-collapse: collapse; text-align: center; font-size: 0.9rem; color: #fff; background: rgba(0,0,0,0.2); border-radius: 12px; overflow: hidden; }
+.history-table th { background: rgba(255,215,0,0.15); color: var(--gold); padding: 10px 5px; font-weight: 700; }
+.history-table td { padding: 10px 5px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.history-table tr:hover { background: rgba(255,255,255,0.05); }
+
+/* SETTINGS / ADMIN SCREEN */
+#screen-admin { justify-content: flex-start; padding-top: 24px; }
+.admin-title { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--gold); margin-bottom: 16px; }
+
+.tab-bar { display: flex; gap: 8px; margin-bottom: 22px; width: 100%; flex-wrap: wrap; }
+.tab-btn { flex: 1; min-width: 130px; text-align: center; padding: 9px 10px; border-radius: 50px; background: rgba(255, 255, 255, 0.07); border: 2px solid rgba(255,255,255,0.12); color: var(--text-dim); font-family: var(--font-body); font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; }
+.tab-btn:hover { border-color: var(--gold); color: var(--gold); }
+.tab-btn.active { background: var(--gold); border-color: var(--gold); color: #000; }
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+
+.pin-overlay { background: rgba(0,0,0,0.6); border-radius: 16px; padding: 28px; text-align: center; border: 2px dashed rgba(255,215,0,0.4); margin-bottom: 16px; }
+.pin-overlay p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 14px; font-weight: 600; }
+.pin-input { width: 150px; padding: 12px; text-align: center; font-size: 2rem; font-weight: 800; letter-spacing: 8px; background: rgba(255,255,255,0.08); border: 2px solid rgba(255,215,0,0.4); border-radius: 14px; color: #fff; outline: none; font-family: var(--font-display); }
+.pin-input:focus { border-color: var(--gold); }
+.pin-error { color: var(--red); font-size: 0.85rem; font-weight: 700; margin-top: 8px; display: none; }
+
+.bank-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+.reward-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+.bank-card { background: rgba(255,255,255,0.05); border: 2px solid rgba(255,215,0,0.25); border-radius: 16px; padding: 16px; text-align: center; cursor: pointer; transition: all 0.2s; position: relative; }
+.bank-card:hover { border-color: var(--gold); background: rgba(255,215,0,0.07); }
+.bank-flag { font-size: 32px; margin-bottom: 8px; }
+.bank-name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; color: var(--gold); }
+.bank-desc { font-size: 0.75rem; color: var(--text-dim); margin-top: 4px; font-weight: 600; }
+.bank-count { display: inline-block; background: rgba(255,215,0,0.2); color: var(--gold); border-radius: 50px; padding: 2px 10px; font-size: 0.8rem; font-weight: 800; margin-top: 6px; }
+.btn-delete-reward { position: absolute; top: 8px; right: 8px; background: rgba(255,71,87,0.2); color: #ff4757; border: 1px solid #ff4757; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; cursor: pointer; }
+.btn-delete-reward:hover { background: #ff4757; color: #fff; }
+
+.res-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+.res-btn { padding: 14px 10px; background: rgba(255,255,255,0.06); border: 2px solid rgba(255,255,255,0.12); border-radius: 14px; color: var(--text-dim); font-family: var(--font-body); font-weight: 700; font-size: 0.88rem; cursor: pointer; transition: all 0.2s; text-align: center; }
+.res-btn:hover { border-color: var(--gold); color: var(--gold); }
+.res-btn.active { background: rgba(255,215,0,0.15); border-color: var(--gold); color: var(--gold); }
+.res-btn .res-label { font-size: 1.1rem; font-weight: 800; display: block; }
+.res-btn .res-desc { font-size: 0.72rem; color: var(--text-dim); margin-top: 2px; }
+.status-msg { padding: 11px 18px; border-radius: 12px; font-weight: 700; text-align: center; margin-bottom: 12px; }
+.status-msg.ok { background: rgba(46,213,115,0.2); color: var(--correct); border: 1px solid var(--correct); }
+.status-msg.err { background: rgba(255,71,87,0.2); color: var(--red); border: 1px solid var(--red); }
+
+/* ─── ABOUT SCREEN ─── */
+#screen-about { text-align: center; }
+.about-card { background: var(--bg-card); border: 2px solid rgba(255,215,0,0.3); border-radius: 24px; padding: 25px 30px 40px 30px; max-width: 440px; width: 100%; animation: fadeUp 0.5s ease; display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+.about-sumo { font-size: 72px; margin-bottom: 20px; align-self: center; }
+.about-brand { font-family: var(--font-display); font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #FFD700, #FF8C00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 20px; align-self: center; }
+.about-love { font-size: 1.5rem; color: #ff6b6b; font-weight: 800; font-family: var(--font-display); margin-bottom: 20px; text-shadow: 0 0 20px rgba(255,107,107,0.4); text-align: center; display: block; width: 100%; }
+.about-info { list-style: none; text-align: left; width: 100%; }
+.about-info li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); display: flex; gap: 10px; font-size: 0.95rem; }
+.about-info li:last-child { border-bottom: none; }
+.about-info .lbl { color: var(--text-dim); font-weight: 600; min-width: 130px; }
+.about-info .val { color: var(--gold); font-weight: 800; }
+.about-hearts { font-size: 1.6rem; margin-top: 20px; animation: heartbeat 1.5s ease-in-out infinite; align-self: center; }
+@keyframes heartbeat { 0%,100%{transform:scale(1)} 50%{transform:scale(1.15)} }
+.coin { position: fixed; font-size: 24px; pointer-events: none; z-index: 999; animation: coinFly 1.2s ease-out forwards; }
+@keyframes coinFly { 0% { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); } 100% { opacity: 0; transform: translateY(-120px) rotate(360deg) scale(0.5); } }
+.divider { height: 1px; background: rgba(255,255,255,0.08); margin: 14px 0; width: 100%; }
+.confetti-piece { position: fixed; width: 10px; height: 10px; pointer-events: none; z-index: 9999; animation: confettiFall linear forwards; border-radius: 2px; }
+@keyframes confettiFall { 0% { opacity: 1; transform: translateY(-20px) rotate(0deg); } 100% { opacity: 0; transform: translateY(100vh) rotate(720deg); } }
+
+/* MODALS */
+.modal-overlay { display:none; position:fixed; z-index:10000; inset:0; background:rgba(0,0,0,0.85); flex-direction:column; justify-content:center; align-items:center; padding:20px; }
+.modal-box { background:var(--bg-card); border:3px solid var(--gold); border-radius:24px; padding:30px; max-width:450px; width: 100%; text-align:center; box-shadow: 0 0 50px rgba(255,215,0,0.4); animation: bounceIn 0.4s ease; }
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+<div class="streak-warn" id="streakWarn">⚠️ Sai 3 lần liên tiếp! -10 điểm</div>
+
+<div id="infoModal" class="modal-overlay" style="z-index: 10001;">
+  <div class="modal-box" style="border-color: #74b9ff;">
+    <div style="font-size: 40px; margin-bottom: 10px;">💡</div>
+    <p id="infoModalText" style="color:#fff; font-size:1.05rem; line-height:1.6; margin-bottom:20px; font-weight: 600; text-align: left;"></p>
+    <button class="btn btn-primary" style="background: linear-gradient(135deg, #74b9ff, #0984e3); color: #fff;" onclick="document.getElementById('infoModal').style.display='none'">Đã hiểu</button>
+  </div>
+</div>
+
+<div id="disclaimerModal" class="modal-overlay" style="z-index: 10001;">
+  <div class="modal-box" style="border-color: #ff6b6b; max-width: 650px; max-height: 85vh; overflow-y: auto; padding: 25px 20px;">
+    <div style="font-size: 50px; margin-bottom: 10px; text-align: center;">🎮❤️</div>
+    <h3 style="color:#ff6b6b; font-family:var(--font-display); margin-bottom:15px; font-size: 1.6rem; text-align: center;">CHUYỆN VỀ SUMO GAMES<br><span style="font-size: 1.1rem; color: var(--gold);">Món Quà Từ AI & Tình Yêu Của Bố</span></h3>
+
+    <div style="color:#fff; font-size:1.1rem; line-height:1.6; margin-bottom:20px; text-align: justify; padding: 0 10px;">
+        <p style="margin-bottom: 15px; font-style: italic; color: var(--text-dim); text-align: center;">"Sumo Games ra đời từ mong muốn xây dựng một không gian học tập sáng tạo, nơi kiến thức trở thành một hành trình khám phá đầy thú vị cho các bạn nhỏ."</p>
+
+        <h4 style="color: var(--gold); margin-top: 20px; margin-bottom: 8px; font-size: 1.1rem; text-align: left;">🤖 Hiện thực hóa ý tưởng bằng sức mạnh AI</h4>
+        <ul style="list-style-type: none; padding-left: 0; margin-bottom: 15px; text-align: left;">
+            <li style="margin-bottom: 8px; padding-left: 15px; position: relative;"><span style="position: absolute; left: 0; color: var(--gold);">•</span> Dù không phải là lập trình viên, mình đã hiện thực hóa ý tưởng này bằng cách tối ưu các câu lệnh (prompt) để phối hợp cùng trợ lý AI (Gemini và Claude).</li>
+            <li style="margin-bottom: 8px; padding-left: 15px; position: relative;"><span style="position: absolute; left: 0; color: var(--gold);">•</span> <strong style="color: #74b9ff;">Tốc độ thực thi:</strong> Nhờ khả năng của AI, phiên bản ban đầu được hoàn thiện chỉ trong khoảng <em style="color: var(--gold);">một giờ đồng hồ</em> từ khi có ý tưởng tới khi games có thể chơi được.</li>
+            <li style="margin-bottom: 8px; padding-left: 15px; position: relative;"><span style="position: absolute; left: 0; color: var(--gold);">•</span> <strong style="color: #74b9ff;">Sự tỉ mỉ:</strong> Sau đó, mình dành thêm một tuần vào thời gian rảnh để tập trung trau chuốt giao diện, tối ưu các tương tác và xây dựng cơ cấu phần thưởng, nhằm mang lại một sản phẩm hoàn thiện nhất trong khả năng của mình dành cho các con (do các trợ lý AI phiên bản miễn phí giới hạn số lượng yêu cầu trong một khoảng thời gian).</li>
+        </ul>
+
+        <h4 style="color: var(--correct); margin-top: 20px; margin-bottom: 8px; font-size: 1.1rem; text-align: left;">👧👦 Những "Chuyên gia kiểm định" đầu tiên</h4>
+        <p style="margin-bottom: 8px; text-align: left;">Trong quá trình phát triển, <strong style="color: var(--correct);">Su và Mo</strong> chính là những người thẩm định quan trọng nhất.</p>
+        <p style="margin-bottom: 15px; text-align: left;">Những phản hồi hồn nhiên của hai con đã trở thành nguồn cảm hứng quan trọng, giúp mình nảy sinh thêm nhiều ý tưởng mới để hoàn thiện trò chơi như hiện tại.</p>
+
+        <h4 style="color: #FFA500; margin-top: 20px; margin-bottom: 8px; font-size: 1.1rem; text-align: left;">📚 Nội dung trải rộng - Phù hợp với mọi học sinh tiểu học</h4>
+        <p style="margin-bottom: 8px; text-align: left;">Nội dung câu hỏi trải rộng trên nhiều lĩnh vực kiến thức - từ khoa học, lịch sử, địa lý đến văn hóa, nghệ thuật và kỹ năng sống - được biên soạn phù hợp với học sinh tiểu học tại Việt Nam. Bên cạnh đó, một phần nội dung còn được cá nhân hóa thêm bằng cách lồng ghép các chi tiết từ những cuốn sách, bộ truyện hay bộ phim mà các con yêu thích - giúp việc học trở nên thân quen và thú vị hơn.</p>
+        <p style="margin-bottom: 15px; text-align: left; font-style: italic; color: var(--timer-warn); font-size: 0.9rem;">* Lưu ý: Vì ngân hàng câu hỏi được tạo hoàn toàn bởi AI, đôi khi sẽ có những sự trùng lặp nhất định, hoặc nội dung câu hỏi/đáp án chưa hoàn toàn chính xác.</p>
+
+        <h4 style="color: #1E90FF; margin-top: 20px; margin-bottom: 8px; font-size: 1.1rem; text-align: left;">✨ Tính tùy biến – Điểm chạm khác biệt</h4>
+        <p style="margin-bottom: 8px; text-align: left;">Điểm thú vị của Sumo Games nằm ở <strong style="color: var(--gold);">sự linh hoạt và tính tùy biến cao</strong> - điều mà những trò chơi có sẵn trên các kho ứng dụng lớn thường khó đáp ứng được.</p>
+        <p style="margin-bottom: 15px; text-align: left;">Các bậc phụ huynh hoàn toàn có thể tự điều chỉnh nội dung câu hỏi và phần thưởng một cách dễ dàng theo hướng dẫn kèm theo để phù hợp nhất với phong cách của từng gia đình.</p>
+
+        <div style="background: rgba(255,71,87,0.1); border: 1px dashed var(--red); padding: 15px; border-radius: 12px; text-align: center; margin-top: 25px;">
+            <p style="color: var(--red); font-weight: bold; font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.5px;">❤️ Hy vọng Sumo Games sẽ là người bạn đồng hành thú vị, mang lại những giây phút vừa học vừa chơi thật ý nghĩa cho các con!</p>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <button class="btn btn-secondary" onclick="document.getElementById('disclaimerModal').style.display='none'">Đóng lại</button>
+    </div>
+  </div>
+</div>
+
+<div id="specialRedeemModal" class="modal-overlay" style="z-index: 10002;">
+  <div class="modal-box">
+    <div style="font-size: 60px; margin-bottom:10px;">🎁</div>
+    <h2 style="font-family:var(--font-display); color:var(--gold); font-size:1.8rem; margin-bottom:10px;">Đổi Quà</h2>
+    <p style="color:#fff; font-size:1.15rem; margin-bottom:25px; font-weight:600;">Bạn có muốn đổi <strong id="srmItemName" style="color:var(--gold)"></strong> ngay bây giờ không?</p>
+    <div style="display:flex; gap:10px; justify-content:center;">
+        <button class="btn btn-primary" id="srmConfirmBtn">Đồng ý</button>
+        <button class="btn btn-secondary" onclick="document.getElementById('specialRedeemModal').style.display='none'">Để sau</button>
+    </div>
+  </div>
+</div>
+
+<div id="redeemedInfoModal" class="modal-overlay" style="z-index: 10002;">
+  <div class="modal-box" style="border-color: var(--correct);">
+    <div style="font-size: 50px; margin-bottom:10px;">✅</div>
+    <p id="rimText" style="color:#fff; font-size:1.15rem; line-height:1.6; margin-bottom:20px; font-weight:600;"></p>
+    <button class="btn btn-secondary" onclick="document.getElementById('redeemedInfoModal').style.display='none'">Đóng</button>
+  </div>
+</div>
+
+<div id="autoRedeemModal" class="modal-overlay" style="z-index: 10002;">
+  <div class="modal-box">
+    <div style="font-size: 70px; margin-bottom:10px;">🎉</div>
+    <h2 style="font-family:var(--font-display); color:var(--gold); font-size:2rem; margin-bottom:10px;">Tuyệt Vời!</h2>
+    <p id="armText" style="color:#fff; font-size:1.15rem; line-height:1.6; margin-bottom:25px; font-weight:600;"></p>
+    <div style="display:flex; gap:10px; justify-content:center;">
+        <button class="btn btn-primary" id="armConfirmBtn">Đổi ngay</button>
+        <button class="btn btn-secondary" id="armCancelBtn">Để sau</button>
+    </div>
+  </div>
+</div>
+
+<div id="bedtimeModal" class="modal-overlay" style="z-index: 10004;">
+  <div class="modal-box" style="border-color: #74b9ff; max-width: 420px;">
+    <div style="font-size: 60px; margin-bottom: 10px;">🌙</div>
+    <h2 style="font-family:var(--font-display); color:#74b9ff; font-size:1.6rem; margin-bottom:12px;">Đã Đến Giờ Ngủ Rồi!</h2>
+    <p style="color:#fff; font-size:1.05rem; line-height:1.7; margin-bottom:25px; font-weight:600;">Đến giờ đi ngủ rồi con nhé. Nếu con tiếp tục chơi sẽ không nhận được phần thưởng. Hãy tiếp tục tham gia thử thách vào ngày mai nhé! 😴</p>
+    <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+        <button class="btn btn-secondary" onclick="document.getElementById('bedtimeModal').style.display='none'">💤 Đi Ngủ Thôi</button>
+        <button class="btn" style="background:rgba(255,255,255,0.1);color:var(--text-dim);border:2px solid rgba(255,255,255,0.15);" onclick="document.getElementById('bedtimeModal').style.display='none'; proceedStartGame()">▶️ Tiếp Tục (không thưởng)</button>
+    </div>
+  </div>
+</div>
+
+<div id="confirmRedeemModal" class="modal-overlay" style="z-index: 10003;">
+  <div class="modal-box">
+    <div style="font-size: 50px; margin-bottom:10px;">🎁</div>
+    <p style="color:#fff; font-size:1.2rem; font-weight:700; text-align:center; margin-bottom:25px;">Con chắc chắn muốn đổi quà này chứ?</p>
+    <div style="display:flex; gap:12px; justify-content:center;">
+      <button id="confirmRedeemOk" class="btn btn-primary">Đồng ý</button>
+      <button class="btn btn-secondary" onclick="closeConfirmRedeem()">Để sau</button>
+    </div>
+  </div>
+</div>
+
+<div id="inventoryModal" class="modal-overlay" style="padding: 20px 10px; overflow-y:auto; justify-content: flex-start;">
+    <div class="card" style="margin: auto; width:100%; max-width:800px;"> 
+        <h2 style="color:var(--gold); font-family:var(--font-display); text-align:center; margin-bottom:15px; font-size:1.8rem;">🎒 Túi Quà Của <span id="invPlayerName"></span></h2>
+        
+        <div id="invAlerts" style="display:none; background:rgba(255,71,87,0.15); color:var(--red); border:1px solid var(--red); padding:10px; border-radius:10px; text-align:center; font-weight:700; margin-bottom:15px; font-size:0.9rem;"></div>
+
+        <div id="invDailyWarning" style="display:none; background:rgba(255,165,0,0.2); color:var(--timer-warn); border:1px dashed var(--timer-warn); padding:10px 20px; border-radius:10px; text-align:center; font-weight:700; margin:0 auto 15px auto; font-size:0.9rem; width:fit-content; box-sizing:border-box;">
+            ⚠️ Hôm nay bạn đã đổi phần quà này rồi! Hãy quay lại vào ngày mai nhé.
+        </div>
+
+        <div style="margin-bottom: 20px;" id="invSpecialSection">
+            <h3 class="section-title">🌟 Quà Đặc Biệt</h3>
+            <div id="invSpecialList" class="grid-3-cols"></div>
+        </div>
+
+        <div style="margin-bottom: 20px;" id="invFractionSection">
+            <h3 class="section-title">🧩 Quà Ghép Mảnh (Voucher 1/x)</h3>
+            <div id="invFractionsList" class="grid-3-cols"></div>
+        </div>
+
+        <div id="voucher-time-section" style="margin-bottom: 20px;">
+            <h3 class="section-title" style="color:#74b9ff">▶️ Voucher Thời Gian</h3>
+            <div id="invTimesList" class="grid-3-cols"></div>
+            <div style="margin-top:15px; display:flex; justify-content:space-between; align-items:center;">
+                <strong style="color:var(--gold); font-size:1.1rem;">Đã chọn: <span id="invTimeTotal">0</span> <span id="invTimeUnit"></span></strong>
+                <button id="btnRedeemTime" class="btn btn-primary btn-sm" onclick="redeemSelectedGroup('time')" disabled>Đổi Voucher</button>
+            </div>
+            <div id="invTimeLimitNote" style="font-size:0.8rem; color:var(--timer-warn); margin-top:5px; text-align:right;"></div>
+        </div>
+
+        <div id="voucher-fun-section" style="margin-bottom: 20px; display:none;">
+            <h3 class="section-title" style="color:#ff6b6b">🎪 Quà Vui Vẻ</h3>
+            
+            <div class="grid-2-cols">
+                <div style="background: rgba(255,255,255,0.05); border: 2px solid #1e90ff; border-radius: 16px; padding: 15px;">
+                    <h4 style="color:#1e90ff; font-family:var(--font-display); text-align:center; margin-bottom:10px; border-bottom:1px dashed #1e90ff; padding-bottom:5px;">👦👧 Dành cho con</h4>
+                    <div id="invFunConList" style="display:flex; flex-direction:column; gap:10px;"></div>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.05); border: 2px solid #ff6b6b; border-radius: 16px; padding: 15px;">
+                    <h4 style="color:#ff6b6b; font-family:var(--font-display); text-align:center; margin-bottom:10px; border-bottom:1px dashed #ff6b6b; padding-bottom:5px;">👨‍👩‍👧 Dành cho bố mẹ</h4>
+                    <div id="invFunParentList" style="display:flex; flex-direction:column; gap:10px;"></div>
+                </div>
+            </div>
+
+            <div id="funRedeemArea" style="margin-top:15px; display:flex; justify-content:space-between; align-items:center;">
+                <strong style="color:var(--gold); font-size:1.1rem;">Đã chọn: <span id="invFunTotal">0</span> <span id="invFunUnit"></span></strong>
+                <button id="btnRedeemFun" class="btn btn-primary btn-sm" onclick="redeemSelectedGroup('fun')" disabled>Đổi Quà Vui Vẻ</button>
+            </div>
+            <div id="invFunLimitNote" style="font-size:0.8rem; color:var(--timer-warn); margin-top:5px; text-align:right;"></div>
+        </div>
+
+        <div style="margin-bottom: 20px;" id="invRedeemedSection">
+            <h3 class="section-title" style="color:var(--correct)">✅ Quà Đã Nhận</h3>
+            <div id="invRedeemedList" class="redeemed-box"></div>
+        </div>
+        
+        <div style="margin-bottom: 20px; width: 100%;">
+            <button onclick="toggleHistory()" class="btn btn-secondary btn-full" style="justify-content:space-between; display:flex;">
+                <span style="font-weight: 800; color: #fff;">📜 Lịch sử chơi</span> <span id="historyArrow">▼</span>
+            </button>
+            <div id="invHistoryList" style="display:none; margin-top:10px; overflow-x:auto;"></div>
+        </div>
+
+        <button class="btn btn-danger btn-full" onclick="document.getElementById('inventoryModal').style.display='none'">Đóng túi quà</button>
+    </div>
+</div>
+
+<div class="screen active" id="screen-home">
+  <div class="logo-wrap">
+    <span class="logo-emoji">🏆</span>
+    <div class="logo-title">SUMO GAMES</div>
+    <div class="logo-sub">✨ Triệu Phú Tri Thức ✨</div>
+  </div>
+
+  <div class="card">
+    <div class="form-group">
+      <label class="form-label">👤 Tên của bạn là gì?</label>
+      <input class="form-input" id="playerName" type="text" placeholder="Nhập tên của bạn..." maxlength="20"/>
+    </div>
+    <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 18px;">
+      <div style="flex: 3; min-width: 200px;">
+        <label class="form-label">📝 Chọn số câu hỏi: <sup class="info-icon" onclick="showInfoModal('Các câu hỏi/trả lời được tạo hoàn toàn tự động bởi AI từ các thông tin sẵn có trên internet với mục đích học tập/giải trí. Do số lượng câu hỏi lớn nên có thể có sự trùng lặp về nội dung.<br><br>Nếu có góp ý hoặc yêu cầu sửa đổi vui lòng sử dụng thông tin liên hệ trong mục About.')">i</sup></label>
+        <div class="choices">
+          <button class="choice-btn" data-q="25" onclick="selectQ(this)">25 câu</button>
+          <button class="choice-btn selected" data-q="30" onclick="selectQ(this)">30 câu</button>
+          <button class="choice-btn" data-q="35" onclick="selectQ(this)">35 câu</button>
+        </div>
+      </div>
+      <div style="flex: 2; min-width: 140px;">
+        <label class="form-label">🔥 Cấp độ: <sup class="info-icon" onclick="showInfoModal('Việc lựa chọn cấp độ chơi không làm thay đổi độ khó/dễ của câu hỏi.<br><br>Nó chỉ ảnh hưởng tới kết quả nhận quà do người chơi có thể ở nhiều độ tuổi khác nhau (lớp 2 đến lớp 5). Các bạn lớp 2, 3 nên chọn cấp độ dễ và các bạn lớp 4, 5 cần chọn cấp độ khó khi chơi.')">i</sup></label>
+        <div class="choices">
+          <button class="choice-btn selected" data-lvl="de" onclick="selectLevel(this)">Dễ</button>
+          <button class="choice-btn" data-lvl="kho" onclick="selectLevel(this)">Khó</button>
+        </div>
+      </div>
+    </div>
+    <div class="home-btns">
+      <button class="btn btn-primary" onclick="startGame()">🚀 Bắt Đầu Chơi!</button>
+      <button class="btn btn-secondary" onclick="showScreen('screen-leaderboard')">🥇 Bảng Xếp Hạng</button>
+      <button class="btn btn-secondary" onclick="showScreen('screen-admin')">⚙️ Cài Đặt</button>
+      <button class="btn btn-secondary" onclick="showScreen('screen-about')" style="margin-top:8px;border-color:rgba(255,71,87,0.3);">❤️ About</button>
+    </div>
+  </div>
+</div>
+
+<div class="screen" id="screen-game">
+  <div class="game-header">
+    <div class="player-badge">👤 <span id="headerName"></span></div>
+    <div class="score-board">
+      <div class="score-item"><div class="score-val" id="levelBadge">Dễ</div><div class="score-lbl">Cấp độ</div></div>
+      <div class="score-item"><div class="score-val" id="scoreVal">0</div><div class="score-lbl">Điểm</div></div>
+      <div class="score-item"><div class="score-val" id="correctVal">0</div><div class="score-lbl">Đúng</div></div>
+      <div class="score-item"><div class="score-val" id="wrongVal">0</div><div class="score-lbl">Sai</div></div>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-info"><span id="progressText">Câu 1 / 30</span><span id="progressPct">0%</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+  </div>
+  <div class="timer-wrap">
+    <div class="timer-circle" id="timerCircle">20</div>
+    <div class="timer-bar-wrap"><div class="timer-bar-fill" id="timerBar" style="width:100%"></div></div>
+  </div>
+  <div class="question-card">
+    <div class="q-number" id="qNumber">Câu 1</div>
+    <div><span class="q-category" id="qCategory">Khoa học</span><span class="q-lang-badge" id="qLangBadge" style="display:none">🌐 ENG</span></div>
+    <div class="q-text" id="qText" style="margin-top:10px">Câu hỏi sẽ hiện ở đây...</div>
+  </div>
+  <div class="answers-grid" id="answersGrid"></div>
+</div>
+
+<div class="screen" id="screen-result">
+  <span id="resultEmoji" class="result-emoji">🎉</span>
+  <div id="resultTitle" class="result-title">Kết Quả</div>
+  <div id="resultMsg" class="result-msg"></div>
+  <div class="result-stats">
+    <div class="stat-box"><div class="stat-val" id="rScore">0</div><div class="stat-lbl">Tổng Điểm</div></div>
+    <div class="stat-box"><div class="stat-val" id="rCorrect">0</div><div class="stat-lbl">Câu Đúng</div></div>
+    <div class="stat-box"><div class="stat-val" id="rPct">0%</div><div class="stat-lbl">Tỉ Lệ Đúng</div></div>
+  </div>
+  <div class="home-btns" style="gap:8px">
+    <button class="btn btn-primary" onclick="startGame()">🔄 Chơi Lại</button>
+    <button class="btn btn-secondary" onclick="showScreen('screen-home')">🏠 Về Trang Chủ</button>
+  </div>
+</div>
+
+<div class="screen" id="screen-leaderboard" style="justify-content:flex-start;padding-top:30px">
+  <div class="lb-title">🏆 Bảng Xếp Hạng</div>
+  <div class="lb-table" id="lbTable"></div>
+  
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;max-width:600px;width:100%">
+    <button class="btn btn-secondary btn-sm" onclick="showScreen('screen-home')">🏠 Trang Chủ</button>
+    <button class="btn btn-danger btn-sm" onclick="promptClearLeaderboard()">🔒 Xóa Bảng</button>
+  </div>
+</div>
+
+<div id="lbPinModal" class="modal-overlay" style="z-index:10005; backdrop-filter:blur(5px);">
+  <div class="modal-box" style="padding:25px; max-width:320px; border-radius:20px;">
+    <h3 style="color:var(--gold); font-family:var(--font-display); margin-bottom:10px; font-size:1.5rem;">🔐 XÁC NHẬN PIN</h3>
+    <p id="lbPinMessage" style="color:var(--text-dim); font-size:0.85rem; margin-bottom:5px;">Vui lòng nhập mã PIN</p>
+    
+    <input type="password" id="lbPinInput" maxlength="4" inputmode="numeric" placeholder="••••" 
+           style="background:rgba(255,255,255,0.1); border:2px solid var(--gold); border-radius:12px; color:var(--gold); font-size:2.2rem; letter-spacing:12px; text-align:center; padding:12px 5px; width:160px; outline:none; margin:15px auto; display:block;"
+           oninput="checkLbPin(this)">
+    
+    <div id="lbPinError" style="display:none; color:var(--red); font-weight:bold; font-size:0.9rem; margin-bottom:10px;">❌ PIN không chính xác</div>
+    
+    <button class="btn btn-secondary btn-sm" onclick="closeLbPin()" style="width:100%;">Hủy bỏ</button>
+  </div>
+</div>
+
+<div class="screen" id="screen-admin">
+  <div class="card" style="max-width:640px">
+    <div class="admin-title">⚙️ Cài Đặt</div>
+    
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('tab-questions',this)">📚 Câu Hỏi</button>
+      <button class="tab-btn" onclick="switchTab('tab-rewards',this)">🎁 Phần Thưởng</button>
+      <button class="tab-btn" onclick="switchTab('tab-data', this)">💾 Dữ Liệu</button>
+      <button class="tab-btn" onclick="switchTab('tab-resolution',this)">🖥️ Hiển Thị</button>
+    </div>
+
+    <div id="adminProtectedArea">
+      <div id="pinSection">
+        <div class="pin-overlay">
+          <p>🔐 Nhập mã PIN 4 chữ số để quản lý hệ thống</p>
+          <input class="pin-input" id="pinInput" type="password" maxlength="4" inputmode="numeric" placeholder="••••" oninput="checkPin(this)"/>
+          <div class="pin-error" id="pinError">❌ Mã PIN không đúng!</div>
+        </div>
+      </div>
+
+      <div id="protectedContent" style="display:none;">
+        <div class="tab-pane active" id="tab-questions-content">
+          <div id="adminStatusQ"></div>
+          <p style="color:var(--text-dim);font-size:.88rem;margin-bottom:14px;">
+            Ngân hàng VIE: <strong id="qCountVIE" style="color:var(--gold)">0</strong> câu &nbsp;|&nbsp; Ngân hàng ENG: <strong id="qCountENG" style="color:#74b9ff">0</strong> câu
+          </p>
+          <div class="bank-grid">
+            <div class="bank-card" onclick="document.getElementById('fileVIE').click()">
+              <div class="bank-flag">🇻🇳</div><div class="bank-name">VIE</div>
+              <div class="bank-count" id="bankCountVIE">0 câu</div>
+            </div>
+            <div class="bank-card" onclick="document.getElementById('fileENG').click()">
+              <div class="bank-flag">🇬🇧</div><div class="bank-name">ENG</div>
+              <div class="bank-count" id="bankCountENG" style="color:#74b9ff;background:rgba(30,144,255,0.15)">0 câu</div>
+            </div>
+          </div>
+          <input type="file" id="fileVIE" accept=".json" style="display:none" onchange="handleBankUpload(this,'VIE')" multiple/>
+          <input type="file" id="fileENG" accept=".json" style="display:none" onchange="handleBankUpload(this,'ENG')" multiple/>
+          <button class="btn btn-danger btn-sm" onclick="resetBanks()" style="margin-bottom:10px">🗑️ Xóa NH tùy chỉnh</button>
+        </div>
+
+        <div class="tab-pane" id="tab-rewards-content">
+          <div id="adminStatusR"></div>
+          <p style="color:var(--text-dim);font-size:.88rem;margin-bottom:14px;">Tải lên file JSON chứa nhận xét (PT1 - PT5).</p>
+          <input type="file" id="fileReward" accept=".json" style="display:none" onchange="handleRewardUpload(this)" multiple/>
+          <div style="text-align: center; margin-bottom: 15px;"><button class="btn btn-primary btn-sm btn-upload-file" onclick="document.getElementById('fileReward').click()">+ Tải file Phần Thưởng</button></div>
+          <div class="reward-grid">
+            <div class="bank-card"><span class="btn-delete-reward" onclick="deleteReward('PT1')">✕</span><div class="bank-name" style="color:#ff4757">PT1</div><div class="bank-count" id="statusPT1" style="background:rgba(255,255,255,0.1);color:#fff">Trống</div></div>
+            <div class="bank-card"><span class="btn-delete-reward" onclick="deleteReward('PT2')">✕</span><div class="bank-name" style="color:#ffa502">PT2</div><div class="bank-count" id="statusPT2" style="background:rgba(255,255,255,0.1);color:#fff">Trống</div></div>
+            <div class="bank-card"><span class="btn-delete-reward" onclick="deleteReward('PT3')">✕</span><div class="bank-name" style="color:#1e90ff">PT3</div><div class="bank-count" id="statusPT3" style="background:rgba(255,255,255,0.1);color:#fff">Trống</div></div>
+            <div class="bank-card"><span class="btn-delete-reward" onclick="deleteReward('PT4')">✕</span><div class="bank-name" style="color:#2ed573">PT4</div><div class="bank-count" id="statusPT4" style="background:rgba(255,255,255,0.1);color:#fff">Trống</div></div>
+            <div class="bank-card"><span class="btn-delete-reward" onclick="deleteReward('PT5')">✕</span><div class="bank-name" style="color:#FFD700">PT5</div><div class="bank-count" id="statusPT5" style="background:rgba(255,255,255,0.1);color:#fff">Trống</div></div>
+          </div>
+        </div>
+        
+        <div class="tab-pane" id="tab-data-content">
+            <div style="background:rgba(30,144,255,0.1); padding:15px; border-radius:12px; margin-bottom:10px; border:1px solid rgba(30,144,255,0.3); text-align: center; display: flex; flex-direction: column; align-items: center;">
+                <button class="btn btn-secondary" style="width:100%; max-width:300px; justify-content:center;" onclick="forceReorganize()"><span style="color:#74b9ff;">🧹 Sắp Xếp Lại Túi Quà (Fix Lỗi)</span></button>
+                <p style="font-size:0.8rem; color:var(--text-dim); margin-top:8px;">Dùng nút này nếu dữ liệu cũ đang hiển thị không đúng mục.</p>
+            </div>
+            
+            <div style="background:rgba(255,255,255,0.05); padding:15px; border-radius:12px; margin-bottom:10px; border:1px solid rgba(255,215,0,0.3); text-align: center; display: flex; justify-content: center;">
+              <button class="btn btn-primary" style="width:100%; max-width:300px; justify-content:center;" onclick="exportGameData()">📥 Tải file sao lưu (.txt)</button>
+            </div>
+            <div style="background:rgba(255,71,87,0.1); padding:15px; border-radius:12px; border:1px solid rgba(255,71,87,0.3); text-align: center; display: flex; justify-content: center;">
+              <input type="file" id="importFile" accept=".txt" style="display:none" onchange="importGameData(event)">
+              <button class="btn btn-danger" style="width:100%; max-width:300px; justify-content:center;" onclick="document.getElementById('importFile').click()">📤 Khôi phục từ file</button>
+            </div>
+        </div>
+
+      </div>
+    </div>
+    
+    <div class="tab-pane" id="tab-resolution-content" style="display:none;">
+      <p class="section-title">Độ phân giải màn hình</p>
+      <div class="res-grid">
+        <button class="res-btn" onclick="setResolution('small',this)"><span class="res-label">📱 Nhỏ</span></button>
+        <button class="res-btn active" onclick="setResolution('normal',this)"><span class="res-label">🖥️ Chuẩn</span></button>
+        <button class="res-btn" onclick="setResolution('large',this)"><span class="res-label">📺 Lớn</span></button>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <button class="btn btn-secondary btn-sm" onclick="showScreen('screen-home')">🏠 Về Trang Chủ</button>
+  </div>
+</div>
+
+<div class="screen" id="screen-about">
+  <div class="about-card">
+    <div class="about-sumo">🏆</div>
+    <div class="about-brand">SUMO GAMES</div>
+    <div class="about-love">💌 From Papa with Love</div>
+    <ul class="about-info">
+      <li><span class="lbl">📦 Version:</span><span class="val">1.8.3 (Fixed Loop)</span></li>
+      <li><span class="lbl">📅 Release date:</span><span class="val">Apr 18, 2026</span></li>
+      <li><span class="lbl">👨‍💻 Developed by:</span><span class="val">Papa Bự 🦁 - Pavel.Hai@gmail.com</span></li>
+      <li><span class="lbl">🎮 Game mode:</span><span class="val">Triệu Phú Tri Thức</span></li>
+      <li><span class="lbl">🌐 Ngôn ngữ:</span><span class="val">Tiếng Việt + English</span></li>
+      <li>
+        <span class="lbl">📌 Giới thiệu:</span>
+        <span class="val">
+          <a href="javascript:void(0);" onclick="document.getElementById('disclaimerModal').style.display='flex';" style="color: var(--gold); text-decoration: underline;">Chuyện về SumoGames</a>
+        </span>
+      </li>
+    </ul>
+    
+    <div class="about-hearts">❤️ 💛 ❤️ 💛 ❤️</div>
+    <button class="btn btn-secondary btn-sm" onclick="showScreen('screen-home')" style="margin-top:20px; align-self:center">🏠 Về Trang Chủ</button>
+  </div>
+</div>
+
+<script>
+// ════════════════════════════════════════
+//  HÀM HỖ TRỢ XỬ LÝ LỖI DỮ LIỆU CŨ THIẾU TIMESTAMP
+// ════════════════════════════════════════
+function getTimestamp(record) {
+    if (record.timestamp) return record.timestamp;
+    if (!record.date) return 0;
+    const parts = record.date.split(' ');
+    const datePart = parts.length > 1 ? parts[1] : parts[0];
+    const d = datePart.split('/');
+    if (d.length === 3) {
+        return new Date(d[2], d[1] - 1, d[0]).getTime();
+    }
+    return 0;
+}
+
+// Hàm chuẩn hoá dữ liệu item: Tách số và đơn vị ra khỏi chuỗi
+function extractNumberAndBase(itemName) {
+    let match = itemName.match(/(\d+(?:\.\d+)?)\s*(giờ|phút|giây|cái|lượt|lần|vòng)/i);
+    if (match) {
+        let val = parseFloat(match[1]);
+        let unit = match[2].toLowerCase();
+        let base = itemName.replace(match[0], '').trim().replace(/^[\s\-\!\.,]+|[\s\-\!\.,]+$/g, '');
+        if (unit === 'giờ') { val *= 60; unit = 'phút'; }
+        return { value: val, unit: unit, base: base, original: itemName, hasNumber: true };
+    }
+    return { value: 1, unit: '', base: itemName, original: itemName, hasNumber: false };
+}
+
+// ════════════════════════════════════════
+//  MIGRATION DATA - CHẠY ĐỂ CẬP NHẬT TÚI QUÀ CŨ
+// ════════════════════════════════════════
+function migrateDataOnce() {
+    if (localStorage.getItem('sumogames_migrated_v3') === 'true') return;
+    
+    let pData = JSON.parse(localStorage.getItem('sumogames_players') || '{}');
+    const now = Date.now();
+
+    for (let pName in pData) {
+        let p = pData[pName];
+        if (p.vouchers) {
+            p.vouchers = p.vouchers.filter(v => v.expiry > now).map(v => {
+                let name = (v.itemName || '').toLowerCase();
+                let hasTime = name.match(/\d+\s*(giờ|phút|giây)/i) !== null;
+                let isYeuCau = name.includes('yêu cầu') || name.includes('bố') || name.includes('mẹ');
+                let isTech = name.match(/youtube|netflix|điện thoại|ipad|tv|tivi/i) !== null;
+                let isFraction = v.type === 'fraction' || name.match(/(1\/|một phần)/i) !== null;
+
+                let tier = v.tier;
+                if (!tier) {
+                    if (isTech) tier = 'PT5';
+                    else if (isYeuCau) tier = 'PT4';
+                    else if (hasTime) tier = 'PT4';
+                    else tier = 'PT2';
+                    v.tier = tier; 
+                }
+
+                if (isFraction) {
+                    v.type = 'fraction';
+                } else if (isYeuCau) {
+                    v.type = 'fun_parent';
+                } else if (tier === 'PT1' || tier === 'PT2') {
+                    v.type = 'fun_con';
+                } else if (tier === 'PT3') {
+                    v.type = hasTime ? 'time' : 'fun_con';
+                } else if (tier === 'PT4' || tier === 'PT5') {
+                    if (hasTime) {
+                        v.type = 'time';
+                    } else {
+                        v.type = 'special';
+                    }
+                } else {
+                    v.type = 'special'; 
+                }
+
+                if (isTech && !isFraction && !isYeuCau) {
+                    v.type = 'time';
+                }
+                return v;
+            });
+        }
+    }
+    
+    localStorage.setItem('sumogames_players', JSON.stringify(pData));
+    localStorage.setItem('sumogames_migrated_v3', 'true');
+    console.log("Migration v3 completed. Inventory is strictly organized.");
+}
+
+function forceReorganize() {
+    localStorage.removeItem('sumogames_migrated_v3');
+    migrateDataOnce();
+    alert("✅ Đã quét và sắp xếp lại toàn bộ dữ liệu trong các túi quà của người chơi theo đúng các mục!");
+    location.reload();
+}
+
+// ════════════════════════════════════════
+//  NGÂN HÀNG CÂU HỎI MẶC ĐỊNH (30 CÂU VIE & 5 CÂU ENG)
+// ════════════════════════════════════════
+const BUILTIN_VIE = [
+  { "id": 1, "question": "Loại túi nào dưới đây thân thiện với môi trường nhất?", "answers": ["Túi nilon dùng một lần", "Túi vải dùng nhiều lần", "Túi nhựa màu đen"], "correct": 1, "category": "Bảo vệ Môi trường" },
+  { "id": 2, "question": "Để tiết kiệm điện, khi ra khỏi phòng chúng ta nên làm gì?", "answers": ["Tắt hết đèn và các thiết bị điện", "Mở cửa sổ thật to", "Bật quạt cho mát phòng"], "correct": 0, "category": "Bảo vệ Môi trường" },
+  { "id": 3, "question": "Trồng nhiều cây xanh có lợi ích gì cho không khí?", "answers": ["Làm không khí nóng lên", "Làm không khí nhiều bụi hơn", "Cung cấp Oxy và làm sạch không khí"], "correct": 2, "category": "Bảo vệ Môi trường" },
+  { "id": 4, "question": "Trong hội họa, màu Cam là kết quả của việc pha trộn hai màu nào?", "answers": ["Đỏ và Vàng", "Xanh dương và Vàng", "Đỏ và Xanh dương"], "correct": 0, "category": "Giải trí & Nghệ thuật" },
+  { "id": 5, "question": "Dụng cụ nào dưới đây là một loại nhạc cụ gõ?", "answers": ["Đàn Guitar", "Trống", "Sáo trúc"], "correct": 1, "category": "Giải trí & Nghệ thuật" },
+  { "id": 6, "question": "Trò chơi dân gian nào người chơi phải bịt mắt để đi tìm người khác?", "answers": ["Kéo co", "Rồng rắn lên mây", "Bịt mắt bắt dê"], "correct": 2, "category": "Giải trí & Nghệ thuật" },
+  { "id": 7, "question": "Nước ở thể rắn được gọi là gì?", "answers": ["Hơi nước", "Nước đá", "Nước suối"], "correct": 1, "category": "Khoa học phổ thông" },
+  { "id": 8, "question": "Trái đất quay quanh thiên thể nào dưới đây?", "answers": ["Mặt trăng", "Sao hỏa", "Mặt trời"], "correct": 2, "category": "Khoa học phổ thông" },
+  { "id": 9, "question": "Lực nào khiến quả táo khi rời cành luôn rơi xuống đất?", "answers": ["Trọng lực", "Lực đẩy", "Lực ma sát"], "correct": 0, "category": "Khoa học phổ thông" },
+  { "id": 10, "question": "Số điện thoại khẩn cấp để gọi cứu hỏa tại Việt Nam là gì?", "answers": ["113", "115", "114"], "correct": 2, "category": "Kỹ năng sinh tồn và sơ cứu" },
+  { "id": 11, "question": "Khi không may bị bỏng nước sôi, việc đầu tiên cần làm là gì?", "answers": ["Ngâm vùng bị bỏng vào nước sạch mát", "Bôi kem đánh răng lên vết bỏng", "Đắp đá lạnh thật lâu"], "correct": 0, "category": "Kỹ năng sinh tồn và sơ cứu" },
+  { "id": 12, "question": "Nếu bị lạc trong siêu thị, con nên tìm sự trợ giúp từ ai?", "answers": ["Người lạ đang đi mua sắm", "Nhân viên bảo vệ hoặc nhân viên thu ngân", "Tự đi ra ngoài bãi xe"], "correct": 1, "category": "Kỹ năng sinh tồn và sơ cứu" },
+  { "id": 13, "question": "Ngọn núi cao nhất thế giới Everest nằm ở châu lục nào?", "answers": ["Châu Phi", "Châu Á", "Châu Âu"], "correct": 1, "category": "Lịch sử và Địa lý thế giới" },
+  { "id": 14, "question": "Tháp Eiffel là biểu tượng nổi tiếng của quốc gia nào?", "answers": ["Pháp", "Đức", "Anh"], "correct": 0, "category": "Lịch sử và Địa lý thế giới" },
+  { "id": 15, "question": "Đại dương nào rộng lớn nhất trên Trái đất?", "answers": ["Đại Tây Dương", "Ấn Độ Dương", "Thái Bình Dương"], "correct": 2, "category": "Lịch sử và Địa lý thế giới" },
+  { "id": 16, "question": "Thiết bị nào được coi là 'bộ não' của máy tính?", "answers": ["Chuột", "Màn hình", "CPU"], "correct": 2, "category": "Thế giới Số & Công nghệ" },
+  { "id": 17, "question": "Khi dùng Internet, hành động nào sau đây là KHÔNG an toàn?", "answers": ["Chia sẻ mật khẩu cho người lạ", "Xem video học tiếng Anh", "Hỏi ý kiến bố mẹ khi tải trò chơi"], "correct": 0, "category": "Thế giới Số & Công nghệ" },
+  { "id": 18, "question": "Robot thường sử dụng thành phần nào để nhận biết vật cản?", "answers": ["Bánh xe", "Cảm biến", "Pin"], "correct": 1, "category": "Thế giới Số & Công nghệ" },
+  { "id": 19, "question": "Tại sao chúng ta nên khởi động kỹ trước khi tập thể dục?", "answers": ["Để tránh bị chuột rút và chấn thương", "Để quần áo bớt sạch", "Để nhanh buồn ngủ hơn"], "correct": 0, "category": "Thể thao & Sức khỏe" },
+  { "id": 20, "question": "Loại thực phẩm nào chứa nhiều Canxi giúp xương và răng chắc khỏe?", "answers": ["Kẹo mút", "Sữa và các sản phẩm từ sữa", "Nước ngọt có gas"], "correct": 1, "category": "Thể thao & Sức khỏe" },
+  { "id": 21, "question": "Môn thể thao nào được gọi là 'Môn thể thao Vua'?", "answers": ["Cầu lông", "Bơi lội", "Bóng đá"], "correct": 2, "category": "Thể thao & Sức khỏe" },
+  { "id": 22, "question": "Con vật nào dưới đây là động vật có vú nhưng lại sống dưới nước?", "answers": ["Cá mập", "Cá voi", "Cá vàng"], "correct": 1, "category": "Tự nhiên và Xã hội" },
+  { "id": 23, "question": "Thứ tự vòng đời của một loài bướm diễn ra như thế nào?", "answers": ["Trứng -> Sâu -> Nhộng -> Bướm", "Bướm -> Nhộng -> Sâu -> Trứng", "Sâu -> Trứng -> Nhộng -> Bướm"], "correct": 0, "category": "Tự nhiên và Xã hội" },
+  { "id": 24, "question": "Thành viên nào trong gia đình thường được gọi là 'thế hệ thứ nhất'?", "answers": ["Con cái", "Bố mẹ", "Ông bà"], "correct": 2, "category": "Tự nhiên và Xã hội" },
+  { "id": 25, "question": "Món bánh nào là món ăn truyền thống không thể thiếu trong ngày Tết của người Việt?", "answers": ["Bánh trung thu", "Bánh chưng", "Bánh mì"], "correct": 1, "category": "Văn hóa & Ẩm thực Việt Nam" },
+  { "id": 26, "question": "Quốc kỳ Việt Nam có hình ảnh gì ở giữa nền đỏ?", "answers": ["Ngôi sao vàng 5 cánh", "Bông hoa sen", "Hình bản đồ Việt Nam"], "correct": 0, "category": "Văn hóa & Ẩm thực Việt Nam" },
+  { "id": 27, "question": "Trang phục truyền thống nổi tiếng của phụ nữ Việt Nam là gì?", "answers": ["Áo sơ mi", "Áo dài", "Váy ngắn"], "correct": 1, "category": "Văn hóa & Ẩm thực Việt Nam" },
+  { "id": 28, "question": "Loài côn trùng nào giúp hoa thụ phấn và làm ra mật ngọt?", "answers": ["Con ruồi", "Con muỗi", "Con ong"], "correct": 2, "category": "Tự nhiên và Xã hội" },
+  { "id": 29, "question": "Để bảo vệ răng miệng, chúng ta nên đánh răng ít nhất mấy lần mỗi ngày?", "answers": ["1 lần", "2 lần", "5 lần"], "correct": 1, "category": "Thể thao & Sức khỏe" },
+  { "id": 30, "question": "Hành động nào giúp bảo vệ tài nguyên nước?", "answers": ["Xả rác xuống sông", "Khóa vòi nước khi đang đánh răng", "Để vòi nước chảy tự do"], "correct": 1, "category": "Bảo vệ Môi trường" }
+];
+
+const BUILTIN_ENG = [
+  {id:1001,question:"What is the capital of England?",answers:["Manchester","London","Birmingham"],correct:1,category:"Geography",lang:"ENG"},
+  {id:1002,question:"How many continents are there on Earth?",answers:["5","6","7"],correct:2,category:"Geography",lang:"ENG"},
+  {id:1003,question:"What is the largest ocean on Earth?",answers:["Atlantic Ocean","Indian Ocean","Pacific Ocean"],correct:2,category:"Geography",lang:"ENG"},
+  {id:1004,question:"What planet is known as the Red Planet?",answers:["Venus","Mars","Jupiter"],correct:1,category:"Science",lang:"ENG"},
+  {id:1005,question:"How many sides does a triangle have?",answers:["2","3","4"],correct:1,category:"Mathematics",lang:"ENG"}
+];
+
+let bankVIE = [...BUILTIN_VIE]; let bankENG = [...BUILTIN_ENG];
+let customRewards = { PT1: null, PT2: null, PT3: null, PT4: null, PT5: null };
+const ADMIN_PIN = "1234";
+
+let gameState = { playerName: '', level: 'de', totalQ: 30, currentIdx: 0, score: 0, correct: 0, wrong: 0, wrongStreak: 0, selectedQ: [], timer: null, timeLeft: 20, answered: false };
+
+let selectedGroups = { time: [], fun: [] };
+
+// ── QUẢN LÝ DỮ LIỆU NGƯỜI CHƠI ──
+let playersData = {};
+
+function loadPlayersData() {
+  migrateDataOnce();
+  playersData = JSON.parse(localStorage.getItem('sumogames_players') || '{}');
+  const now = Date.now();
+  for (let pName in playersData) {
+      if(playersData[pName].vouchers) {
+          playersData[pName].vouchers = playersData[pName].vouchers.filter(v => v.expiry > now);
+      }
+      if(!playersData[pName].redeemedItems) playersData[pName].redeemedItems = [];
+  }
+}
+
+function savePlayersData() { localStorage.setItem('sumogames_players', JSON.stringify(playersData)); }
+
+function getPlayer(name) {
+    if (!playersData[name]) playersData[name] = { vouchers: [], redeemedItems: [] };
+    if (!playersData[name].redeemedItems) playersData[name].redeemedItems = [];
+    return playersData[name];
+}
+
+function addVoucher(playerName, voucher) {
+    let p = getPlayer(playerName);
+    voucher.expiry = Date.now() + 90 * 24 * 60 * 60 * 1000; 
+    voucher.id = 'v_' + Date.now() + '_' + Math.floor(Math.random()*1000);
+    p.vouchers.push(voucher); savePlayersData();
+}
+
+// Kiểm tra xem item CỤ THỂ này đã được đổi trong ngày hôm nay chưa
+function canRedeemItemToday(playerName, itemName) {
+    let p = getPlayer(playerName);
+    const today = new Date().toLocaleDateString('vi-VN');
+    return !p.redeemedItems.some(r => r.itemName === itemName && r.dateStr === today);
+}
+
+// Cảnh báo UI
+function showDailyWarning() {
+    const warnEl = document.getElementById('invDailyWarning');
+    warnEl.style.display = 'block';
+    setTimeout(() => { warnEl.style.display = 'none'; }, 4000);
+}
+
+function markRedeemed(playerName, itemName, tier, sourceSection, level) { 
+    let p = getPlayer(playerName); 
+    let section = sourceSection || tier || 'Không xác định';
+    p.redeemedItems.unshift({ itemName: itemName, timeStr: new Date().toLocaleTimeString('vi-VN', {hour: '2-digit', minute:'2-digit'}), dateStr: new Date().toLocaleDateString('vi-VN'), tier: section, level: (level || gameState.level) === 'kho' ? 'Khó' : 'Dễ' }); 
+    if (p.redeemedItems.length > 20) p.redeemedItems.pop();
+    savePlayersData(); 
+}
+
+// Hàm xử lý dùng chung cho phần đổi quà đặc biệt & mảnh ghép
+function processRedemption(playerName, itemName, den, tier) {
+    let p = getPlayer(playerName); let removed = 0;
+    p.vouchers = p.vouchers.filter(v => { 
+        if (v.itemName === itemName && removed < den) { removed++; return false; } 
+        return true; 
+    });
+    markRedeemed(playerName, itemName, tier, 'Quà Ghép Mảnh');
+    alert(`🎉 Chúc mừng bạn đã nhận được 1 ${itemName}, hãy gửi cho Papa bự để nhận quà nhé!`);
+    renderInventoryContent(playerName);
+}
+
+(function initApp() {
+  const sVIE = localStorage.getItem('sumogames_bankVIE'); if (sVIE) bankVIE = [...BUILTIN_VIE, ...JSON.parse(sVIE)];
+  const sENG = localStorage.getItem('sumogames_bankENG'); if (sENG) bankENG = [...BUILTIN_ENG, ...JSON.parse(sENG)];
+  ['PT1','PT2','PT3','PT4','PT5'].forEach(tier => { const saved = localStorage.getItem('sumogames_reward_' + tier); if (saved) customRewards[tier] = JSON.parse(saved); });
+  loadPlayersData();
+})();
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if (id === 'screen-leaderboard') renderLeaderboard();
+  if (id === 'screen-admin') { resetPinState(); document.getElementById('tab-questions-content').style.display = 'block'; document.getElementById('tab-rewards-content').style.display = 'none'; document.getElementById('tab-resolution-content').style.display = 'none'; document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active')); document.querySelectorAll('.tab-btn')[0].classList.add('active'); }
+}
+
+function showInfoModal(text) { document.getElementById('infoModalText').innerHTML = text; document.getElementById('infoModal').style.display = 'flex'; }
+function getCurrentDateTimeStr() { const now = new Date(); const hh = String(now.getHours()).padStart(2, '0'); const mm = String(now.getMinutes()).padStart(2, '0'); const dd = String(now.getDate()).padStart(2, '0'); const mo = String(now.getMonth() + 1).padStart(2, '0'); return `${hh}:${mm} ${dd}/${mo}/${now.getFullYear()}`; }
+
+// ── QUẢN LÝ ĐỘ PHÂN GIẢI ──
+const scaleMap = { small: 0.85, normal: 1.0, large: 1.2, xlarge: 1.4, fullhd: 1.6, '4k': 2.0 }; 
+function setResolution(key, btn) { 
+    document.documentElement.style.setProperty('--ui-scale', scaleMap[key] || 1.0); 
+    document.querySelectorAll('.res-btn').forEach(b => b.classList.remove('active')); 
+    btn.classList.add('active'); 
+    localStorage.setItem('sumogames_resolution', key); 
+}
+(function loadResolution() { 
+    const saved = localStorage.getItem('sumogames_resolution'); 
+    if (saved && scaleMap[saved]) { 
+        document.documentElement.style.setProperty('--ui-scale', scaleMap[saved]); 
+        setTimeout(() => { 
+            const btns = document.querySelectorAll('.res-btn'); 
+            const keys = Object.keys(scaleMap); 
+            const idx = keys.indexOf(saved); 
+            if (idx >= 0 && btns[idx]) { 
+                btns.forEach(b => b.classList.remove('active')); 
+                btns[idx].classList.add('active'); 
+            } 
+        }, 50); 
+    } 
+})();
+
+// ── ADMIN PIN & TABS ──
+function checkPin(input) {
+    if (input.value === ADMIN_PIN) { 
+        document.getElementById('pinError').style.display = 'none';
+        document.getElementById('pinSection').style.display = 'none'; 
+        document.getElementById('protectedContent').style.display = 'block';   
+        input.value = ''; updateQCounts(); updateRewardStatus();
+    } else if (input.value.length === 4) {
+        document.getElementById('pinError').style.display = 'block'; input.value = '';
+    } else { document.getElementById('pinError').style.display = 'none'; }
+}
+function resetPinState() {
+    document.getElementById('pinInput').value = ''; document.getElementById('pinError').style.display = 'none'; document.getElementById('pinSection').style.display = 'block'; document.getElementById('protectedContent').style.display = 'none';
+}
+function switchTab(tabId, btn) {
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  if (tabId === 'tab-questions' || tabId === 'tab-rewards' || tabId === 'tab-data') {
+      resetPinState();
+      document.getElementById('adminProtectedArea').style.display = 'block';
+      
+      document.getElementById('tab-questions-content').style.display = (tabId === 'tab-questions' ? 'block' : 'none');
+      document.getElementById('tab-rewards-content').style.display = (tabId === 'tab-rewards' ? 'block' : 'none');
+      document.getElementById('tab-data-content').style.display = (tabId === 'tab-data' ? 'block' : 'none');
+      document.getElementById('tab-resolution-content').style.display = 'none';
+  } else {
+      document.getElementById('adminProtectedArea').style.display = 'none';
+      document.getElementById('tab-resolution-content').style.display = 'block';
+      document.getElementById('tab-questions-content').style.display = 'none';
+      document.getElementById('tab-rewards-content').style.display = 'none';
+      document.getElementById('tab-data-content').style.display = 'none';
+  }
+}
+
+// ════════════════════════════════════════
+//  GAME LOGIC CỐT LÕI
+// ════════════════════════════════════════
+function selectQ(btn) { document.querySelectorAll('.choice-btn[data-q]').forEach(b => b.classList.remove('selected')); btn.classList.add('selected'); gameState.totalQ = parseInt(btn.dataset.q); }
+function selectLevel(btn) { document.querySelectorAll('.choice-btn[data-lvl]').forEach(b => b.classList.remove('selected')); btn.classList.add('selected'); gameState.level = btn.dataset.lvl; }
+
+function shuffle(arr) { for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; } return arr; }
+
+// Anti-repeat logic
+const _usedQuestionIds = { VIE: [], ENG: [] };
+const MAX_USED_RATIO = 0.6;
+
+function selectAntiRepeat(bank, count, lang) {
+    if (count <= 0 || bank.length === 0) return [];
+    const maxUsed = Math.floor(bank.length * MAX_USED_RATIO);
+    const used = _usedQuestionIds[lang] || [];
+    
+    const fresh = bank.filter(q => !used.includes(q.id));
+    const stale = bank.filter(q => used.includes(q.id));
+    
+    let pool;
+    if (fresh.length >= count) {
+        pool = shuffle([...fresh]).slice(0, count);
+    } else {
+        pool = shuffle([...fresh, ...shuffle([...stale])]).slice(0, count);
+    }
+    
+    const newIds = pool.map(q => q.id);
+    _usedQuestionIds[lang] = [...used, ...newIds].slice(-maxUsed);
+    return pool.map(q => ({...q, lang}));
+}
+
+// ════════════════════════════════════════
+//  KIỂM TRA GIỜ NGỦ & KHỞI ĐẦU GAME
+// ════════════════════════════════════════
+let _bedtimeBypass = false;
+
+function startGame() {
+  const name = document.getElementById('playerName').value.trim();
+  if (!name) { alert('Bạn chưa nhập tên!'); return; }
+
+  const hour = new Date().getHours();
+  if (hour >= 22 && !_bedtimeBypass) {
+      _bedtimeBypass = false;
+      document.getElementById('bedtimeModal').style.display = 'flex';
+      return;
+  }
+  proceedStartGame();
+}
+
+function proceedStartGame() {
+  const name = document.getElementById('playerName').value.trim();
+  if (!name) { alert('Bạn chưa nhập tên!'); return; }
+
+  const hour = new Date().getHours();
+  const isBedtime = hour >= 22;
+
+  // Sửa tỷ lệ mặc định: 30 câu thì 25 câu VIE + 5 câu ENG (tỉ lệ 5/30)
+  const engCount = bankENG.length > 0 ? Math.min(bankENG.length, Math.round(gameState.totalQ * (5/30))) : 0;
+  const vieCount = gameState.totalQ - engCount;
+  if (bankVIE.length < vieCount) { alert(`Ngân hàng Tiếng Việt chỉ có ${bankVIE.length} câu, cần ${vieCount} câu.`); return; }
+
+  const shuffledVIE = selectAntiRepeat(bankVIE, vieCount, 'VIE');
+  const shuffledENG = engCount > 0 ? selectAntiRepeat(bankENG, engCount, 'ENG') : [];
+  let pool = [...shuffledVIE];
+  shuffledENG.forEach(q => pool.splice(Math.floor(Math.random() * pool.length), 0, q));
+
+  gameState.playerName = name;
+  gameState.currentIdx = 0; gameState.score = 0; gameState.correct = 0;
+  gameState.wrong = 0; gameState.wrongStreak = 0; gameState.selectedQ = pool;
+  gameState.isBedtime = isBedtime;
+
+  _bedtimeBypass = false; 
+  showScreen('screen-game');
+  document.getElementById('headerName').textContent = name;
+  document.getElementById('levelBadge').textContent = gameState.level === 'kho' ? 'Khó' : 'Dễ';
+  showQuestion();
+}
+
+function showQuestion() {
+  if (gameState.currentIdx >= gameState.totalQ) { endGame(); return; }
+  const q = gameState.selectedQ[gameState.currentIdx]; gameState.answered = false; gameState.timeLeft = 20;
+  document.getElementById('qNumber').textContent = `Câu ${gameState.currentIdx + 1}`; document.getElementById('qCategory').textContent = q.category; document.getElementById('qText').textContent = q.question;
+  const pct = Math.round((gameState.currentIdx / gameState.totalQ) * 100); document.getElementById('progressText').textContent = `Câu ${gameState.currentIdx + 1} / ${gameState.totalQ}`; document.getElementById('progressFill').style.width = pct + '%';
+  
+  const grid = document.getElementById('answersGrid'); grid.innerHTML = '';
+  let ansArray = q.answers.map((ans, i) => ({ text: ans, isCorrect: i === q.correct })).sort(() => 0.5 - Math.random());
+  
+  ['A','B','C'].forEach((letter, i) => {
+    const btn = document.createElement('button'); btn.className = 'answer-btn'; btn.innerHTML = `<span class="letter">${letter}</span><span>${ansArray[i].text}</span>`;
+    btn.dataset.correct = ansArray[i].isCorrect; 
+    btn.onclick = () => selectAnswer(btn, ansArray[i].isCorrect); grid.appendChild(btn);
+  });
+  
+  updateScoreUI(); startTimer();
+}
+
+function startTimer() {
+  clearInterval(gameState.timer);
+  const circle = document.getElementById('timerCircle'); const bar = document.getElementById('timerBar'); circle.className = 'timer-circle'; bar.className = 'timer-bar-fill';
+  gameState.timer = setInterval(() => {
+    gameState.timeLeft--; circle.textContent = gameState.timeLeft; bar.style.width = (gameState.timeLeft / 20 * 100) + '%';
+    if (gameState.timeLeft <= 5) { circle.className = 'timer-circle danger'; bar.className = 'timer-bar-fill danger'; }
+    if (gameState.timeLeft <= 0) { clearInterval(gameState.timer); if (!gameState.answered) timeUp(); }
+  }, 1000);
+}
+
+function timeUp() { 
+  gameState.answered = true; 
+  document.querySelectorAll('.answer-btn').forEach(b => b.disabled = true); 
+  let correctBtn = document.querySelector('.answer-btn[data-correct="true"]'); if(correctBtn) correctBtn.classList.add('correct');
+  gameState.wrong++; gameState.wrongStreak++; checkStreak(); 
+  setTimeout(nextQuestion, 1500); 
+}
+
+function selectAnswer(btn, isCorrect) {
+  if (gameState.answered) return; 
+  gameState.answered = true; 
+  clearInterval(gameState.timer); 
+  document.querySelectorAll('.answer-btn').forEach(b => b.disabled = true);
+  
+  if (isCorrect) { 
+      btn.classList.add('correct'); 
+      gameState.score += 10; gameState.correct++; gameState.wrongStreak = 0; spawnCoins(btn); 
+  } else { 
+      btn.classList.add('wrong'); 
+      let correctBtn = document.querySelector('.answer-btn[data-correct="true"]'); if(correctBtn) correctBtn.classList.add('correct');
+      gameState.wrong++; gameState.wrongStreak++; checkStreak(); 
+  }
+  updateScoreUI(); setTimeout(nextQuestion, 1500);
+}
+
+function checkStreak() {
+  if (gameState.wrongStreak >= 3) { gameState.score = Math.max(0, gameState.score - 10); gameState.wrongStreak = 0; updateScoreUI(); const warn = document.getElementById('streakWarn'); warn.classList.add('show'); setTimeout(() => warn.classList.remove('show'), 2500); }
+}
+function updateScoreUI() { document.getElementById('scoreVal').textContent = gameState.score; document.getElementById('correctVal').textContent = gameState.correct; document.getElementById('wrongVal').textContent = gameState.wrong; }
+function nextQuestion() { gameState.currentIdx++; showQuestion(); }
+
+// ════════════════════════════════════════
+//  END GAME & REWARDS
+// ════════════════════════════════════════
+const rewardHistory = { PT1:[], PT2:[], PT3:[], PT4:[], PT5:[] };
+
+function matchesSchedule(reward) {
+    if (!reward.schedules || !Array.isArray(reward.schedules) || reward.schedules.length === 0) return true;
+    const now = new Date();
+    const dayOfWeek = now.getDay(); 
+    const isWeekend = (dayOfWeek === 0 || dayOfWeek === 6);
+    const currentType = isWeekend ? 'weekend' : 'weekday';
+    const hh = String(now.getHours()).padStart(2, '0');
+    const mm = String(now.getMinutes()).padStart(2, '0');
+    const currentTime = hh + ':' + mm;
+
+    for (const s of reward.schedules) {
+        if (s.type !== currentType) continue;
+        const from = s.from || '00:00';
+        const to   = s.to   || '23:59';
+        if (currentTime >= from && currentTime <= to) return true;
+    }
+    return false;
+}
+
+function getCustomRewardObj(tier) {
+    const rewardData = customRewards[tier];
+    if (!rewardData || !Array.isArray(rewardData)) return null;
+
+    const valid = rewardData.map((r, idx) => ({ r, idx })).filter(({ r }) => matchesSchedule(r));
+    if (valid.length === 0) return null;
+
+    const hist = rewardHistory[tier] || [];
+    const maxHistLen = Math.max(1, Math.floor(valid.length * 0.6)); 
+
+    const fresh  = valid.filter(({ idx }) => !hist.includes(idx));
+    const pool   = fresh.length > 0 ? fresh : valid; 
+    const chosen = pool[Math.floor(Math.random() * pool.length)];
+
+    hist.push(chosen.idx);
+    if (hist.length > maxHistLen) hist.shift();
+    rewardHistory[tier] = hist;
+
+    return chosen.r;
+}
+
+function endGame() {
+  clearInterval(gameState.timer);
+  const pct = Math.round((gameState.correct / gameState.totalQ) * 100);
+  const name = gameState.playerName; const level = gameState.level; 
+  
+  let tier = 'PT1';
+  if (level === 'de') { if (pct >= 92) tier = 'PT5'; else if (pct >= 81) tier = 'PT4'; else if (pct >= 71) tier = 'PT3'; else if (pct >= 60) tier = 'PT2'; } 
+  else { if (pct >= 96) tier = 'PT5'; else if (pct >= 86) tier = 'PT4'; else if (pct >= 76) tier = 'PT3'; else if (pct >= 60) tier = 'PT2'; }
+
+  let msg = `<span class="msg-highlight">Bạn đã trả lời đúng ${pct}% câu hỏi!</span><br><br>`;
+  
+  let customRewardObj = (!gameState.isBedtime) ? getCustomRewardObj(tier) : null;
+  if (gameState.isBedtime) {
+      msg += `<div style="background:rgba(30,144,255,0.15); border:1px dashed #74b9ff; border-radius:12px; padding:14px; margin-bottom:12px; color:#74b9ff; font-weight:700; font-size:0.95rem;">🌙 Bạn đã chơi sau 22:00 giờ nên không nhận được phần thưởng lần này. Chúc ngủ ngon và chơi tiếp vào ngày mai nhé!</div>`;
+  }
+  let hasReward = false;
+  
+  if (customRewardObj) {
+      hasReward = true;
+      let rTitle = customRewardObj.title || "Phần thưởng";
+      let rMsg = (customRewardObj.message || customRewardObj).replace(/{name}/g, name).replace(/{pct}/g, pct).replace(/{score}/g, gameState.score);
+
+      msg += `<div class="custom-reward-box">
+                <span style="font-size:1.35rem; color:#2ED573; font-weight:800;">${customRewardObj.emoji || '🎁'} ${rTitle}</span><br>
+                <span style="color:#fff; font-size:1.15rem; display:block; margin-top:8px;">${rMsg}</span>`;
+
+      let cleanName = rTitle.trim();
+      if (cleanName === "Phần thưởng" && rMsg) { cleanName = rMsg.replace(/<[^>]*>?/gm, '').trim(); }
+
+      let fractionMatch = cleanName.match(/(?:1\/|một phần\s*)(\d+)\s+(.+)/i);
+      let hasTime = cleanName.match(/\d+\s*(giờ|phút|giây)/i) !== null;
+      let isYeuCau = cleanName.toLowerCase().includes('yêu cầu') || (rMsg && rMsg.toLowerCase().includes('yêu cầu'));
+      let isTech = cleanName.match(/youtube|netflix|điện thoại|ipad|tv|tivi/i) !== null;
+
+      if (fractionMatch) {
+          let den = parseInt(fractionMatch[1]); 
+          let itemName = fractionMatch[2].trim();
+          addVoucher(name, { type: 'fraction', den: den, itemName: itemName, tier: tier, emoji: customRewardObj.emoji || '' });
+          
+          let allFragments = getPlayer(name).vouchers.filter(v => v.type === 'fraction' && v.itemName === itemName);
+          let totalDecimal = allFragments.reduce((sum, v) => sum + (1 / (v.den || 1)), 0);
+          let wholeGifts = Math.floor(totalDecimal + 1e-9); 
+          
+          if (wholeGifts < 1) {
+              let pctDone = Math.round(totalDecimal * 100);
+              msg += `<span style="color:var(--gold); display:block; margin-top:10px; font-weight:700;">🎫 Đã tích lũy: ${pctDone}% — Tiếp tục tích thêm để đổi quà nguyên nhé!</span>`; 
+          } else { 
+              setTimeout(() => {
+                  spawnHearts();
+                  showAutoRedeemModal(name, itemName, den, tier, wholeGifts, allFragments, totalDecimal);
+              }, 1200); 
+          }
+      } 
+      else if (isTech) {
+          addVoucher(name, { type: 'time', itemName: cleanName, tier: tier, emoji: customRewardObj.emoji || '' });
+          msg += `<span style="color:#74b9ff; display:block; margin-top:10px; font-weight:700;">🎒 Voucher thời gian đã cất vào túi!</span>`;
+      }
+      else if (isYeuCau) {
+          addVoucher(name, { type: 'fun_parent', itemName: cleanName, tier: tier, emoji: customRewardObj.emoji || '' });
+          msg += `<span style="color:#ff6b6b; display:block; margin-top:10px; font-weight:700;">🎪 Quà đã cất vào mục Quà vui vẻ (Dành cho bố mẹ)!</span>`;
+      } 
+      else if (tier === 'PT1' || tier === 'PT2' || (tier === 'PT3' && !hasTime)) {
+          addVoucher(name, { type: 'fun_con', itemName: cleanName, tier: tier, emoji: customRewardObj.emoji || '' });
+          msg += `<span style="color:#1e90ff; display:block; margin-top:10px; font-weight:700;">🎪 Quà đã cất vào mục Quà vui vẻ (Dành cho con)!</span>`;
+      }
+      else if (hasTime && (tier === 'PT4' || tier === 'PT5' || tier === 'PT3')) {
+          addVoucher(name, { type: 'time', itemName: cleanName, tier: tier, emoji: customRewardObj.emoji || '' });
+          msg += `<span style="color:#74b9ff; display:block; margin-top:10px; font-weight:700;">🎒 Voucher thời gian đã cất vào túi!</span>`;
+      }
+      else {
+          addVoucher(name, { type: 'special', itemName: cleanName, tier: tier, emoji: customRewardObj.emoji || '' });
+          msg += `<span style="color:var(--gold); display:block; margin-top:10px; font-weight:700;">🎒 Quà đặc biệt đã cất vào túi đồ!</span>`;
+      }
+      msg += `</div>`;
+  }
+
+  let dateStr = getCurrentDateTimeStr();
+  msg += `
+    <div class="result-footer">
+        👤 Người chơi: <span>${name}</span> &nbsp;|&nbsp; 
+        📝 Gói: <span>${gameState.totalQ} câu</span><br>
+        🔥 Cấp độ: <span>${level === 'kho' ? 'Khó' : 'Dễ'}</span> &nbsp;|&nbsp;
+        📅 Ngày: <span>${dateStr}</span>
+    </div>
+  `;
+
+  if(tier === 'PT5' && !customRewardObj) { hasReward = true; launchConfetti(); }
+
+  document.getElementById('resultMsg').innerHTML = msg;
+  document.getElementById('rScore').textContent = gameState.score; document.getElementById('rCorrect').textContent = gameState.correct; document.getElementById('rPct').textContent = pct + '%';
+  
+  saveScore(name, gameState.score, gameState.correct, gameState.totalQ, level, hasReward);
+  showScreen('screen-result');
+}
+
+// ════════════════════════════════════════
+//  AUTO REDEEM MODAL (FRACTIONS)
+// ════════════════════════════════════════
+function showAutoRedeemModal(playerName, itemName, den, tier, wholeGifts, allFragments, totalDecimal) {
+    wholeGifts = wholeGifts || 1;
+    allFragments = allFragments || getPlayer(playerName).vouchers.filter(v => v.type === 'fraction' && v.itemName === itemName);
+    totalDecimal = totalDecimal != null ? totalDecimal : allFragments.reduce((s, v) => s + 1/(v.den||1), 0);
+
+    const remainderDecimal = totalDecimal - wholeGifts;
+    const hasRemainder = remainderDecimal > 0.001;
+    const remainderPct = Math.round(remainderDecimal * 100);
+
+    let armMsg = `Đã đủ mảnh ghép để đổi <strong>${wholeGifts > 1 ? wholeGifts + ' phần ' : '1 '} ${itemName}</strong>!`;
+    if (hasRemainder) {
+        armMsg += `<br><span style="color:var(--gold); font-size:0.9rem;">📌 Còn dư <strong>${remainderPct}%</strong> mảnh – sẽ được giữ lại để tích tiếp nếu đồng ý đổi.</span>`;
+    }
+    armMsg += `<br><br>Bạn có muốn đổi quà ngay bây giờ không?`;
+
+    document.getElementById('autoRedeemModal').style.display = 'flex';
+    document.getElementById('armText').innerHTML = armMsg;
+    
+    document.getElementById('armConfirmBtn').onclick = () => {
+        if (!canRedeemItemToday(playerName, itemName)) {
+            document.getElementById('autoRedeemModal').style.display = 'none';
+            showDailyWarning();
+            return;
+        }
+        document.getElementById('autoRedeemModal').style.display = 'none';
+        processFractionRedemption(playerName, itemName, tier, wholeGifts, allFragments, remainderDecimal);
+    };
+    
+    document.getElementById('armCancelBtn').onclick = () => document.getElementById('autoRedeemModal').style.display = 'none';
+}
+
+function processFractionRedemption(playerName, itemName, tier, wholeGifts, allFragments, remainderDecimal) {
+    let p = getPlayer(playerName);
+    
+    p.vouchers = p.vouchers.filter(v => !(v.type === 'fraction' && v.itemName === itemName));
+    
+    if (remainderDecimal > 0.001) {
+        let remDen = Math.round(1 / remainderDecimal);
+        if (remDen < 2) remDen = 2;
+        p.vouchers.push({
+            type: 'fraction',
+            den: remDen,
+            itemName: itemName,
+            tier: tier,
+            emoji: '',
+            expiry: Date.now() + 90 * 24 * 60 * 60 * 1000,
+            id: 'v_rem_' + Date.now()
+        });
+    }
+    
+    for (let i = 0; i < wholeGifts; i++) {
+        markRedeemed(playerName, itemName, tier, 'Quà Ghép Mảnh');
+    }
+    savePlayersData();
+    
+    let giftWord = wholeGifts > 1 ? `${wholeGifts} phần ` : '1 ';
+    let remNote = remainderDecimal > 0.001 ? `\n📌 Phần dư ${Math.round(remainderDecimal*100)}% đã được giữ lại trong Túi Quà.` : '';
+    alert(`🎉 Chúc mừng bạn đã nhận được ${giftWord}${itemName}!\nHãy gửi cho Papa bự để nhận quà nhé!${remNote}`);
+    renderInventoryContent(playerName);
+}
+
+// ════════════════════════════════════════
+//  LEADERBOARD & HISTORY DATA
+// ════════════════════════════════════════
+function saveScore(name, score, correct, total, level, hasReward) {
+  let lb = JSON.parse(localStorage.getItem('sumogames_lb') || '[]');
+  lb.push({ name: name, score: score, correct: correct, total: total, level: level === 'kho' ? 'Khó' : 'Dễ', date: getCurrentDateTimeStr(), timestamp: Date.now(), hasReward: hasReward });
+  if (lb.length > 1000) lb.shift(); 
+  localStorage.setItem('sumogames_lb', JSON.stringify(lb));
+}
+
+function renderLeaderboard() {
+  const lb = JSON.parse(localStorage.getItem('sumogames_lb') || '[]');
+  const table = document.getElementById('lbTable');
+  if (lb.length === 0) { table.innerHTML = '<div class="lb-empty">Chưa có kết quả nào.</div>'; return; }
+
+  let playerStats = {};
+  lb.forEach(r => {
+      if (!playerStats[r.name]) playerStats[r.name] = { name: r.name, totalScore: 0, totalCorrect: 0, totalTotal: 0, lastDate: r.date, timestamp: getTimestamp(r) };
+      playerStats[r.name].totalScore += r.score; playerStats[r.name].totalCorrect += r.correct; playerStats[r.name].totalTotal += r.total;
+      if (getTimestamp(r) > playerStats[r.name].timestamp) { playerStats[r.name].lastDate = r.date; playerStats[r.name].timestamp = getTimestamp(r); }
+  });
+
+  let sorted = Object.values(playerStats).sort((a, b) => b.totalScore - a.totalScore).slice(0, 10);
+  let html = `<div class="lb-row header"><span>Hạng</span><span>Tên</span><span style="text-align:center">Lượt gần nhất</span><span style="text-align:center">Tổng điểm</span><span style="text-align:center">Đúng</span></div>`;
+  sorted.forEach((p, i) => {
+    const hasVouchers = getPlayer(p.name).vouchers.length > 0;
+    const dParts = p.lastDate.split(' ');
+    const displayDate = dParts.length > 1 ? `${dParts[0]}<br><span style="font-size:0.7rem">${dParts[1]}</span>` : p.lastDate;
+    
+    html += `<div class="lb-row">
+      <span class="lb-rank">${i < 3 ? ['🥇','🥈','🥉'][i] : '#'+(i+1)}</span>
+      <span class="lb-name" style="cursor:pointer; text-decoration:underline;" onclick="openInventory('${p.name}')">${p.name}${hasVouchers?' 🏷️':''}</span>
+      <span class="lb-date">${displayDate}</span>
+      <span class="lb-score">${p.totalScore}</span><span class="lb-correct">${p.totalCorrect}/${p.totalTotal}</span>
+    </div>`;
+  });
+  table.innerHTML = html;
+}
+
+// ════════════════════════════════════════
+//  INVENTORY HTML GENERATORS
+// ════════════════════════════════════════
+function buildSpecialItemHtml(v, playerName) {
+    let emojiDisplay = v.emoji ? v.emoji + ' ' : '🎁 ';
+    return `
+    <div style="background: rgba(255,255,255,0.08); border: 1px solid var(--gold); border-radius: 12px; padding: 12px; text-align: left; display: flex; flex-direction: column; justify-content: center; cursor: pointer;" onclick="promptSpecialRedeem('${playerName}', '${v.id}', '${v.itemName.replace(/'/g, "\\'")}', '${v.tier}')">
+        <div style="font-weight: 800; color: #fff; margin-bottom: 5px;">${emojiDisplay}${v.itemName}</div>
+        <div style="font-size: 0.8rem; color: var(--gold);">Quà đặc biệt</div>
+        <div style="font-size: 0.8rem; color: var(--green);">Bấm để đổi quà</div>
+    </div>`;
+}
+
+function buildCheckboxHtml(v, checkboxClass, group) {
+    let pt5Tag = v.tier === 'PT5' ? `<span style="background:var(--gold); color:#000; font-size:0.6rem; padding: 2px 4px; border-radius: 4px; font-weight:bold; margin-left:5px;">PT5</span>` : '';
+    let emojiDisplay = v.emoji ? v.emoji + ' ' : '';
+    return `
+    <label style="display:flex; flex-direction:row; align-items:center; gap:10px; padding: 12px 14px; cursor:pointer; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.2); border-radius:12px; transition: 0.2s;">
+        <input type="checkbox" class="${checkboxClass}" value="${v.id}" data-name="${v.itemName}" onchange="calcVouchers('${group}')" style="width:20px; height:20px; flex-shrink:0;">
+        <span style="font-weight:800; font-size:1rem; color:#fff; line-height:1.3;">${emojiDisplay}${v.itemName} ${pt5Tag}</span>
+    </label>`;
+}
+
+// ════════════════════════════════════════
+//  INVENTORY MODAL (TÚI ĐỒ CỦA...)
+// ════════════════════════════════════════
+function openInventory(playerName) {
+    document.getElementById('inventoryModal').style.display = 'flex';
+    document.getElementById('invPlayerName').textContent = playerName;
+    document.getElementById('invHistoryList').style.display = 'none'; document.getElementById('historyArrow').textContent = '▼';
+    document.getElementById('invDailyWarning').style.display = 'none';
+    
+    selectedGroups.time = []; selectedGroups.fun = [];
+    renderInventoryContent(playerName);
+}
+
+function renderInventoryContent(playerName) {
+    let p = getPlayer(playerName);
+    
+    let alertMsgs = []; 
+    let fractions = {}, specials = [], times = [], funCon = [], funParent = [];
+    
+    p.vouchers.forEach(v => {
+        let daysLeft = Math.ceil((v.expiry - Date.now()) / 86400000);
+        if ([1,3,5,7].includes(daysLeft)) alertMsgs.push(`⚠️ Voucher <strong>${v.itemName}</strong> sắp hết hạn trong <strong>${daysLeft} ngày</strong>!`);
+        
+        if (v.type === 'fraction') { if(!fractions[v.itemName]) fractions[v.itemName] = { count: 0, den: v.den, tier: v.tier, emoji: v.emoji || '' }; fractions[v.itemName].count++; } 
+        else if (v.type === 'special') specials.push(v);
+        else if (v.type === 'time') times.push(v);
+        else if (v.type === 'fun_con') funCon.push(v);
+        else if (v.type === 'fun_parent') funParent.push(v);
+    });
+
+    const alertBox = document.getElementById('invAlerts');
+    if (alertMsgs.length > 0) { alertBox.innerHTML = [...new Set(alertMsgs)].join('<br>'); alertBox.style.display = 'block'; } else { alertBox.style.display = 'none'; }
+
+    let specialHtml = '';
+    if (specials.length > 0) {
+        document.getElementById('invSpecialSection').style.display = 'block';
+        specials.forEach(v => specialHtml += buildSpecialItemHtml(v, playerName));
+    } else { document.getElementById('invSpecialSection').style.display = 'none'; }
+    document.getElementById('invSpecialList').innerHTML = specialHtml;
+
+    let fracHtml = '';
+    let fracByItem = {};
+    p.vouchers.filter(v => v.type === 'fraction').forEach(v => {
+        if (!fracByItem[v.itemName]) fracByItem[v.itemName] = { frags: [], tier: v.tier, emoji: v.emoji || '' };
+        fracByItem[v.itemName].frags.push(v);
+    });
+    for (let item in fracByItem) {
+        let fi = fracByItem[item];
+        let totalDec = fi.frags.reduce((s, v) => s + 1/(v.den||1), 0);
+        let wholeParts = Math.floor(totalDec + 1e-9);
+        let pctDisplay = Math.min(Math.round(totalDec * 100), 100);
+        let canRedeem = wholeParts >= 1;
+        let btnStr = canRedeem 
+            ? `<button class="btn btn-primary btn-sm" style="width:100%; padding: 5px; font-size:0.8rem; height: auto;" onclick="promptFractionRedeem('${playerName}','${item}',2,'${fi.tier}')">🎁 Đổi ngay (${wholeParts} phần)</button>` 
+            : `<div style="background:rgba(255,215,0,0.1); border-radius:6px; height:8px; overflow:hidden; margin-bottom:4px;"><div style="width:${pctDisplay}%; height:100%; background:var(--gold);"></div></div><span style="color:var(--text-dim)">Đã tích: <strong style="color:var(--gold)">${pctDisplay}%</strong></span>`;
+        fracHtml += `
+        <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,215,0,0.3); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center;">
+            <div style="font-weight:800; color:#fff; font-size:0.95rem; margin-bottom:5px;">${fi.emoji ? fi.emoji + ' ' : '🧩 '}${item}</div>
+            <div style="font-size:0.85rem; color: var(--text-dim); margin-bottom:6px;">${fi.frags.length} mảnh (${fi.frags.map(v=>'1/'+v.den).join(' + ')})</div>
+            <div style="width:100%; font-size:0.85rem;">${btnStr}</div>
+        </div>`;
+    }
+    for (let item in fractions) {
+        if (fracByItem[item]) continue; 
+        let f = fractions[item]; let need = f.den - f.count;
+        let btnStr = need <= 0 ? `<button class="btn btn-primary btn-sm" style="width:100%; padding: 5px; font-size:0.8rem; height: auto;" onclick="promptFractionRedeem('${playerName}','${item}',${f.den},'${f.tier}')">Đổi ngay</button>` : `Cần thêm: <strong style="color:var(--gold)">${need > 0 ? need : 0}</strong>`;
+        fracHtml += `
+        <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,215,0,0.3); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center;">
+            <div style="font-weight:800; color:#fff; font-size:0.95rem; margin-bottom:5px;">${f.emoji ? f.emoji + ' ' : '🧩 '}${item}</div>
+            <div style="font-size:0.85rem; color: var(--text-dim); margin-bottom:5px;">Đã có: <strong>${f.count}/${f.den}</strong></div>
+            <div style="width:100%; font-size:0.85rem;">${btnStr}</div>
+        </div>`;
+    }
+    const fracSection = document.getElementById('invFractionSection');
+    if(Object.keys(fractions).length > 0) { fracSection.style.display = 'block'; document.getElementById('invFractionsList').innerHTML = fracHtml; } 
+    else { fracSection.style.display = 'none'; }
+
+    const timeSection = document.getElementById('voucher-time-section');
+    if (times.length > 0) {
+        timeSection.style.display = 'block';
+        times.sort((a, b) => (b.tier === 'PT5' ? 1 : 0) - (a.tier === 'PT5' ? 1 : 0));
+        let timeHtml = '';
+        times.forEach(v => timeHtml += buildCheckboxHtml(v, 'cb-time', 'time'));
+        document.getElementById('invTimesList').innerHTML = timeHtml;
+        calcVouchers('time');
+    } else { timeSection.style.display = 'none'; }
+
+    const funSection = document.getElementById('voucher-fun-section');
+    if (funCon.length > 0 || funParent.length > 0) {
+        funSection.style.display = 'block';
+        
+        let fcHtml = '';
+        funCon.forEach(v => fcHtml += buildCheckboxHtml(v, 'cb-fun', 'fun'));
+        document.getElementById('invFunConList').innerHTML = fcHtml;
+
+        let fpHtml = '';
+        funParent.forEach(v => fpHtml += buildCheckboxHtml(v, 'cb-fun', 'fun'));
+        document.getElementById('invFunParentList').innerHTML = fpHtml;
+        
+        calcVouchers('fun');
+    } else { funSection.style.display = 'none'; }
+
+    let redeemedSec = document.getElementById('invRedeemedSection');
+    if (p.redeemedItems && p.redeemedItems.length > 0) {
+        redeemedSec.style.display = 'block';
+        let rHtml = p.redeemedItems.map(r => { let capName = r.itemName ? r.itemName.charAt(0).toUpperCase() + r.itemName.slice(1) : r.itemName; return `<a class="redeemed-item" onclick="showRedeemedPopup('${r.timeStr}', '${r.dateStr}', '${r.tier}', '${r.level || ''}')">${capName}</a>`; }).join(' ; ');
+        document.getElementById('invRedeemedList').innerHTML = rHtml;
+    } else { redeemedSec.style.display = 'none'; }
+
+    renderHistory(playerName);
+}
+
+function promptSpecialRedeem(playerName, vId, itemName, tier) {
+    if(!canRedeemItemToday(playerName, itemName)){ showDailyWarning(); return; }
+    currentSpecialData = { name: playerName, id: vId, item: itemName, tier: tier }; document.getElementById('srmItemName').textContent = itemName; document.getElementById('specialRedeemModal').style.display = 'flex';
+}
+document.getElementById('srmConfirmBtn').onclick = () => {
+    if(!currentSpecialData) return; 
+    if(!canRedeemItemToday(currentSpecialData.name, currentSpecialData.item)){
+        document.getElementById('specialRedeemModal').style.display = 'none';
+        showDailyWarning();
+        return;
+    }
+    let p = getPlayer(currentSpecialData.name); p.vouchers = p.vouchers.filter(v => v.id !== currentSpecialData.id);
+    markRedeemed(currentSpecialData.name, currentSpecialData.item, currentSpecialData.tier, 'Quà Đặc Biệt'); document.getElementById('specialRedeemModal').style.display = 'none'; renderInventoryContent(currentSpecialData.name);
+};
+
+function promptFractionRedeem(playerName, itemName, den, tier) {
+    if (!canRedeemItemToday(playerName, itemName)) {
+        showDailyWarning();
+        return; 
+    }
+    let allFragments = getPlayer(playerName).vouchers.filter(v => v.type === 'fraction' && v.itemName === itemName);
+    let totalDecimal = allFragments.reduce((sum, v) => sum + (1 / (v.den || 1)), 0);
+    let wholeGifts = Math.floor(totalDecimal + 1e-9);
+    let remainderDecimal = totalDecimal - wholeGifts;
+    
+    if (wholeGifts < 1) {
+        alert('Chưa đủ mảnh để đổi quà nguyên. Tiếp tục tích thêm nhé!');
+        return;
+    }
+    processFractionRedemption(playerName, itemName, tier, wholeGifts, allFragments, remainderDecimal);
+}
+
+function showRedeemedPopup(timeStr, dateStr, tier, level) { 
+    let lvlStr = level ? ` (Cấp độ: <strong>${level}</strong>)` : '';
+    document.getElementById('rimText').innerHTML = `Bạn đã nhận quà vào <strong>${timeStr}</strong> giờ, ngày <strong>${dateStr}</strong> từ gói <strong>${tier}</strong>${lvlStr}.`; 
+    document.getElementById('redeemedInfoModal').style.display = 'flex'; 
+}
+
+function toggleHistory() {
+    let list = document.getElementById('invHistoryList'); let arrow = document.getElementById('historyArrow');
+    if (list.style.display === 'none') { list.style.display = 'block'; arrow.textContent = '▲'; } else { list.style.display = 'none'; arrow.textContent = '▼'; }
+}
+
+function renderHistory(playerName) {
+    const lb = JSON.parse(localStorage.getItem('sumogames_lb') || '[]');
+    const history = lb.filter(r => r.name === playerName).sort((a,b) => getTimestamp(b) - getTimestamp(a)).slice(0, 10);
+
+    if (history.length === 0) { document.getElementById('invHistoryList').innerHTML = '<div style="text-align:center; color:var(--text-dim); padding:10px;">Chưa có lịch sử chơi.</div>'; return; }
+
+    let html = `<table class="history-table"><thead><tr><th>STT</th><th style="text-align:left;">Thời gian</th><th>Cấp độ</th><th>Điểm</th><th>Đúng</th><th style="text-align:center">Quà</th></tr></thead><tbody>`;
+
+    history.forEach((r, i) => {
+        const dParts = r.date.split(' ');
+        const timeP = dParts.length > 1 ? dParts[0] : '';
+        const dateP = dParts.length > 1 ? dParts[1] : r.date;
+        const dateHtml = timeP ? `${dateP}<br><span style="font-size:0.75rem;color:var(--text-dim)">${timeP}</span>` : dateP;
+        const showTag = r.hasReward ? '🏷️' : '-'; 
+        html += `<tr><td style="color:var(--text-dim)">${i+1}</td><td style="font-size:0.85rem; text-align:left;">${dateHtml}</td><td style="font-size:0.85rem">${r.level || 'Dễ'}</td><td style="color:var(--gold); font-weight:bold;">${r.score}</td><td style="color:var(--correct);">${r.correct}/${r.total}</td><td style="text-align:center; font-size:1.1rem;">${showTag}</td></tr>`;
+    });
+    html += `</tbody></table>`; document.getElementById('invHistoryList').innerHTML = html;
+}
+
+// ════════════════════════════════════════
+//  COMBINING LOGIC (TIME & FUN)
+// ════════════════════════════════════════
+function calcVouchers(group) {
+    const selector = group === 'time' ? '.cb-time' : '.cb-fun';
+    const totalElId = group === 'time' ? 'invTimeTotal' : 'invFunTotal';
+    const unitElId = group === 'time' ? 'invTimeUnit' : 'invFunUnit';
+    const btnId = group === 'time' ? 'btnRedeemTime' : 'btnRedeemFun';
+    const noteId = group === 'time' ? 'invTimeLimitNote' : 'invFunLimitNote';
+    
+    let selectedArr = selectedGroups[group];
+    selectedArr.length = 0;
+    
+    let types = new Set();
+    let sumValue = 0;
+    let commonUnit = "";
+    let electronicMins = 0;
+
+    document.querySelectorAll(selector + ':checked').forEach(cb => { 
+        let parsed = extractNumberAndBase(cb.getAttribute('data-name'));
+        types.add(parsed.base);
+        sumValue += parsed.value;
+        commonUnit = parsed.unit;
+        selectedArr.push(cb.value);
+
+        if (group === 'time' && parsed.base.match(/youtube|netflix|điện thoại|ipad|tv|tivi/i)) {
+            electronicMins += parsed.value;
+        }
+    });
+
+    const btn = document.getElementById(btnId); const note = document.getElementById(noteId);
+    document.getElementById(totalElId).textContent = sumValue;
+    document.getElementById(unitElId).textContent = commonUnit;
+
+    if (selectedArr.length === 0) { btn.disabled = true; note.textContent = ''; return; }
+
+    if (types.size > 1) {
+        btn.disabled = true;
+        note.textContent = `Chỉ được gộp các phần quà cùng loại!`;
+        note.style.color = "var(--red)";
+        return;
+    }
+
+    if (group === 'time' && electronicMins > 0) {
+        let playerName = document.getElementById('invPlayerName').textContent;
+        const today = new Date().toLocaleDateString('vi-VN');
+        let dailyLimits = JSON.parse(localStorage.getItem('sumogames_daily_limits_' + playerName)) || {};
+        if (dailyLimits.date !== today) { dailyLimits = { date: today, boMeCount: 0, electronicMins: 0 }; }
+        
+        const isWeekend = (new Date().getDay() === 0 || new Date().getDay() === 6); 
+        const maxMins = isWeekend ? 60 : 30;
+        const totalReq = dailyLimits.electronicMins + electronicMins;
+
+        if (totalReq > maxMins) {
+            btn.disabled = true; 
+            note.textContent = `Vượt giới hạn thiết bị điện tử (${maxMins}p/ngày). Đã dùng: ${dailyLimits.electronicMins}p.`; 
+            note.style.color = "var(--red)"; 
+            return;
+        }
+    }
+
+    btn.disabled = false; 
+    note.textContent = `Hợp lệ.`; 
+    note.style.color = "var(--correct)"; 
+}
+
+let _pendingRedeemGroup = null;
+function closeConfirmRedeem() { document.getElementById('confirmRedeemModal').style.display = 'none'; _pendingRedeemGroup = null; }
+function showConfirmRedeem(group) {
+    _pendingRedeemGroup = group;
+    document.getElementById('confirmRedeemOk').onclick = () => {
+        document.getElementById('confirmRedeemModal').style.display = 'none';
+        executeRedeemGroup(_pendingRedeemGroup);
+        _pendingRedeemGroup = null;
+    };
+    document.getElementById('confirmRedeemModal').style.display = 'flex';
+}
+
+function redeemSelectedGroup(group) {
+    showConfirmRedeem(group);
+}
+
+function executeRedeemGroup(group) {
+    const playerName = document.getElementById('invPlayerName').textContent;
+    let selectedArr = selectedGroups[group];
+    if (!selectedArr || selectedArr.length === 0) return;
+
+    let p = getPlayer(playerName); 
+    const today = new Date().toLocaleDateString('vi-VN');
+    let dailyLimits = JSON.parse(localStorage.getItem('sumogames_daily_limits_' + playerName)) || {};
+    if (dailyLimits.date !== today) { dailyLimits = { date: today, boMeCount: 0, electronicMins: 0 }; }
+
+    let boMeSelected = 0; let sumValue = 0; 
+    let baseName = ""; let commonUnit = ""; let tier = "N/A";
+    let isElectronic = false;
+
+    p.vouchers.forEach(v => {
+        if (selectedArr.includes(v.id)) {
+            let parsed = extractNumberAndBase(v.itemName);
+            sumValue += parsed.value;
+            baseName = parsed.base;
+            commonUnit = parsed.unit;
+            tier = v.tier || "N/A";
+
+            if (v.itemName.toLowerCase().includes('bố') || v.itemName.toLowerCase().includes('mẹ')) boMeSelected++;
+            if (group === 'time' && parsed.base.match(/youtube|netflix|điện thoại|ipad|tv|tivi/i)) isElectronic = true;
+        }
+    });
+
+    if (boMeSelected > 0 && dailyLimits.boMeCount + 1 > 6) { 
+        alert(`❌ Bạn chỉ được đổi tối đa 6 lần quà Bố/Mẹ mỗi ngày!\nHôm nay bạn đã đổi: ${dailyLimits.boMeCount}/6 lần.`);
+        return; 
+    }
+
+    p.vouchers = p.vouchers.filter(v => !selectedArr.includes(v.id));
+    if (boMeSelected > 0) dailyLimits.boMeCount += 1;
+    if (isElectronic) dailyLimits.electronicMins += sumValue;
+    
+    localStorage.setItem('sumogames_daily_limits_' + playerName, JSON.stringify(dailyLimits));
+
+    let finalName = sumValue > 0 ? `${baseName} ${sumValue} ${commonUnit}`.trim() : baseName;
+    let sectionName = (group === 'fun_parent' || group === 'fun_con') ? 'Quà Vui Vẻ' : 'Voucher Thời Gian';
+    markRedeemed(playerName, finalName, tier, sectionName);
+    
+    alert(`✅ Đổi thành công!\nBạn nhận được: ${finalName}.`); 
+    
+    selectedArr.length = 0;
+    renderInventoryContent(playerName);
+}
+
+// ── HIỆU ỨNG ──
+function spawnCoins(btn) { const rect = btn.getBoundingClientRect(); for (let i = 0; i < 5; i++) { const coin = document.createElement('div'); coin.className = 'coin'; coin.textContent = '🪙'; coin.style.left = (rect.left + Math.random() * rect.width) + 'px'; coin.style.top = rect.top + 'px'; coin.style.animationDelay = (i * 0.1) + 's'; document.body.appendChild(coin); setTimeout(() => coin.remove(), 1500); } }
+function spawnHearts() { const colors = ['❤️','💛','💙','💚','💜','🧡']; for (let i = 0; i < 30; i++) { const el = document.createElement('div'); el.style.cssText = `position:fixed;font-size:${24+Math.random()*20}px;left:${Math.random()*100}vw;top:-40px;z-index:9999;pointer-events:none;animation:confettiFall ${2+Math.random()*3}s linear ${Math.random()*2}s forwards;`; el.textContent = colors[Math.floor(Math.random()*colors.length)]; document.body.appendChild(el); setTimeout(() => el.remove(), 6000); } }
+function launchConfetti() { const colors = ['#FFD700','#FF6B6B','#4CC9F0','#2ED573','#C77DFF','#FFA500']; for (let i = 0; i < 100; i++) { const el = document.createElement('div'); el.className = 'confetti-piece'; el.style.cssText = `left:${Math.random()*100}vw;top:-20px;background:${colors[Math.floor(Math.random()*colors.length)]};animation-duration:${2+Math.random()*3}s;animation-delay:${Math.random()*1.5}s;transform:rotate(${Math.random()*360}deg);border-radius:${Math.random()>0.5?'50%':'2px'};`; document.body.appendChild(el); setTimeout(() => el.remove(), 5000); } }
+
+// ── ADMIN ──
+function updateQCounts() { document.getElementById('qCountVIE').textContent = bankVIE.length; document.getElementById('qCountENG').textContent = bankENG.length; document.getElementById('bankCountVIE').textContent = bankVIE.length + ' câu'; document.getElementById('bankCountENG').textContent = bankENG.length + ' câu'; }
+function handleBankUpload(input, lang) { const files = input.files; if (!files || files.length === 0) return; Array.from(files).forEach(file => { const reader = new FileReader(); reader.onload = (e) => { try { let data = JSON.parse(e.target.result); if (!Array.isArray(data)) throw new Error('Cần mảng JSON'); data = data.map(q => ({...q, lang})); if (lang === 'VIE') { const saved = JSON.parse(localStorage.getItem('sumogames_bankVIE') || '[]'); const merged = [...saved, ...data]; localStorage.setItem('sumogames_bankVIE', JSON.stringify(merged)); bankVIE = [...BUILTIN_VIE, ...merged]; } else { const saved = JSON.parse(localStorage.getItem('sumogames_bankENG') || '[]'); const merged = [...saved, ...data]; localStorage.setItem('sumogames_bankENG', JSON.stringify(merged)); bankENG = [...BUILTIN_ENG, ...merged]; } updateQCounts(); showStatus(`✅ Đã thêm ${data.length} câu ${lang}!`, 'ok', 'adminStatusQ'); } catch (err) { showStatus(`❌ Lỗi: ${err.message}`, 'err', 'adminStatusQ'); } }; reader.readAsText(file, 'utf-8'); }); input.value = ''; }
+function resetBanks() { if (confirm('Xóa tất cả câu hỏi tùy chỉnh (giữ lại câu hỏi gốc)?')) { localStorage.removeItem('sumogames_bankVIE'); localStorage.removeItem('sumogames_bankENG'); bankVIE = [...BUILTIN_VIE]; bankENG = [...BUILTIN_ENG]; updateQCounts(); showStatus('✅ Đã khôi phục ngân hàng mặc định.', 'ok', 'adminStatusQ'); } }
+
+function updateRewardStatus() {
+    ['PT1', 'PT2', 'PT3', 'PT4', 'PT5'].forEach(tier => {
+        const statusEl = document.getElementById('status' + tier);
+        if (customRewards[tier] && Array.isArray(customRewards[tier])) {
+            const total = customRewards[tier].length;
+            const validNow = customRewards[tier].filter(r => matchesSchedule(r)).length;
+            statusEl.textContent = `Sẵn sàng (${total} mục, ${validNow} hiện tại)`;
+            statusEl.style.background = 'rgba(46,213,115,0.2)';
+            statusEl.style.color = '#2ED573';
+        } else {
+            statusEl.textContent = 'Trống';
+            statusEl.style.background = 'rgba(255,255,255,0.1)';
+            statusEl.style.color = '#fff';
+        }
+    });
+}
+
+function handleRewardUpload(input) { const files = input.files; if (!files || files.length === 0) return; Array.from(files).forEach(file => { const fName = file.name.toUpperCase(); let targetTier = ''; if (fName.includes('PT1')) targetTier = 'PT1'; else if (fName.includes('PT2')) targetTier = 'PT2'; else if (fName.includes('PT3')) targetTier = 'PT3'; else if (fName.includes('PT4')) targetTier = 'PT4'; else if (fName.includes('PT5')) targetTier = 'PT5'; if (!targetTier) { showStatus(`❌ Tên file ${file.name} không chứa PT1-PT5!`, 'err', 'adminStatusR'); return; } const reader = new FileReader(); reader.onload = (e) => { try { let data = JSON.parse(e.target.result); const rewardsArray = data.rewards ? data.rewards : data; localStorage.setItem('sumogames_reward_' + targetTier, JSON.stringify(rewardsArray)); customRewards[targetTier] = rewardsArray; updateRewardStatus(); showStatus(`✅ Tải thành công ${file.name} vào ${targetTier}!`, 'ok', 'adminStatusR'); } catch (err) { showStatus(`❌ Lỗi file: ${err.message}`, 'err', 'adminStatusR'); } }; reader.readAsText(file, 'utf-8'); }); input.value = ''; }
+function deleteReward(tier) { if (confirm(`Bạn có chắc muốn xóa dữ liệu mốc ${tier}?`)) { localStorage.removeItem('sumogames_reward_' + tier); customRewards[tier] = null; updateRewardStatus(); showStatus(`✅ Đã xóa mốc ${tier}`, 'ok', 'adminStatusR'); } }
+function showStatus(msg, type, elementId) { const el = document.getElementById(elementId); el.innerHTML = `<div class="status-msg ${type}">${msg}</div>`; setTimeout(() => el.innerHTML = '', 4000); }
+
+// ── DATA EXPORT / IMPORT & PIN LOGIC ──
+let pendingAction = null; 
+function promptClearLeaderboard() {
+    document.getElementById('lbPinMessage').innerText = "Vui lòng nhập mã PIN";
+    pendingAction = function() {
+        if (confirm('Xác nhận xóa toàn bộ bảng xếp hạng?')) {
+            localStorage.removeItem('sumogames_lb');
+            renderLeaderboard();
+            alert('Đã xóa bảng xếp hạng thành công!');
+        }
+    };
+    showLbPin();
+}
+function showLbPin() { document.getElementById('lbPinModal').style.display = 'flex'; document.getElementById('lbPinInput').value = ''; document.getElementById('lbPinError').style.display = 'none'; setTimeout(() => document.getElementById('lbPinInput').focus(), 100); }
+function closeLbPin() { document.getElementById('lbPinModal').style.display = 'none'; document.getElementById('lbPinInput').value = ''; document.getElementById('lbPinError').style.display = 'none'; }
+function checkLbPin(input) {
+  const errorEl = document.getElementById('lbPinError'); errorEl.style.display = 'none';
+  if (input.value.length === 4) {
+    if (input.value === ADMIN_PIN) {
+        let actionToRun = pendingAction;
+        closeLbPin();
+        pendingAction = null;
+        if (actionToRun) { actionToRun(); } 
+    } 
+    else { errorEl.style.display = 'block'; input.value = ''; }
+  }
+}
+
+function exportGameData() {
+  const data = {}; for(let i=0; i<localStorage.length; i++) { const k = localStorage.key(i); if (k.startsWith('sumogames_')) data[k] = localStorage.getItem(k); }
+  const blob = new Blob([JSON.stringify(data)], {type: 'text/plain'}); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'sumogames_backup.txt'; a.click();
+}
+function importGameData(event) {
+  const file = event.target.files[0]; if (!file) return;
+  if (!confirm('Khôi phục dữ liệu sẽ ghi đè toàn bộ dữ liệu hiện tại. Bạn có chắc chắn muốn tiếp tục?')) { event.target.value = ''; return; }
+  const reader = new FileReader();
+  reader.onload = function(e) {
+      try { const data = JSON.parse(e.target.result); Object.keys(data).forEach(key => { if (key.startsWith('sumogames_')) localStorage.setItem(key, data[key]); }); alert("✅ Khôi phục thành công! Trang sẽ tải lại."); location.reload(); } 
+      catch(err) { alert("❌ File không hợp lệ!"); }
+  }; reader.readAsText(file);
+}
+
+// ════════════════════════════════════════
+//  AUTO-LOAD DỮ LIỆU MẶC ĐỊNH KHI MỞ FILE
+// ════════════════════════════════════════
+async function sumoAutoLoadDefaultData() {
+    // Đã thay đổi kiểm tra ở đây: Không kiểm tra bankVIE nữa, mà dùng 1 biến cờ độc lập
+    if (localStorage.getItem('sumogames_auto_loaded') === 'true') return;
+    
+    // Ngay lập tức đánh dấu là đã tự động nạp (Dù có thành công hay thất bại thì lần sau cũng không chạy lại nữa)
+    localStorage.setItem('sumogames_auto_loaded', 'true'); 
+
+    console.log("Sumo Games: Khởi tạo dữ liệu mặc định...");
+    let loaded = false;
+    try {
+        const filesCauHoi = {
+            'sumogames_bankVIE': './VIE.json',
+            'sumogames_bankENG': './ENG.json'
+        };
+        for (const [key, path] of Object.entries(filesCauHoi)) {
+            try {
+                const res = await fetch(path);
+                if (res.ok) {
+                    const data = await res.json();
+                    if (Array.isArray(data) && data.length > 0) {
+                        localStorage.setItem(key, JSON.stringify(data));
+                        console.log(`Sumo Games: Đã nạp ${data.length} câu từ ${path}`);
+                        loaded = true;
+                    }
+                }
+            } catch(e) { /* File không tồn tại → bỏ qua */ }
+        }
+
+        for (let i = 1; i <= 5; i++) {
+            try {
+                const res = await fetch(`./PT${i}.json`);
+                if (res.ok) {
+                    const data = await res.json();
+                    const rewardsArray = data.rewards ? data.rewards : data;
+                    localStorage.setItem(`sumogames_reward_PT${i}`, JSON.stringify(rewardsArray));
+                    console.log(`Sumo Games: Đã nạp PT${i}.json (${rewardsArray.length} mục)`);
+                    loaded = true;
+                }
+            } catch(e) { /* File không tồn tại → bỏ qua */ }
+        }
+
+        if (loaded) {
+            console.log("Sumo Games: Hoàn tất nạp dữ liệu mặc định. Tải lại trang...");
+            window.location.reload();
+        }
+    } catch (error) {
+        console.warn("Sumo Games: Lỗi khi chạy Auto Load:", error);
+    }
+}
+
+window.addEventListener('DOMContentLoaded', sumoAutoLoadDefaultData);
+</script>
+</body>
+</html>

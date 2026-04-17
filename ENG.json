@@ -1,0 +1,2417 @@
+[
+  {
+    "id": 1,
+    "question": "What do you call your mother's sister?",
+    "answers": ["Your uncle", "Your aunt", "Your cousin"],
+    "correct": 1,
+    "category": "My Family"
+  },
+  {
+    "id": 2,
+    "question": "Who is the father of your father?",
+    "answers": ["Your grandfather", "Your brother", "Your son"],
+    "correct": 0,
+    "category": "My Family"
+  },
+  {
+    "id": 3,
+    "question": "If your parents have a new baby boy, who is he to you?",
+    "answers": ["Your sister", "Your father", "Your brother"],
+    "correct": 2,
+    "category": "My Family"
+  },
+  {
+    "id": 4,
+    "question": "Who is your aunt's husband?",
+    "answers": ["Your uncle", "Your nephew", "Your grandfather"],
+    "correct": 0,
+    "category": "My Family"
+  },
+  {
+    "id": 5,
+    "question": "What is the name for your mother's mother?",
+    "answers": ["Aunt", "Grandmother", "Sister"],
+    "correct": 1,
+    "category": "My Family"
+  },
+  {
+    "id": 6,
+    "question": "Who is the daughter of your uncle and aunt?",
+    "answers": ["Your mother", "Your sister", "Your cousin"],
+    "correct": 2,
+    "category": "My Family"
+  },
+  {
+    "id": 7,
+    "question": "What do you call your father and mother together?",
+    "answers": ["Parents", "Grandparents", "Cousins"],
+    "correct": 0,
+    "category": "My Family"
+  },
+  {
+    "id": 8,
+    "question": "If you are a boy, you are your parents'...?",
+    "answers": ["Daughter", "Son", "Brother"],
+    "correct": 1,
+    "category": "My Family"
+  },
+  {
+    "id": 9,
+    "question": "Who is your father's brother?",
+    "answers": ["Your cousin", "Your nephew", "Your uncle"],
+    "correct": 2,
+    "category": "My Family"
+  },
+  {
+    "id": 10,
+    "question": "A family often eats together. Which meal is in the morning?",
+    "answers": ["Breakfast", "Lunch", "Dinner"],
+    "correct": 0,
+    "category": "My Family"
+  },
+  {
+    "id": 11,
+    "question": "Which animal says 'Woof Woof' and wags its tail?",
+    "answers": ["Cat", "Dog", "Hamster"],
+    "correct": 1,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 12,
+    "question": "What do we call a baby cat?",
+    "answers": ["Kitten", "Puppy", "Cub"],
+    "correct": 0,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 13,
+    "question": "Which animal has a very long trunk to drink water?",
+    "answers": ["Giraffe", "Lion", "Elephant"],
+    "correct": 2,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 14,
+    "question": "What animal loves to eat carrots and has long ears?",
+    "answers": ["Rabbit", "Tiger", "Monkey"],
+    "correct": 0,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 15,
+    "question": "Which bird can swim but cannot fly?",
+    "answers": ["Parrot", "Penguin", "Owl"],
+    "correct": 1,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 16,
+    "question": "How many legs does an ant have?",
+    "answers": ["4 legs", "6 legs", "8 legs"],
+    "correct": 1,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 17,
+    "question": "Which animal is the tallest in the world?",
+    "answers": ["Zebra", "Hippo", "Giraffe"],
+    "correct": 2,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 18,
+    "question": "What do bees make that is sweet and sticky?",
+    "answers": ["Milk", "Honey", "Sugar"],
+    "correct": 1,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 19,
+    "question": "Which animal lives in the ocean and has eight arms?",
+    "answers": ["Octopus", "Shark", "Whale"],
+    "correct": 0,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 20,
+    "question": "What do we call a bird's house?",
+    "answers": ["Cave", "Stable", "Nest"],
+    "correct": 2,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 21,
+    "question": "Which animal is famous for being very slow and carrying its house?",
+    "answers": ["Snail", "Cheetah", "Horse"],
+    "correct": 0,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 22,
+    "question": "What sound does a cow make?",
+    "answers": ["Meow", "Moo", "Quack"],
+    "correct": 1,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 23,
+    "question": "Which pet lives in a bowl or a tank and swims?",
+    "answers": ["Lizard", "Goldfish", "Rabbit"],
+    "correct": 1,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 24,
+    "question": "Which animal is called the 'King of the Jungle'?",
+    "answers": ["Tiger", "Bear", "Lion"],
+    "correct": 2,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 25,
+    "question": "A sheep gives us what material for warm clothes?",
+    "answers": ["Wool", "Cotton", "Plastic"],
+    "correct": 0,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 26,
+    "question": "In which season do we celebrate Tet holiday in Vietnam?",
+    "answers": ["Summer", "Winter", "Spring"],
+    "correct": 2,
+    "category": "Seasons & Weather"
+  },
+  {
+    "id": 27,
+    "question": "What do we wear when it is very cold in winter?",
+    "answers": ["T-shirt", "Coats and scarves", "Swimsuit"],
+    "correct": 1,
+    "category": "Seasons & Weather"
+  },
+  {
+    "id": 28,
+    "question": "Which season is the hottest of the year?",
+    "answers": ["Summer", "Autumn", "Spring"],
+    "correct": 0,
+    "category": "Seasons & Weather"
+  },
+  {
+    "id": 29,
+    "question": "What falls from the sky when it is rainy?",
+    "answers": ["Snowflakes", "Leaves", "Raindrops"],
+    "correct": 2,
+    "category": "Seasons & Weather"
+  },
+  {
+    "id": 30,
+    "question": "In which season do leaves change color to yellow or red and fall down?",
+    "answers": ["Spring", "Autumn", "Summer"],
+    "correct": 1,
+    "category": "Seasons & Weather"
+  },
+  {
+    "id": 31,
+    "question": "What is the bright yellow thing in the sky that gives us light and heat?",
+    "answers": ["The Moon", "The Sun", "A Cloud"],
+    "correct": 1,
+    "category": "Seasons & Weather"
+  },
+  {
+    "id": 32,
+    "question": "What do we use to stay dry when walking in the rain?",
+    "answers": ["Sunglasses", "An umbrella", "A fan"],
+    "correct": 1,
+    "category": "Seasons & Weather"
+  },
+  {
+    "id": 33,
+    "question": "What season comes after Summer?",
+    "answers": ["Autumn", "Winter", "Spring"],
+    "correct": 0,
+    "category": "Seasons & Weather"
+  },
+  {
+    "id": 34,
+    "question": "When the wind blows very, very hard, what do we call it?",
+    "answers": ["Sunlight", "Breeze", "Storm"],
+    "correct": 2,
+    "category": "Seasons & Weather"
+  },
+  {
+    "id": 35,
+    "question": "What colorful thing appears in the sky after the rain and when the sun shines?",
+    "answers": ["Rainbow", "Lightning", "Snow"],
+    "correct": 0,
+    "category": "Seasons & Weather"
+  },
+  {
+    "id": 36,
+    "question": "What do we call the big white things in the sky that look like cotton candy?",
+    "answers": ["Stars", "Clouds", "Planes"],
+    "correct": 1,
+    "category": "Seasons & Weather"
+  },
+  {
+    "id": 37,
+    "question": "In winter, some places have white, cold powder falling from the sky. What is it?",
+    "answers": ["Rain", "Sand", "Snow"],
+    "correct": 2,
+    "category": "Seasons & Weather"
+  },
+  {
+    "id": 38,
+    "question": "Which season is the best for swimming at the beach?",
+    "answers": ["Summer", "Autumn", "Winter"],
+    "correct": 0,
+    "category": "Seasons & Weather"
+  },
+  {
+    "id": 39,
+    "question": "What do flowers do in the Spring?",
+    "answers": ["They sleep", "They bloom", "They fall"],
+    "correct": 1,
+    "category": "Seasons & Weather"
+  },
+  {
+    "id": 40,
+    "question": "What is the lucky color of Tet in Vietnam?",
+    "answers": ["Blue", "Red", "Black"],
+    "correct": 1,
+    "category": "Tet Holiday"
+  },
+  {
+    "id": 41,
+    "question": "What do children receive in red envelopes during Tet?",
+    "answers": ["Candies", "Lucky money", "Books"],
+    "correct": 1,
+    "category": "Tet Holiday"
+  },
+  {
+    "id": 42,
+    "question": "Which special square cake do we eat on Tet holiday?",
+    "answers": ["Banh Chung", "Banh Mi", "Mooncake"],
+    "correct": 0,
+    "category": "Tet Holiday"
+  },
+  {
+    "id": 43,
+    "question": "Which flower is a symbol of Tet in Northern Vietnam?",
+    "answers": ["Lotus", "Apricot blossom", "Peach blossom"],
+    "correct": 2,
+    "category": "Tet Holiday"
+  },
+  {
+    "id": 44,
+    "question": "Which flower is a symbol of Tet in Southern Vietnam?",
+    "answers": ["Apricot blossom", "Rose", "Sunflower"],
+    "correct": 0,
+    "category": "Tet Holiday"
+  },
+  {
+    "id": 45,
+    "question": "What do people do to their houses before Tet begins?",
+    "answers": ["Sell them", "Clean and decorate", "Paint them black"],
+    "correct": 1,
+    "category": "Tet Holiday"
+  },
+  {
+    "id": 46,
+    "question": "On the first day of Tet, who do people usually visit first?",
+    "answers": ["Their teachers", "Their friends", "Their grandparents"],
+    "correct": 2,
+    "category": "Tet Holiday"
+  },
+  {
+    "id": 47,
+    "question": "What do we say to wish someone a happy New Year in Vietnamese?",
+    "answers": ["Chuc Mung Nam Moi", "Chuc Mung Sinh Nhat", "Chuc Ngu Ngon"],
+    "correct": 0,
+    "category": "Tet Holiday"
+  },
+  {
+    "id": 48,
+    "question": "What fruit tray is placed on the altar during Tet?",
+    "answers": ["Single fruit tray", "Three fruit tray", "Five fruit tray"],
+    "correct": 2,
+    "category": "Tet Holiday"
+  },
+  {
+    "id": 49,
+    "question": "What bright and loud things are used to celebrate New Year's Eve?",
+    "answers": ["Fireworks", "Balloons", "Drums"],
+    "correct": 0,
+    "category": "Tet Holiday"
+  },
+  {
+    "id": 50,
+    "question": "What do children carry during the Mid-Autumn Festival?",
+    "answers": ["Backpacks", "Lanterns", "Hats"],
+    "correct": 1,
+    "category": "Mid-Autumn Festival"
+  },
+  {
+    "id": 51,
+    "question": "What special cake is eaten during the Mid-Autumn Festival?",
+    "answers": ["Cupcake", "Birthday cake", "Mooncake"],
+    "correct": 2,
+    "category": "Mid-Autumn Festival"
+  },
+  {
+    "id": 52,
+    "question": "The moon during the Mid-Autumn Festival is...?",
+    "answers": ["Very small", "Big and round", "A crescent"],
+    "correct": 1,
+    "category": "Mid-Autumn Festival"
+  },
+  {
+    "id": 53,
+    "question": "Which animal dance is very popular during Mid-Autumn?",
+    "answers": ["Snake dance", "Bird dance", "Lion dance"],
+    "correct": 2,
+    "category": "Mid-Autumn Festival"
+  },
+  {
+    "id": 54,
+    "question": "Who is the legendary man living on the Moon with a Banyan tree?",
+    "answers": ["Cuoi", "Thanh Giong", "Son Tinh"],
+    "correct": 0,
+    "category": "Mid-Autumn Festival"
+  },
+  {
+    "id": 55,
+    "question": "Who is the beautiful lady living on the Moon?",
+    "answers": ["Tam", "Hang Nga", "Cam"],
+    "correct": 1,
+    "category": "Mid-Autumn Festival"
+  },
+  {
+    "id": 56,
+    "question": "Which lunar month is the Mid-Autumn Festival in?",
+    "answers": ["The 1st month", "The 5th month", "The 8th month"],
+    "correct": 2,
+    "category": "Mid-Autumn Festival"
+  },
+  {
+    "id": 57,
+    "question": "What lantern shape is most traditional for kids?",
+    "answers": ["Star shape", "Square shape", "Triangle shape"],
+    "correct": 0,
+    "category": "Mid-Autumn Festival"
+  },
+  {
+    "id": 58,
+    "question": "What instrument is usually played during a Lion dance?",
+    "answers": ["Piano", "Drum", "Guitar"],
+    "correct": 1,
+    "category": "Mid-Autumn Festival"
+  },
+  {
+    "id": 59,
+    "question": "The Mid-Autumn Festival is also known as a festival for...?",
+    "answers": ["Animals", "Old people", "Children"],
+    "correct": 2,
+    "category": "Mid-Autumn Festival"
+  },
+  {
+    "id": 60,
+    "question": "Where do many Vietnamese children like to go on summer vacation?",
+    "answers": ["The library", "The beach", "The cinema"],
+    "correct": 1,
+    "category": "Summer Vacation in Vietnam"
+  },
+  {
+    "id": 61,
+    "question": "What is the famous bay in the North of Vietnam with many islands?",
+    "answers": ["Ha Long Bay", "Nha Trang Bay", "Da Nang Bay"],
+    "correct": 0,
+    "category": "Summer Vacation in Vietnam"
+  },
+  {
+    "id": 62,
+    "question": "What do you wear to protect your eyes from the bright summer sun?",
+    "answers": ["Glasses", "Sunglasses", "Goggles"],
+    "correct": 1,
+    "category": "Summer Vacation in Vietnam"
+  },
+  {
+    "id": 63,
+    "question": "What do you put on your skin so you don't get a sunburn?",
+    "answers": ["Soap", "Water", "Sunscreen"],
+    "correct": 2,
+    "category": "Summer Vacation in Vietnam"
+  },
+  {
+    "id": 64,
+    "question": "Which city is a famous mountain resort with cool weather even in summer?",
+    "answers": ["Da Lat", "Can Tho", "Vung Tau"],
+    "correct": 0,
+    "category": "Summer Vacation in Vietnam"
+  },
+  {
+    "id": 65,
+    "question": "What do you use to swim safely if you don't know how to swim yet?",
+    "answers": ["A life jacket", "A backpack", "An umbrella"],
+    "correct": 0,
+    "category": "Summer Vacation in Vietnam"
+  },
+  {
+    "id": 66,
+    "question": "Which cool treat do kids love to eat on a hot summer day?",
+    "answers": ["Hot soup", "Ice cream", "Hot tea"],
+    "correct": 1,
+    "category": "Summer Vacation in Vietnam"
+  },
+  {
+    "id": 67,
+    "question": "What do you do with sand at the beach?",
+    "answers": ["Eat it", "Build a sandcastle", "Wash your hair"],
+    "correct": 1,
+    "category": "Summer Vacation in Vietnam"
+  },
+  {
+    "id": 68,
+    "question": "What is the biggest island in Vietnam, famous for beautiful beaches?",
+    "answers": ["Phu Quy", "Con Dao", "Phu Quoc"],
+    "correct": 2,
+    "category": "Summer Vacation in Vietnam"
+  },
+  {
+    "id": 69,
+    "question": "What season follows Spring and before the school year starts?",
+    "answers": ["Summer", "Autumn", "Winter"],
+    "correct": 0,
+    "category": "Summer Vacation in Vietnam"
+  },
+  {
+    "id": 70,
+    "question": "Which part of your body pumps blood?",
+    "answers": ["The brain", "The heart", "The stomach"],
+    "correct": 1,
+    "category": "General Science"
+  },
+  {
+    "id": 71,
+    "question": "What do plants need from the sky to grow?",
+    "answers": ["Rain and sunlight", "Moonlight", "Snow"],
+    "correct": 0,
+    "category": "General Science"
+  },
+  {
+    "id": 72,
+    "question": "What do we use our eyes for?",
+    "answers": ["Hearing", "Smelling", "Seeing"],
+    "correct": 2,
+    "category": "General Science"
+  },
+  {
+    "id": 73,
+    "question": "Which organ helps us breathe air?",
+    "answers": ["Lungs", "Liver", "Kidneys"],
+    "correct": 0,
+    "category": "General Science"
+  },
+  {
+    "id": 74,
+    "question": "How many senses do humans have?",
+    "answers": ["3 senses", "5 senses", "7 senses"],
+    "correct": 1,
+    "category": "General Science"
+  },
+  {
+    "id": 75,
+    "question": "What happens to ice when it gets hot?",
+    "answers": ["It freezes", "It melts", "It disappears"],
+    "correct": 1,
+    "category": "General Science"
+  },
+  {
+    "id": 76,
+    "question": "Which part of the plant is under the ground?",
+    "answers": ["Leaf", "Flower", "Root"],
+    "correct": 2,
+    "category": "General Science"
+  },
+  {
+    "id": 77,
+    "question": "What do bees collect from flowers?",
+    "answers": ["Nectar", "Water", "Milk"],
+    "correct": 0,
+    "category": "General Science"
+  },
+  {
+    "id": 78,
+    "question": "What gas do humans need to breathe in?",
+    "answers": ["Carbon dioxide", "Oxygen", "Nitrogen"],
+    "correct": 1,
+    "category": "General Science"
+  },
+  {
+    "id": 79,
+    "question": "Which planet is known as the 'Red Planet'?",
+    "answers": ["Mars", "Venus", "Jupiter"],
+    "correct": 0,
+    "category": "Astronomy"
+  },
+  {
+    "id": 80,
+    "question": "How many planets are in our solar system?",
+    "answers": ["7", "8", "9"],
+    "correct": 1,
+    "category": "Astronomy"
+  },
+  {
+    "id": 81,
+    "question": "What is the name of our planet?",
+    "answers": ["Mars", "Saturn", "Earth"],
+    "correct": 2,
+    "category": "Astronomy"
+  },
+  {
+    "id": 82,
+    "question": "Which is the largest planet in our solar system?",
+    "answers": ["Jupiter", "Mercury", "Neptune"],
+    "correct": 0,
+    "category": "Astronomy"
+  },
+  {
+    "id": 83,
+    "question": "What is the center of our solar system?",
+    "answers": ["The Earth", "The Sun", "The Moon"],
+    "correct": 1,
+    "category": "Astronomy"
+  },
+  {
+    "id": 84,
+    "question": "Which planet has beautiful rings around it?",
+    "answers": ["Earth", "Mars", "Saturn"],
+    "correct": 2,
+    "category": "Astronomy"
+  },
+  {
+    "id": 85,
+    "question": "Who was the first person to walk on the Moon?",
+    "answers": ["Neil Armstrong", "Yuri Gagarin", "Isaac Newton"],
+    "correct": 0,
+    "category": "Astronomy"
+  },
+  {
+    "id": 86,
+    "question": "What do we call a group of stars that forms a pattern?",
+    "answers": ["Galaxy", "Constellation", "Universe"],
+    "correct": 1,
+    "category": "Astronomy"
+  },
+  {
+    "id": 87,
+    "question": "Which planet is the closest to the Sun?",
+    "answers": ["Venus", "Mars", "Mercury"],
+    "correct": 2,
+    "category": "Astronomy"
+  },
+  {
+    "id": 88,
+    "question": "What do we use to look at distant stars and planets?",
+    "answers": ["Telescope", "Microscope", "Binoculars"],
+    "correct": 0,
+    "category": "Astronomy"
+  },
+  {
+    "id": 89,
+    "question": "What is the capital city of Vietnam?",
+    "answers": ["Ho Chi Minh City", "Ha Noi", "Da Nang"],
+    "correct": 1,
+    "category": "Geography"
+  },
+  {
+    "id": 90,
+    "question": "Which is the longest river in the world?",
+    "answers": ["Nile River", "Amazon River", "Mekong River"],
+    "correct": 0,
+    "category": "Geography"
+  },
+  {
+    "id": 91,
+    "question": "How many continents are there on Earth?",
+    "answers": ["5", "6", "7"],
+    "correct": 2,
+    "category": "Geography"
+  },
+  {
+    "id": 92,
+    "question": "Which continent is Vietnam located in?",
+    "answers": ["Asia", "Europe", "Africa"],
+    "correct": 0,
+    "category": "Geography"
+  },
+  {
+    "id": 93,
+    "question": "What is the highest mountain in the world?",
+    "answers": ["Mount Fuji", "Mount Everest", "Fansipan"],
+    "correct": 1,
+    "category": "Geography"
+  },
+  {
+    "id": 94,
+    "question": "Which ocean is the largest on Earth?",
+    "answers": ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean"],
+    "correct": 2,
+    "category": "Geography"
+  },
+  {
+    "id": 95,
+    "question": "What is the name of the 'S-shaped' country?",
+    "answers": ["Vietnam", "Thailand", "Japan"],
+    "correct": 0,
+    "category": "Geography"
+  },
+  {
+    "id": 96,
+    "question": "Which country is famous for the Eiffel Tower?",
+    "answers": ["USA", "France", "England"],
+    "correct": 1,
+    "category": "Geography"
+  },
+  {
+    "id": 97,
+    "question": "What is the largest country in the world by land area?",
+    "answers": ["China", "Canada", "Russia"],
+    "correct": 2,
+    "category": "Geography"
+  },
+  {
+    "id": 98,
+    "question": "Which line divides the Earth into North and South?",
+    "answers": ["The Equator", "The North Pole", "The Meridian"],
+    "correct": 0,
+    "category": "Geography"
+  },
+  {
+    "id": 99,
+    "question": "I am long and thin. I help you draw straight lines. What am I?",
+    "answers": ["A pen", "A ruler", "A pencil case"],
+    "correct": 1,
+    "category": "School Life"
+  },
+  {
+    "id": 100,
+    "question": "I 'eat' your mistakes on paper. Who am I?",
+    "answers": ["An eraser", "A sharpener", "A stapler"],
+    "correct": 0,
+    "category": "School Life"
+  },
+  {
+    "id": 101,
+    "question": "In this subject, you learn about numbers and shapes. What is it?",
+    "answers": ["Music", "History", "Math"],
+    "correct": 2,
+    "category": "School Life"
+  },
+  {
+    "id": 102,
+    "question": "Where do you go to borrow books in school?",
+    "answers": ["The canteen", "The library", "The gym"],
+    "correct": 1,
+    "category": "School Life"
+  },
+  {
+    "id": 103,
+    "question": "I have many pages and a cover, but I cannot talk. What am I?",
+    "answers": ["A book", "A desk", "A window"],
+    "correct": 0,
+    "category": "School Life"
+  },
+  {
+    "id": 104,
+    "question": "In which subject do you sing and play the piano?",
+    "answers": ["Science", "Music", "Art"],
+    "correct": 1,
+    "category": "School Life"
+  },
+  {
+    "id": 105,
+    "question": "I make your blunt pencils sharp again. What am I?",
+    "answers": ["A ruler", "A bag", "A sharpener"],
+    "correct": 2,
+    "category": "School Life"
+  },
+  {
+    "id": 106,
+    "question": "What do you use to stick two pieces of paper together?",
+    "answers": ["Glue", "A pen", "A chair"],
+    "correct": 0,
+    "category": "School Life"
+  },
+  {
+    "id": 107,
+    "question": "What do you carry on your back to school every day?",
+    "answers": ["A desk", "A backpack", "A blackboard"],
+    "correct": 1,
+    "category": "School Life"
+  },
+  {
+    "id": 108,
+    "question": "Which subject teaches you how to paint and draw?",
+    "answers": ["Art", "PE", "IT"],
+    "correct": 0,
+    "category": "School Life"
+  },
+  {
+    "id": 109,
+    "question": "The teacher writes on me with chalk or a marker. What am I?",
+    "answers": ["A floor", "A board", "A notebook"],
+    "correct": 1,
+    "category": "School Life"
+  },
+  {
+    "id": 110,
+    "question": "What is the person who leads the class called?",
+    "answers": ["A student", "A doctor", "A teacher"],
+    "correct": 2,
+    "category": "School Life"
+  },
+  {
+    "id": 111,
+    "question": "Which tool do you use to cut paper?",
+    "answers": ["Scissors", "A spoon", "A brush"],
+    "correct": 0,
+    "category": "School Life"
+  },
+  {
+    "id": 112,
+    "question": "In which subject do you do exercise and play sports?",
+    "answers": ["History", "PE", "Geography"],
+    "correct": 1,
+    "category": "School Life"
+  },
+  {
+    "id": 113,
+    "question": "What do you use to keep your pens and pencils organized?",
+    "answers": ["A pencil case", "A lunchbox", "A hat"],
+    "correct": 0,
+    "category": "School Life"
+  },
+  {
+    "id": 114,
+    "question": "Which object tells you when the lesson starts and ends?",
+    "answers": ["A map", "A clock", "A bin"],
+    "correct": 1,
+    "category": "School Life"
+  },
+  {
+    "id": 115,
+    "question": "Where do students sit in a classroom?",
+    "answers": ["On the table", "On the desk", "On the chair"],
+    "correct": 2,
+    "category": "School Life"
+  },
+  {
+    "id": 116,
+    "question": "I am a round object that shows all the countries. What am I?",
+    "answers": ["A globe", "A plate", "A ball"],
+    "correct": 0,
+    "category": "School Life"
+  },
+  {
+    "id": 117,
+    "question": "What do you use to color a beautiful sunset?",
+    "answers": ["Crayons", "A calculator", "A compass"],
+    "correct": 0,
+    "category": "School Life"
+  },
+  {
+    "id": 118,
+    "question": "Where do you eat lunch at school?",
+    "answers": ["The restroom", "The canteen", "The playground"],
+    "correct": 1,
+    "category": "School Life"
+  },
+  {
+    "id": 119,
+    "question": "I am long, yellow, and monkeys love me. What am I?",
+    "answers": ["A grape", "An apple", "A banana"],
+    "correct": 2,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 120,
+    "question": "I am a popular Italian food. I am round and have cheese. What am I?",
+    "answers": ["Pizza", "Sushi", "Soup"],
+    "correct": 0,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 121,
+    "question": "I come from cows and make your bones strong. What am I?",
+    "answers": ["Tea", "Milk", "Soda"],
+    "correct": 1,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 122,
+    "question": "I am orange and rabbits love to eat me. What am I?",
+    "answers": ["A potato", "A carrot", "An onion"],
+    "correct": 1,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 123,
+    "question": "I am a cold, sweet dessert that melts in the sun. What am I?",
+    "answers": ["Bread", "Ice cream", "Chicken"],
+    "correct": 1,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 124,
+    "question": "Which fruit is red and has many small seeds on the outside?",
+    "answers": ["A strawberry", "A mango", "A pear"],
+    "correct": 0,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 125,
+    "question": "I am a Japanese food made of rice and raw fish. What am I?",
+    "answers": ["Bread", "Sushi", "Taco"],
+    "correct": 1,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 126,
+    "question": "What drink do you get when you squeeze oranges?",
+    "answers": ["Orange juice", "Apple juice", "Water"],
+    "correct": 0,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 127,
+    "question": "I am green on the outside and red on the inside with black seeds. What am I?",
+    "answers": ["A lemon", "A watermelon", "A coconut"],
+    "correct": 1,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 128,
+    "question": "I am very sour and yellow. What am I?",
+    "answers": ["A lemon", "A cherry", "A peach"],
+    "correct": 0,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 129,
+    "question": "Which of these is a vegetable?",
+    "answers": ["Chocolate", "Broccoli", "Cake"],
+    "correct": 1,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 130,
+    "question": "You use me to make a sandwich. What am I?",
+    "answers": ["Bread", "Rice", "Noodles"],
+    "correct": 0,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 131,
+    "question": "Which fruit is known as the 'King of Fruits' in Southeast Asia?",
+    "answers": ["Apple", "Durian", "Banana"],
+    "correct": 1,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 132,
+    "question": "I am white, and many people in Vietnam eat me every day. What am I?",
+    "answers": ["Rice", "Pizza", "Pasta"],
+    "correct": 0,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 133,
+    "question": "What do you call a burger with cheese?",
+    "answers": ["A cheeseburger", "A hotdog", "A pancake"],
+    "correct": 0,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 134,
+    "question": "I am a red fruit that people often think is a vegetable. What am I?",
+    "answers": ["A tomato", "A cucumber", "A cabbage"],
+    "correct": 0,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 135,
+    "question": "Which of these is a healthy snack?",
+    "answers": ["Candy", "Chips", "An apple"],
+    "correct": 2,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 136,
+    "question": "I am round and made of dough. I often have a hole in the middle. What am I?",
+    "answers": ["A donut", "A cookie", "A tart"],
+    "correct": 0,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 137,
+    "question": "I am a bird that is eaten on Thanksgiving and in some Vietnamese soups. Who am I?",
+    "answers": ["Turkey", "Pigeon", "Goose"],
+    "correct": 0,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 138,
+    "question": "Which food is a French bread stick, long and crunchy?",
+    "answers": ["A croissant", "A baguette", "A pretzel"],
+    "correct": 1,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 139,
+    "question": "Kimchi is a spicy fermented vegetable dish from which country?",
+    "answers": ["Japan", "Vietnam", "South Korea"],
+    "correct": 2,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 140,
+    "question": "What is the most popular sport in the world, played with a round ball?",
+    "answers": ["Tennis", "Soccer (Football)", "Basketball"],
+    "correct": 1,
+    "category": "Sports & Hobbies"
+  },
+  {
+    "id": 141,
+    "question": "In which sport do you wear a swimsuit and move in water?",
+    "answers": ["Running", "Swimming", "Dancing"],
+    "correct": 1,
+    "category": "Sports & Hobbies"
+  },
+  {
+    "id": 142,
+    "question": "What hobby involves using a camera?",
+    "answers": ["Photography", "Cooking", "Singing"],
+    "correct": 0,
+    "category": "Sports & Hobbies"
+  },
+  {
+    "id": 143,
+    "question": "You use a racket and a shuttlecock to play this. What is it?",
+    "answers": ["Badminton", "Golf", "Boxing"],
+    "correct": 0,
+    "category": "Sports & Hobbies"
+  },
+  {
+    "id": 144,
+    "question": "What hobby involves reading stories in a book?",
+    "answers": ["Painting", "Reading", "Fishing"],
+    "correct": 1,
+    "category": "Sports & Hobbies"
+  },
+  {
+    "id": 145,
+    "question": "In this sport, you try to throw a ball through a high hoop. What is it?",
+    "answers": ["Basketball", "Baseball", "Soccer"],
+    "correct": 0,
+    "category": "Sports & Hobbies"
+  },
+  {
+    "id": 146,
+    "question": "What do you call a person who plays the guitar?",
+    "answers": ["A dancer", "A guitarist", "A runner"],
+    "correct": 1,
+    "category": "Sports & Hobbies"
+  },
+  {
+    "id": 147,
+    "question": "What is the hobby of moving your body to music?",
+    "answers": ["Dancing", "Sleeping", "Studying"],
+    "correct": 0,
+    "category": "Sports & Hobbies"
+  },
+  {
+    "id": 148,
+    "question": "What hobby involves using colors and a brush?",
+    "answers": ["Painting", "Hiking", "Gaming"],
+    "correct": 0,
+    "category": "Sports & Hobbies"
+  },
+  {
+    "id": 149,
+    "question": "In this sport, you hit a small yellow ball over a net with a racket. What is it?",
+    "answers": ["Volleyball", "Tennis", "Ice hockey"],
+    "correct": 1,
+    "category": "Sports & Hobbies"
+  },
+  {
+    "id": 150,
+    "question": "What do you call the activity of catching fish from a river or lake?",
+    "answers": ["Sailing", "Swimming", "Fishing"],
+    "correct": 2,
+    "category": "Sports & Hobbies"
+  },
+  {
+    "id": 151,
+    "question": "In which sport do people run very fast on a track?",
+    "answers": ["Running", "Bowling", "Yoga"],
+    "correct": 0,
+    "category": "Sports & Hobbies"
+  },
+  {
+    "id": 152,
+    "question": "What do you call the hobby of making food?",
+    "answers": ["Eating", "Cooking", "Cleaning"],
+    "correct": 1,
+    "category": "Sports & Hobbies"
+  },
+  {
+    "id": 153,
+    "question": "What activity involves sleeping in a tent in the forest?",
+    "answers": ["Camping", "Shopping", "Bowling"],
+    "correct": 0,
+    "category": "Sports & Hobbies"
+  },
+  {
+    "id": 154,
+    "question": "Which of these is an indoor hobby?",
+    "answers": ["Mountain climbing", "Playing video games", "Hiking"],
+    "correct": 1,
+    "category": "Sports & Hobbies"
+  },
+  {
+    "id": 155,
+    "question": "What do you use to skip in the playground?",
+    "answers": ["A jump rope", "A bat", "A whistle"],
+    "correct": 0,
+    "category": "Sports & Hobbies"
+  },
+  {
+    "id": 156,
+    "question": "What hobby involves singing your favorite songs?",
+    "answers": ["Karaoke", "Yoga", "Drawing"],
+    "correct": 0,
+    "category": "Sports & Hobbies"
+  },
+  {
+    "id": 157,
+    "question": "In this sport, players hit a ball over a high net using their hands. What is it?",
+    "answers": ["Volleyball", "Football", "Golf"],
+    "correct": 0,
+    "category": "Sports & Hobbies"
+  },
+  {
+    "id": 158,
+    "question": "I have five fingers but no meat or bone. What am I?",
+    "answers": ["A sock", "A glove", "A shoe"],
+    "correct": 1,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 159,
+    "question": "Who takes care of your teeth and tells you to brush them?",
+    "answers": ["A pilot", "A chef", "A dentist"],
+    "correct": 2,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 160,
+    "question": "How many eyes do you have?",
+    "answers": ["One", "Two", "Three"],
+    "correct": 1,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 161,
+    "question": "What do you use to cut your fingernails?",
+    "answers": ["A knife", "Nail clippers", "A fork"],
+    "correct": 1,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 162,
+    "question": "Where do you go to buy food and toys?",
+    "answers": ["A hospital", "A supermarket", "A school"],
+    "correct": 1,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 163,
+    "question": "What do you use to clean your body when you take a shower?",
+    "answers": ["Soup", "Soap", "Milk"],
+    "correct": 1,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 164,
+    "question": "Who flies an airplane in the sky?",
+    "answers": ["A pilot", "A driver", "A sailor"],
+    "correct": 0,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 165,
+    "question": "What do you use to clean your teeth?",
+    "answers": ["A hairbrush", "A toothbrush", "A spoon"],
+    "correct": 1,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 166,
+    "question": "Which part of your body has ten toes?",
+    "answers": ["Your hands", "Your head", "Your feet"],
+    "correct": 2,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 167,
+    "question": "What should you do if you feel very tired at night?",
+    "answers": ["Drink coffee", "Go to sleep", "Play football"],
+    "correct": 1,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 168,
+    "question": "Who grows fruits and vegetables on a farm?",
+    "answers": ["A farmer", "A teacher", "A singer"],
+    "correct": 0,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 169,
+    "question": "Which part of your body do you use to hear music?",
+    "answers": ["Your eyes", "Your nose", "Your ears"],
+    "correct": 2,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 170,
+    "question": "Who helps sick animals?",
+    "answers": ["A vet", "A nurse", "A baker"],
+    "correct": 0,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 171,
+    "question": "I help you stand up and walk. I am at the bottom of your legs. What am I?",
+    "answers": ["Your elbows", "Your feet", "Your fingers"],
+    "correct": 1,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 172,
+    "question": "What do you use to wipe your hands or face after eating?",
+    "answers": ["A napkin or tissue", "A book", "A ruler"],
+    "correct": 0,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 173,
+    "question": "Where should you throw your trash?",
+    "answers": ["On the floor", "In the bin", "Under the bed"],
+    "correct": 1,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 174,
+    "question": "How many times a day should you brush your teeth?",
+    "answers": ["Once a week", "At least twice a day", "Never"],
+    "correct": 1,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 175,
+    "question": "How often should you take a shower?",
+    "answers": ["Once a month", "Every day", "Once a year"],
+    "correct": 1,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 176,
+    "question": "Who cooks delicious food in a restaurant?",
+    "answers": ["A chef", "A scientist", "An artist"],
+    "correct": 0,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 177,
+    "question": "What color is healthy blood?",
+    "answers": ["Blue", "Red", "Green"],
+    "correct": 1,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 178,
+    "question": "Where is your brain located?",
+    "answers": ["In your chest", "In your head", "In your tummy"],
+    "correct": 1,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 179,
+    "question": "What color is the sky on a sunny day?",
+    "answers": ["Blue", "Pink", "Green"],
+    "correct": 0,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 180,
+    "question": "What color do you get if you mix red and white?",
+    "answers": ["Purple", "Pink", "Orange"],
+    "correct": 1,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 181,
+    "question": "A square has how many sides?",
+    "answers": ["3", "4", "5"],
+    "correct": 1,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 182,
+    "question": "What color are most leaves on trees in the summer?",
+    "answers": ["Green", "Blue", "Red"],
+    "correct": 0,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 183,
+    "question": "A circle is what shape?",
+    "answers": ["Square", "Round", "Triangle"],
+    "correct": 1,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 184,
+    "question": "What color is a ripe banana?",
+    "answers": ["Yellow", "Purple", "Black"],
+    "correct": 0,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 185,
+    "question": "How many sides does a triangle have?",
+    "answers": ["2", "3", "4"],
+    "correct": 1,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 186,
+    "question": "What color is the snow?",
+    "answers": ["White", "Yellow", "Blue"],
+    "correct": 0,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 187,
+    "question": "What shape is the moon when it is full?",
+    "answers": ["Star", "Circle", "Rectangle"],
+    "correct": 1,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 188,
+    "question": "What color do you get if you mix blue and yellow?",
+    "answers": ["Green", "Purple", "Brown"],
+    "correct": 0,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 189,
+    "question": "What color are strawberries?",
+    "answers": ["Red", "Blue", "Green"],
+    "correct": 0,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 190,
+    "question": "What color is a chocolate bar?",
+    "answers": ["Brown", "Orange", "Pink"],
+    "correct": 0,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 191,
+    "question": "A rectangle has how many corners?",
+    "answers": ["3", "4", "6"],
+    "correct": 1,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 192,
+    "question": "What color is an elephant?",
+    "answers": ["Grey", "Purple", "Yellow"],
+    "correct": 0,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 193,
+    "question": "What color is coal or a dark night?",
+    "answers": ["White", "Black", "Red"],
+    "correct": 1,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 194,
+    "question": "What shape is a TV screen usually?",
+    "answers": ["Circle", "Triangle", "Rectangle"],
+    "correct": 2,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 195,
+    "question": "What color is the sun?",
+    "answers": ["Yellow or Orange", "Blue", "Green"],
+    "correct": 0,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 196,
+    "question": "What color do you get if you mix red and yellow?",
+    "answers": ["Green", "Orange", "Purple"],
+    "correct": 1,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 197,
+    "question": "What shape is an egg?",
+    "answers": ["Oval", "Square", "Triangle"],
+    "correct": 0,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 198,
+    "question": "What color is a carrot?",
+    "answers": ["Orange", "Blue", "Pink"],
+    "correct": 0,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 199,
+    "question": "Which vehicle has two wheels and you need to pedal to move?",
+    "answers": ["A car", "A bicycle", "A bus"],
+    "correct": 1,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 200,
+    "question": "Which vehicle has four wheels and carries a small family?",
+    "answers": ["A car", "A truck", "A train"],
+    "correct": 0,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 201,
+    "question": "What do we call a very long vehicle that travels on tracks?",
+    "answers": ["A boat", "A train", "A bicycle"],
+    "correct": 1,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 202,
+    "question": "Which vehicle flies in the sky and has a pilot?",
+    "answers": ["An aeroplane", "A bus", "A ship"],
+    "correct": 0,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 203,
+    "question": "What travels on water and can carry many people across the ocean?",
+    "answers": ["A car", "A ship", "A train"],
+    "correct": 1,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 204,
+    "question": "Which vehicle is very long and carries many students to school?",
+    "answers": ["A school bus", "A taxi", "A motorbike"],
+    "correct": 0,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 205,
+    "question": "Which vehicle has two wheels and an engine, and is very popular in Vietnam?",
+    "answers": ["A bicycle", "A motorbike", "A truck"],
+    "correct": 1,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 206,
+    "question": "What do we call a small boat that you use a paddle for?",
+    "answers": ["A canoe or rowboat", "A jet", "A rocket"],
+    "correct": 0,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 207,
+    "question": "Which vehicle is used to carry sick people to the hospital?",
+    "answers": ["An ambulance", "A fire truck", "A police car"],
+    "correct": 0,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 208,
+    "question": "What do we call a vehicle that goes into space?",
+    "answers": ["A balloon", "A rocket", "A submarine"],
+    "correct": 1,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 209,
+    "question": "Which vehicle is used by firefighters to put out fires?",
+    "answers": ["A tractor", "A fire truck", "A van"],
+    "correct": 1,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 210,
+    "question": "What travels under the water?",
+    "answers": ["A submarine", "A helicopter", "A taxi"],
+    "correct": 0,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 211,
+    "question": "Which vehicle has no wheels and uses a large balloon to fly?",
+    "answers": ["A hot air balloon", "A plane", "A drone"],
+    "correct": 0,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 212,
+    "question": "What do we call a car that you pay for to take you somewhere?",
+    "answers": ["A bus", "A taxi", "A tractor"],
+    "correct": 1,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 213,
+    "question": "Which vehicle is used on farms to pull heavy things?",
+    "answers": ["A sports car", "A tractor", "A scooter"],
+    "correct": 1,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 214,
+    "question": "What do you call a very large truck that carries goods?",
+    "answers": ["A lorry or semi-truck", "A bicycle", "A van"],
+    "correct": 0,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 215,
+    "question": "Which vehicle has spinning blades on top to fly?",
+    "answers": ["An aeroplane", "A helicopter", "A train"],
+    "correct": 1,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 216,
+    "question": "Which vehicle flies through the sky and carries passengers between countries?",
+    "answers": ["A hot air balloon", "An aeroplane", "A helicopter"],
+    "correct": 1,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 217,
+    "question": "Which subject teaches you about plants, animals and the human body?",
+    "answers": ["Science", "History", "Music"],
+    "correct": 0,
+    "category": "School Subjects"
+  },
+  {
+    "id": 218,
+    "question": "In which subject do you read stories and write essays?",
+    "answers": ["English", "Maths", "PE"],
+    "correct": 0,
+    "category": "School Subjects"
+  },
+  {
+    "id": 219,
+    "question": "Which subject teaches you about events that happened in the past?",
+    "answers": ["Geography", "History", "Science"],
+    "correct": 1,
+    "category": "School Subjects"
+  },
+  {
+    "id": 220,
+    "question": "In which subject do you use computers and learn about the internet?",
+    "answers": ["IT", "Art", "Maths"],
+    "correct": 0,
+    "category": "School Subjects"
+  },
+  {
+    "id": 221,
+    "question": "Which subject teaches you about maps and countries?",
+    "answers": ["Science", "Geography", "History"],
+    "correct": 1,
+    "category": "School Subjects"
+  },
+  {
+    "id": 222,
+    "question": "Which food is from Italy and has long, thin noodles?",
+    "answers": ["Spaghetti", "Rice", "Taco"],
+    "correct": 0,
+    "category": "International Food"
+  },
+  {
+    "id": 223,
+    "question": "Sushi is a famous food from which country?",
+    "answers": ["Vietnam", "Thailand", "Japan"],
+    "correct": 2,
+    "category": "International Food"
+  },
+  {
+    "id": 224,
+    "question": "Which food is red and used in many Italian dishes?",
+    "answers": ["Tomato", "Carrot", "Onion"],
+    "correct": 0,
+    "category": "International Food"
+  },
+  {
+    "id": 225,
+    "question": "How many fingers does a person have on one hand?",
+    "answers": ["4", "5", "6"],
+    "correct": 1,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 226,
+    "question": "Which part of your body do you use to smell things?",
+    "answers": ["Mouth", "Nose", "Eyes"],
+    "correct": 1,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 227,
+    "question": "What do you call the joints in the middle of your arms?",
+    "answers": ["Knees", "Wrists", "Elbows"],
+    "correct": 2,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 228,
+    "question": "How many ears does a person have?",
+    "answers": ["2", "1", "3"],
+    "correct": 0,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 229,
+    "question": "What part of your body has hair on top?",
+    "answers": ["Hand", "Head", "Foot"],
+    "correct": 1,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 230,
+    "question": "Which part of your body do you use to walk and run?",
+    "answers": ["Arms", "Legs", "Ears"],
+    "correct": 1,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 231,
+    "question": "How many teeth do most adults have?",
+    "answers": ["20", "32", "50"],
+    "correct": 1,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 232,
+    "question": "What part of your body do you use to taste food?",
+    "answers": ["Teeth", "Tongue", "Lips"],
+    "correct": 1,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 233,
+    "question": "Which part of your body covers and protects you?",
+    "answers": ["Skin", "Bones", "Muscle"],
+    "correct": 0,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 234,
+    "question": "How many fingers does a person have on both hands?",
+    "answers": ["10", "12", "8"],
+    "correct": 0,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 235,
+    "question": "Which body part do you use to kick a football?",
+    "answers": ["Arms", "Hands", "Legs and feet"],
+    "correct": 2,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 236,
+    "question": "What part of your body digests the food you eat?",
+    "answers": ["Kidneys", "Lungs", "Stomach"],
+    "correct": 2,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 237,
+    "question": "Which part of the body lets you breathe?",
+    "answers": ["Stomach", "Liver", "Lungs"],
+    "correct": 2,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 238,
+    "question": "What are the hard white things in your mouth called?",
+    "answers": ["Teeth", "Gums", "Bones"],
+    "correct": 0,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 239,
+    "question": "Which body part connects your head to your shoulders?",
+    "answers": ["Elbow", "Neck", "Spine"],
+    "correct": 1,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 240,
+    "question": "Who treats sick people at a hospital?",
+    "answers": ["A chef", "A doctor", "A teacher"],
+    "correct": 1,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 241,
+    "question": "Who helps the doctor in a hospital?",
+    "answers": ["A nurse", "A driver", "A farmer"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 242,
+    "question": "Who keeps the streets clean?",
+    "answers": ["A street cleaner", "A doctor", "A pilot"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 243,
+    "question": "Who makes wooden furniture like tables and chairs?",
+    "answers": ["A carpenter", "A baker", "A barber"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 244,
+    "question": "Who cuts and styles your hair?",
+    "answers": ["A tailor", "A barber or hairdresser", "A chef"],
+    "correct": 1,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 245,
+    "question": "Who makes bread and cakes?",
+    "answers": ["A baker", "A butcher", "A farmer"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 246,
+    "question": "Who catches fish for a living?",
+    "answers": ["A fisherman", "A sailor", "A diver"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 247,
+    "question": "Who puts out fires and saves people?",
+    "answers": ["A firefighter", "A policeman", "A soldier"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 248,
+    "question": "Who protects the country in the army?",
+    "answers": ["A soldier", "A pilot", "A nurse"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 249,
+    "question": "Who sings songs on stage or for a movie?",
+    "answers": ["A singer", "An actor", "A dancer"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 250,
+    "question": "Who paints beautiful pictures on canvas?",
+    "answers": ["An artist (painter)", "A writer", "A scientist"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 251,
+    "question": "Who writes stories and books?",
+    "answers": ["A writer or author", "A librarian", "A teacher"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 252,
+    "question": "Who acts in movies and plays?",
+    "answers": ["An actor", "A singer", "A director"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 253,
+    "question": "Who designs buildings and houses?",
+    "answers": ["An architect", "An engineer", "A builder"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 254,
+    "question": "Who fixes broken cars and machines?",
+    "answers": ["A mechanic", "A driver", "A pilot"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 255,
+    "question": "Who delivers letters and packages to your home?",
+    "answers": ["A mail carrier (postman)", "A driver", "A farmer"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 256,
+    "question": "Who serves food and drinks in a restaurant?",
+    "answers": ["A waiter or waitress", "A chef", "A manager"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 257,
+    "question": "Who takes photos with a camera?",
+    "answers": ["A photographer", "An artist", "A journalist"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 258,
+    "question": "Who learns new things and studies at school?",
+    "answers": ["A student", "A teacher", "A principal"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 259,
+    "question": "Who takes care of books in a library?",
+    "answers": ["A librarian", "A bookseller", "A reader"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 260,
+    "question": "Who fixes leaky pipes and toilets?",
+    "answers": ["A plumber", "An electrician", "A builder"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 261,
+    "question": "Who fixes electrical wires and lights?",
+    "answers": ["An electrician", "A plumber", "A mechanic"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 262,
+    "question": "Who works in a laboratory and does experiments?",
+    "answers": ["A scientist", "An astronaut", "A doctor"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 263,
+    "question": "Who travels into space in a rocket?",
+    "answers": ["An astronaut", "A pilot", "A scientist"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 264,
+    "question": "Who takes care of animals when they are sick?",
+    "answers": ["A vet (veterinarian)", "A biologist", "A farmer"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 265,
+    "question": "Who helps keep your neighbourhood safe and follows the law?",
+    "answers": ["A judge", "A lawyer", "A police officer"],
+    "correct": 2,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 266,
+    "question": "Which vehicle travels on water and is powered by sails or engines?",
+    "answers": ["A submarine", "A ship or boat", "A surfboard"],
+    "correct": 1,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 267,
+    "question": "What travels on water and is usually very small?",
+    "answers": ["A boat", "A ship", "A train"],
+    "correct": 0,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 268,
+    "question": "What animal says 'Moo' and gives us milk?",
+    "answers": ["Cow", "Goat", "Horse"],
+    "correct": 0,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 269,
+    "question": "What is the color of the grass?",
+    "answers": ["Green", "Brown", "Yellow"],
+    "correct": 0,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 270,
+    "question": "What color do you get if you mix red and blue?",
+    "answers": ["Purple", "Green", "Orange"],
+    "correct": 0,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 271,
+    "question": "Who is the mother of your mother?",
+    "answers": ["Grandmother", "Grandfather", "Aunt"],
+    "correct": 0,
+    "category": "My Family"
+  },
+  {
+    "id": 272,
+    "question": "What do you call your mother's father?",
+    "answers": ["Your uncle", "Your grandfather", "Your brother"],
+    "correct": 1,
+    "category": "My Family"
+  },
+  {
+    "id": 273,
+    "question": "What do you call your father's mother?",
+    "answers": ["Your grandmother", "Your aunt", "Your sister"],
+    "correct": 0,
+    "category": "My Family"
+  },
+  {
+    "id": 274,
+    "question": "Who is the daughter of your brother or sister?",
+    "answers": ["Your nephew", "Your niece", "Your daughter"],
+    "correct": 1,
+    "category": "My Family"
+  },
+  {
+    "id": 275,
+    "question": "Who is the son of your brother or sister?",
+    "answers": ["Your son", "Your cousin", "Your nephew"],
+    "correct": 2,
+    "category": "My Family"
+  },
+  {
+    "id": 276,
+    "question": "Which animal has a hump on its back and lives in the desert?",
+    "answers": ["Horse", "Camel", "Elephant"],
+    "correct": 1,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 277,
+    "question": "Which is the largest mammal living in the ocean?",
+    "answers": ["Shark", "Dolphin", "Blue Whale"],
+    "correct": 2,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 278,
+    "question": "Which animal carries its baby in a pouch?",
+    "answers": ["Kangaroo", "Panda", "Koala"],
+    "correct": 0,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 279,
+    "question": "Which animal can change its color to hide from enemies?",
+    "answers": ["Chameleon", "Snake", "Lizard"],
+    "correct": 0,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 280,
+    "question": "Which bird can see at night and says 'Hoo Hoo'?",
+    "answers": ["Eagle", "Owl", "Sparrow"],
+    "correct": 1,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 281,
+    "question": "Which insect makes a web to catch its food?",
+    "answers": ["Ant", "Bee", "Spider"],
+    "correct": 2,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 282,
+    "question": "Which big animal has a horn on its nose?",
+    "answers": ["Rhino", "Hippo", "Buffalo"],
+    "correct": 0,
+    "category": "My Pets & Animals"
+  },
+  {
+    "id": 283,
+    "question": "Which small fruit is round and can be purple or green?",
+    "answers": ["Grape", "Apple", "Orange"],
+    "correct": 0,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 284,
+    "question": "Which long, green vegetable is used to make salads?",
+    "answers": ["Potato", "Cucumber", "Carrot"],
+    "correct": 1,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 285,
+    "question": "Which tropical fruit has a prickly skin and is very sweet?",
+    "answers": ["Pineapple", "Pear", "Banana"],
+    "correct": 0,
+    "category": "Food & Drinks"
+  },
+  {
+    "id": 286,
+    "question": "Which small orange tree is used to decorate houses during Tet?",
+    "answers": ["Apple tree", "Kumquat tree", "Peach tree"],
+    "correct": 1,
+    "category": "Tet Holiday"
+  },
+  {
+    "id": 287,
+    "question": "What is the cylindrical sticky rice cake eaten during Tet in Southern Vietnam?",
+    "answers": ["Banh Chung", "Banh Tet", "Banh Gio"],
+    "correct": 1,
+    "category": "Tet Holiday"
+  },
+  {
+    "id": 288,
+    "question": "What kind of lantern is shaped like a star?",
+    "answers": ["Star lantern", "Flower lantern", "Fish lantern"],
+    "correct": 0,
+    "category": "Mid-Autumn Festival"
+  },
+  {
+    "id": 289,
+    "question": "Which dance is often performed with the Lion dance during festivals?",
+    "answers": ["Bird dance", "Dragon dance", "Chicken dance"],
+    "correct": 1,
+    "category": "Mid-Autumn Festival"
+  },
+  {
+    "id": 290,
+    "question": "What is the traditional conical hat of Vietnam called?",
+    "answers": ["Non La", "Bucket hat", "Cap"],
+    "correct": 0,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 291,
+    "question": "What is the traditional long dress of Vietnamese women?",
+    "answers": ["Kimono", "Ao Dai", "Hanbok"],
+    "correct": 1,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 292,
+    "question": "What is the name of the highest mountain in Vietnam?",
+    "answers": ["Mount Fuji", "Mount Everest", "Fansipan"],
+    "correct": 2,
+    "category": "Geography"
+  },
+  {
+    "id": 293,
+    "question": "Which city in Vietnam is famous for its 'Dragon Bridge'?",
+    "answers": ["Ha Noi", "Da Nang", "Hue"],
+    "correct": 1,
+    "category": "Geography"
+  },
+  {
+    "id": 294,
+    "question": "Which is the longest river in the South of Vietnam?",
+    "answers": ["Red River", "Mekong River", "Huong River"],
+    "correct": 1,
+    "category": "Geography"
+  },
+  {
+    "id": 295,
+    "question": "Which is the famous river that flows through Ha Noi?",
+    "answers": ["Red River", "Han River", "Saigon River"],
+    "correct": 0,
+    "category": "Geography"
+  },
+  {
+    "id": 296,
+    "question": "What do you use to wash your hair and make it clean?",
+    "answers": ["Soap", "Shampoo", "Toothpaste"],
+    "correct": 1,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 297,
+    "question": "What do you use to dry your body after a bath?",
+    "answers": ["A towel", "A blanket", "A pillow"],
+    "correct": 0,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 298,
+    "question": "Which kitchen appliance keeps your food cold and fresh?",
+    "answers": ["Oven", "Washing machine", "Refrigerator"],
+    "correct": 2,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 299,
+    "question": "What do you use to cook rice every day?",
+    "answers": ["A rice cooker", "A kettle", "A toaster"],
+    "correct": 0,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 300,
+    "question": "Which machine is used to heat food very quickly?",
+    "answers": ["Dishwasher", "Microwave", "Fan"],
+    "correct": 1,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 301,
+    "question": "What do you use to wash the floor and keep it clean?",
+    "answers": ["A mop", "A spoon", "A ruler"],
+    "correct": 0,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 302,
+    "question": "What do you use to sweep the floor?",
+    "answers": ["A brush", "A broom", "A comb"],
+    "correct": 1,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 303,
+    "question": "What do you call the meal you eat at 12:00 in the middle of the day?",
+    "answers": ["Breakfast", "Lunch", "Dinner"],
+    "correct": 1,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 304,
+    "question": "What do you call the meal you eat in the evening?",
+    "answers": ["Lunch", "Snack", "Dinner"],
+    "correct": 2,
+    "category": "Daily Life & Health"
+  },
+  {
+    "id": 305,
+    "question": "How many months are there in one year?",
+    "answers": ["7 months", "10 months", "12 months"],
+    "correct": 2,
+    "category": "General Science"
+  },
+  {
+    "id": 306,
+    "question": "How many days are there in a week?",
+    "answers": ["5 days", "7 days", "30 days"],
+    "correct": 1,
+    "category": "General Science"
+  },
+  {
+    "id": 307,
+    "question": "How many seasons are there in Northern Vietnam?",
+    "answers": ["Two", "Three", "Four"],
+    "correct": 2,
+    "category": "Seasons & Weather"
+  },
+  {
+    "id": 308,
+    "question": "How many seasons are there in Southern Vietnam?",
+    "answers": ["Two", "Four", "Five"],
+    "correct": 0,
+    "category": "Seasons & Weather"
+  },
+  {
+    "id": 309,
+    "question": "What is the shape of the Earth?",
+    "answers": ["Square", "Triangle", "Sphere (Round)"],
+    "correct": 2,
+    "category": "Astronomy"
+  },
+  {
+    "id": 310,
+    "question": "Which planet is known as the 'Blue Planet' because of its water?",
+    "answers": ["Mars", "Earth", "Saturn"],
+    "correct": 1,
+    "category": "Astronomy"
+  },
+  {
+    "id": 311,
+    "question": "What do we call the path that the Earth takes around the Sun?",
+    "answers": ["Orbit", "Street", "Circle"],
+    "correct": 0,
+    "category": "Astronomy"
+  },
+  {
+    "id": 312,
+    "question": "What do we call a star that falls across the sky at night?",
+    "answers": ["The Moon", "A meteor (Shooting star)", "A plane"],
+    "correct": 1,
+    "category": "Astronomy"
+  },
+  {
+    "id": 313,
+    "question": "What white tool does a teacher use to write on a blackboard?",
+    "answers": ["A pen", "A marker", "Chalk"],
+    "correct": 2,
+    "category": "School Life"
+  },
+  {
+    "id": 314,
+    "question": "Who is the person in charge of a whole school?",
+    "answers": ["A student", "A principal", "A librarian"],
+    "correct": 1,
+    "category": "School Life"
+  },
+  {
+    "id": 315,
+    "question": "What do you use to type letters and numbers into a computer?",
+    "answers": ["A mouse", "A screen", "A keyboard"],
+    "correct": 2,
+    "category": "School Life"
+  },
+  {
+    "id": 316,
+    "question": "What do you use to move the arrow on a computer screen?",
+    "answers": ["A mouse", "A printer", "A speaker"],
+    "correct": 0,
+    "category": "School Life"
+  },
+  {
+    "id": 317,
+    "question": "What machine do you use to put words from a computer onto paper?",
+    "answers": ["A scanner", "A printer", "A laptop"],
+    "correct": 1,
+    "category": "School Life"
+  },
+  {
+    "id": 318,
+    "question": "In which subject do you learn to draw and color pictures?",
+    "answers": ["Math", "Fine Arts", "Music"],
+    "correct": 1,
+    "category": "School Life"
+  },
+  {
+    "id": 319,
+    "question": "Where is the area in school where children play during break time?",
+    "answers": ["The classroom", "The office", "The playground"],
+    "correct": 2,
+    "category": "School Life"
+  },
+  {
+    "id": 320,
+    "question": "What do you call someone who is in the same class as you?",
+    "answers": ["A teacher", "A classmate", "A neighbor"],
+    "correct": 1,
+    "category": "School Life"
+  },
+  {
+    "id": 321,
+    "question": "What color is the star in the middle of the Vietnamese flag?",
+    "answers": ["White", "Yellow", "Red"],
+    "correct": 1,
+    "category": "Geography"
+  },
+  {
+    "id": 322,
+    "question": "What color is the sky at night when there are no clouds?",
+    "answers": ["Bright blue", "Yellow", "Black or dark blue"],
+    "correct": 2,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 323,
+    "question": "Which shape has no corners and is perfectly round?",
+    "answers": ["Square", "Circle", "Triangle"],
+    "correct": 1,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 324,
+    "question": "What shape is a box where all sides are equal squares?",
+    "answers": ["A cube", "A star", "An oval"],
+    "correct": 0,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 325,
+    "question": "Most books are in this shape. What is it?",
+    "answers": ["Rectangle", "Circle", "Cone"],
+    "correct": 0,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 326,
+    "question": "What is the shape of an ice cream cone?",
+    "answers": ["Square", "Cone", "Cylinder"],
+    "correct": 1,
+    "category": "Colors & Shapes"
+  },
+  {
+    "id": 327,
+    "question": "Which vehicle carries people and cars across a river?",
+    "answers": ["A bus", "A ferry", "An airplane"],
+    "correct": 1,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 328,
+    "question": "What big machine is used at a construction site to dig holes?",
+    "answers": ["A bicycle", "An excavator", "A taxi"],
+    "correct": 1,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 329,
+    "question": "What do we call a train that runs on a single rail?",
+    "answers": ["A monorail", "A boat", "A scooter"],
+    "correct": 0,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 330,
+    "question": "What do you call a very big truck that carries other cars?",
+    "answers": ["A car carrier", "A motorcycle", "A van"],
+    "correct": 0,
+    "category": "Means of Transport"
+  },
+  {
+    "id": 331,
+    "question": "Who is the person that works on a ship and sails across the sea?",
+    "answers": ["A sailor", "A driver", "A teacher"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 332,
+    "question": "Who is the person that designs and makes new clothes?",
+    "answers": ["A farmer", "A fashion designer", "A baker"],
+    "correct": 1,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 333,
+    "question": "Who is the person that cleans buildings and schools?",
+    "answers": ["A janitor", "A doctor", "A pilot"],
+    "correct": 0,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 334,
+    "question": "Who is the person that takes care of animals at the zoo?",
+    "answers": ["A gardener", "A zookeeper", "A vet"],
+    "correct": 1,
+    "category": "Jobs & Occupations"
+  },
+  {
+    "id": 335,
+    "question": "Which part of your body is between your head and your shoulders?",
+    "answers": ["Your arm", "Your neck", "Your leg"],
+    "correct": 1,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 336,
+    "question": "What is the joint in the middle of your leg that helps you bend it?",
+    "answers": ["The elbow", "The knee", "The wrist"],
+    "correct": 1,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 337,
+    "question": "What is the part of your body that connects your hand to your arm?",
+    "answers": ["The wrist", "The ankle", "The neck"],
+    "correct": 0,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 338,
+    "question": "What do we call the joint that connects your foot to your leg?",
+    "answers": ["The finger", "The ankle", "The shoulder"],
+    "correct": 1,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 339,
+    "question": "What is the part of your face below your mouth?",
+    "answers": ["Your forehead", "Your chin", "Your nose"],
+    "correct": 1,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 340,
+    "question": "What is the flat part at the top of your face, above your eyes?",
+    "answers": ["Your cheek", "Your ear", "Your forehead"],
+    "correct": 2,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 341,
+    "question": "Which part of your body is on the opposite side of your chest?",
+    "answers": ["Your back", "Your stomach", "Your knee"],
+    "correct": 0,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 342,
+    "question": "What do you call the middle part of your body, where your heart is?",
+    "answers": ["Your head", "Your chest", "Your foot"],
+    "correct": 1,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 343,
+    "question": "Where do you wear a belt on your body?",
+    "answers": ["Around your neck", "Around your waist", "Around your arm"],
+    "correct": 1,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 344,
+    "question": "What is the back part of your foot called?",
+    "answers": ["The toe", "The heel", "The palm"],
+    "correct": 1,
+    "category": "Parts of the Body"
+  },
+  {
+    "id": 345,
+    "question": "Which large organ in your body helps clean your blood?",
+    "answers": ["The brain", "The stomach", "The liver"],
+    "correct": 2,
+    "category": "Parts of the Body"
+  }
+]

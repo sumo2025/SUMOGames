@@ -1,0 +1,108 @@
+[
+  {
+    "emoji": " 🦧 ",
+    "title": "Bố đu xà 30 giây",
+    "message": "Đến lượt bố mẹ rồi! Hãy yêu cầu bố hoặc mẹ đu xà trong 30 giây để xem sức mạnh của người lớn thế nào nhé!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "21:20" },
+      { "type": "weekend", "from": "08:00", "to": "21:20" }
+    ]
+  },
+  {
+    "emoji": " 🏋️‍♂️ ",
+    "title": "Bố chống đẩy 10 cái",
+    "message": "Yêu cầu bố nằm xuống chống đẩy 10 cái ngay lập tức! Con nhớ làm trọng tài đếm cho thật chuẩn nha!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "21:20" },
+      { "type": "weekend", "from": "08:00", "to": "21:20" }
+    ]
+  },
+  {
+    "emoji": " 🚕 ",
+    "title": "Bố cõng từ bếp ra cửa",
+    "message": "Yêu cầu bố cõng con một vòng từ trong bếp ra đến ngoài cửa nhà! Tận hưởng chuyến đi miễn phí này thôi!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "21:00" },
+      { "type": "weekend", "from": "08:00", "to": "21:00" }
+    ]
+  },
+  {
+    "emoji": " 💆‍♂️ ",
+    "title": "Tẩm quất 3 phút",
+    "message": "Chúc mừng con nhận được voucher tẩm quất/massage 3 phút do chuyên gia vật lý trị liệu Papa bự đảm nhận!",
+    "schedules": [
+      { "type": "weekday", "from": "06:00", "to": "22:00" },
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+  {
+    "emoji": " 🍦 ",
+    "title": "1/3 Cây kem ốc quế",
+    "message": "Tuyệt vời! Con đã tích lũy được 1/3 cây kem ốc quế. Cố gắng thêm chút nữa để có cây kem hoàn chỉnh nhé!",
+    "schedules": [
+      { "type": "weekday", "from": "06:00", "to": "22:00" },
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+  {
+    "emoji": " 📘 ",
+    "title": "1/3 Cuốn truyện tranh",
+    "message": "Tin vui! Con nhận được 1/3 quyển truyện Doraemon hoặc Conan. Sắp có truyện mới để đọc rồi!",
+    "schedules": [
+      { "type": "weekday", "from": "06:00", "to": "22:00" },
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+  {
+    "emoji": " 🍧 ",
+    "title": "1/3 Cốc chè Cung Đình Huế",
+    "message": "Ngọt ngào quá! Con nhận được 1/3 cốc chè cung đình Huế mát lạnh!",
+    "schedules": [
+      { "type": "weekday", "from": "06:00", "to": "22:00" },
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+  {
+    "emoji": " 🍨 ",
+    "title": "1/3 Cây Kem Merino",
+    "message": "Tích tiểu thành đại! Con đã nhận được 1/3 cây kem Merino cực ngon!",
+    "schedules": [
+      { "type": "weekday", "from": "06:00", "to": "22:00" },
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+  {
+    "emoji": " 🤸 ",
+    "title": "1/8 Voucher Jump Arena",
+    "message": "Cơ hội đi chơi đang đến gần! Con nhận được 1/8 voucher đi chơi tại Jump Arena!",
+    "schedules": [
+      { "type": "weekday", "from": "06:00", "to": "22:00" },
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+  {
+    "emoji": " 📖 ",
+    "title": "10 phút đọc truyện/sách/báo",
+    "message": "Nếu đã học xong bài, con được thưởng 10 phút đọc truyện. Một phần thưởng xứng đáng!",
+    "schedules": [
+      { "type": "weekday", "from": "06:00", "to": "21:30" },
+      { "type": "weekend", "from": "06:00", "to": "21:30" }
+    ]
+  },
+  {
+    "emoji": " 🎬 ",
+    "title": "10 phút xem TV, Ipad",
+    "message": "Cuối tuần xả láng! Con được xem TV, Ipad trong 10 phút. Xem gì thật thú vị nhé!",
+    "schedules": [
+      { "type": "weekend", "from": "06:00", "to": "21:30" }
+    ]
+  },
+  {
+    "emoji": " ⚽ ",
+    "title": "Chơi bóng đá với bố 10 phút",
+    "message": "Ra sân thôi! Con được chơi bóng cùng bố trong 10 phút. Chúc hai bố con có những giây phút vui vẻ!",
+    "schedules": [
+      { "type": "weekend", "from": "08:00", "to": "18:00" }
+    ]
+  }
+]

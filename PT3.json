@@ -1,0 +1,47 @@
+[
+  {
+    "emoji": " 🎵 ",
+    "title": "Mở một bản nhạc yêu thích",
+    "message": "Nếu bố mẹ có nhà, hãy xin phép được mở một bài nhạc yêu thích trên Youtube để cả nhà cùng chill nhé!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "21:00" },
+      { "type": "weekend", "from": "06:00", "to": "21:00" }
+    ]
+  },
+  {
+    "emoji": " 📺 ",
+    "title": "5 Phút xem TV, Ipad",
+    "message": "Nếu bố mẹ đồng ý, con được phép xem TV, Ipad trong 5 phút để giải trí sau giờ học căng thẳng!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "21:00" },
+      { "type": "weekend", "from": "06:00", "to": "21:00" }
+    ]
+  },
+  {
+    "emoji": " 🦇 ",
+    "title": "Chơi 2 lượt games Badland",
+    "message": "Phần thưởng đây! Con được chơi 2 lượt game Badland. Hãy thể hiện kỹ năng siêu đẳng của mình đi nào!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "21:30" },
+      { "type": "weekend", "from": "06:00", "to": "21:30" }
+    ]
+  },
+  {
+    "emoji": " 🎮 ",
+    "title": "Chơi 3 lượt games Badland",
+    "message": "Nếu đã hoàn thành xong bài tập, con được quyền chơi 3 lượt game Badland để thư giãn nhé!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "21:30" },
+      { "type": "weekend", "from": "06:00", "to": "21:30" }
+    ]
+  },
+  {
+    "emoji": " 📖 ",
+    "title": "5 phút đọc truyện/sách/báo",
+    "message": "Học xong rồi thì xõa thôi! Con được đọc truyện trong 5 phút. Chọn cuốn nào hấp dẫn nhất nhé!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "21:30" },
+      { "type": "weekend", "from": "06:00", "to": "21:30" }
+    ]
+  }
+]

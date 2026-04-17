@@ -1,0 +1,126 @@
+[
+  {
+    "emoji": " 💆‍♀️ ",
+    "title": "Bóp vai cho mẹ 3 phút",
+    "message": "Hãy bóp vai cho mẹ trong 3 phút nhé! Mẹ sẽ cảm thấy rất hạnh phúc và tự hào về con đấy!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "22:30" },
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+  {
+    "emoji": " 🤣 ",
+    "title": "Kể chuyện cười",
+    "message": "Hãy kể cho bố mẹ nghe một câu chuyện cười thật hóm hỉnh để cả nhà cùng cười vang nào!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "22:30" },
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+  {
+    "emoji": " 🏫 ",
+    "title": "Kể truyện ở trường",
+    "message": "Hôm nay ở trường có gì vui không? Hãy kể ngay cho bố mẹ nghe một mẩu chuyện thú vị về thầy cô hay bạn bè nhé!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "22:30" },
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+  {
+    "emoji": " 💆‍♂️ ",
+    "title": "Massage Cho Bố 2 phút",
+    "message": "Bố đi làm về mệt rồi, con hãy matxa mặt cho bố trong 2 phút để bố thấy thư giãn hơn nhé!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "22:30" },
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+  {
+    "emoji": " 🇬🇧 ",
+    "title": "Đọc một bài Razkids",
+    "message": "Đọc một bài Razkids thật hay và gửi cho bố nghe nào! Bố đang rất chờ đợi giọng đọc của con đấy!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "22:30" },
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+  {
+    "emoji": " 🛌 ",
+    "title": "Hút bụi đệm ngủ",
+    "message": "Lấy máy hút bụi và làm sạch đệm trước khi ngủ thôi! Phòng sạch sẽ thì giấc mơ sẽ đẹp hơn nhiều!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "22:30" },
+      { "type": "weekend", "from": "18:00", "to": "22:00" }
+    ]
+  },
+  {
+    "emoji": " 🧹 ",
+    "title": "Dọn phòng",
+    "message": "Cuối tuần rồi! Hãy dọn dẹp đồ đạc cho ngăn nắp và hút bụi phòng ngủ thật sạch bong kin kít nhé!",
+    "schedules": [
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+  {
+    "emoji": " 🗑️ ",
+    "title": "Đổ rác",
+    "message": "Nhiệm vụ đặc biệt: Thu gom rác ở tất cả các tầng và đem đi đổ nhé! Cảm ơn con đã giúp đỡ gia đình!",
+    "schedules": [
+      { "type": "weekend", "from": "06:00", "to": "18:00" }
+    ]
+  },
+{
+    "emoji": " 🏃‍♂️ ",
+    "title": "Nhảy dây 20 cái",
+    "message": "Hãy ra ngoài nhảy dây 20 cái! Con sẽ thấy khỏe khoắn hơn hẳn và khi quay lại chắc chắn sẽ trả lời được nhiều câu hỏi hóc búa hơn đấy!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "18:00" },
+      { "type": "weekend", "from": "06:00", "to": "18:00" }
+    ]
+  },
+  {
+    "emoji": " 🏀 ",
+    "title": "Ném 10 quả bóng vào rổ",
+    "message": "Ra sân ném ngay 5 quả bóng vào rổ nào! Vận động tay chân một chút sẽ giúp con chọn đáp án chuẩn xác hơn nhiều!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "18:00" },
+      { "type": "weekend", "from": "06:00", "to": "18:00" }
+    ]
+  },
+  {
+    "emoji": " 🐒 ",
+    "title": "Đu xà 30 giây",
+    "message": "Đu xà 30 giây cho giãn gân cốt nào! Vừa giúp con thư giãn vừa hỗ trợ tăng chiều cao cực tốt đó!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "21:30" },
+      { "type": "weekend", "from": "06:00", "to": "21:30" }
+    ]
+  },
+  {
+    "emoji": " 🦾 ",
+    "title": "Hít đất 10 cái",
+    "message": "Nằm xuống chống đẩy 10 cái nào! Rèn luyện cơ bắp một chút để trở thành siêu nhân bảo vệ gia đình nhé!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "21:30" },
+      { "type": "weekend", "from": "06:00", "to": "21:30" }
+    ]
+  },
+  {
+    "emoji": " 🐸 ",
+    "title": "Nhảy lò cò từ bếp ra cửa",
+    "message": "Thử thách vui: Nhảy lò cò từ trong bếp ra ngoài cửa rồi quay vào! Nhớ giữ thăng bằng thật tốt nha!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "21:00" },
+      { "type": "weekend", "from": "06:00", "to": "21:00" }
+    ]
+  },
+  {
+    "emoji": " 🥋 ",
+    "title": "Ôn một bài quyền Karate",
+    "message": "Tới giờ luyện công: Hãy ôn lại một bài quyền Karate thật dũng mãnh và chuẩn xác nào!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "21:30" },
+      { "type": "weekend", "from": "06:00", "to": "21:30" }
+    ]
+  }
+]

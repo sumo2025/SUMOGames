@@ -1,0 +1,118 @@
+[
+  {
+    "emoji": " ⚽ ",
+    "title": "Chơi bóng đá với bố 20 Phút",
+    "message": "Quá tuyệt! Con được chơi bóng cùng bố tận 20 phút. Tha hồ kiến tạo và ghi bàn nhé!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "18:00" },
+      { "type": "weekend", "from": "09:00", "to": "18:00" }
+    ]
+  },
+  {
+    "emoji": " 🦖 ",
+    "title": "Chuyến Đi Tới Cây Sấu",
+    "message": "Phần thưởng đặc biệt: Yêu cầu bố cõng từ sân nhà mình ra tới tận chỗ cây sấu gần nhà bác Việt nhé!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "21:00" },
+      { "type": "weekend", "from": "09:00", "to": "21:00" }
+    ]
+  },
+  {
+    "emoji": " 🦾 ",
+    "title": "Bố chống đẩy 20 cái",
+    "message": "Thử thách cực đại cho bố: Yêu cầu bố chống đẩy 20 cái! Con nhớ cổ vũ thật nhiệt tình cho bố nha!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "21:00" },
+      { "type": "weekend", "from": "09:00", "to": "21:00" }
+    ]
+  },
+  {
+    "emoji": " 🍦 ",
+    "title": "1 Cây Kem ốc quế",
+    "message": "Chúc mừng con! Con được thưởng trọn vẹn 1 cây kem ốc quế siêu to khổng lồ!",
+    "schedules": [
+      { "type": "weekday", "from": "06:00", "to": "22:00" },
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+  {
+    "emoji": " 📚 ",
+    "title": "1/2 Cuốn truyện tranh",
+    "message": "Tin cực vui! Con được thưởng 1/2 quyển truyện Doraemon hoặc Conan. Sắp thành chủ nhân của cuốn truyện rồi!",
+    "schedules": [
+      { "type": "weekday", "from": "06:00", "to": "22:00" },
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+  {
+    "emoji": " 🍧 ",
+    "title": "1/2 Cốc chè Cung Đình Huế",
+    "message": "Thưởng ngay 1/2 cốc chè cung đình Huế cho sự nỗ lực của con! Ngon lắm đấy!",
+    "schedules": [
+      { "type": "weekday", "from": "06:00", "to": "22:00" },
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+  {
+    "emoji": " 💆 ",
+    "title": "5 Phút Massage",
+    "message": "Nghỉ ngơi thôi! Con được tận hưởng 5 phút massage/tầm quất cực kỳ chuyên nghiệp!",
+    "schedules": [
+      { "type": "weekday", "from": "06:00", "to": "22:00" },
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+  {
+    "emoji": " 🤸 ",
+    "title": "1/6 Voucher Jump Arena",
+    "message": "Sắp được đi nhảy rồi! Con nhận được 1/6 voucher đi chơi tại Jump Arena!",
+    "schedules": [
+      { "type": "weekday", "from": "06:00", "to": "22:00" },
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+  {
+    "emoji": " 🥐 ",
+    "title": "1/6 Voucher bữa sáng tại Kelicious",
+    "message": "Thật tuyệt vời! Con nhận được 1/6 voucher ăn sáng sang chảnh tại Kelicious!",
+    "schedules": [
+      { "type": "weekday", "from": "06:00", "to": "22:00" },
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+  {
+    "emoji": " 🍣 ",
+    "title": "1/10 Voucher ăn Sushi",
+    "message": "Món quà đặc biệt cho fan đồ Nhật: Con nhận được 1/10 voucher ăn Sushi tại nhà hàng Nhật Bản!",
+    "schedules": [
+      { "type": "weekday", "from": "06:00", "to": "22:00" },
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+{
+    "emoji": " 🍨 ",
+    "title": "1 Cây Kem Merino",
+    "message": "Tích tiểu thành đại! Con đã nhận được 1 cây kem Merino cực ngon!",
+    "schedules": [
+      { "type": "weekday", "from": "06:00", "to": "22:00" },
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+
+  {
+    "emoji": " 🎥 ",
+    "title": "20 phút xem TV, Ipad",
+    "message": "Phần thưởng cực lớn: Con được xem Tivi, Ipad trong 20 phút liên tục!",
+    "schedules": [
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  },
+  {
+    "emoji": " 🚲 ",
+    "title": "Đạp xe buổi sáng cuối tuần",
+    "message": "Một buổi sáng năng động: Yêu cầu bố cùng đi đạp xe dạo chơi để hít thở không khí trong lành nhé!",
+    "schedules": [
+      { "type": "weekend", "from": "06:00", "to": "22:00" }
+    ]
+  }
+]

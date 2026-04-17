@@ -1,0 +1,87 @@
+╔══════════════════════════════════════════════════════════════╗
+║          🏆 SUMO GAMES — HƯỚNG DẪN NHANH                                       ║
+║                                                                                 ║
+╚══════════════════════════════════════════════════════════════╝
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  BƯỚC 1 — MỞ GAME
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  → Nhấp đôi vào file  index.html
+  → Trình duyệt (Chrome / Edge / Safari) tự mở game
+  → Không cần cài gì thêm, không cần internet
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  BƯỚC 2 — CHƠI NGAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Gõ tên người chơi
+  2. Chọn số câu (25 / 30 / 35)
+  3. Chọn cấp độ: Dễ hoặc Khó
+  4. Bấm 🚀 Bắt Đầu Chơi
+
+  Luật chơi:
+  • Mỗi câu có 20 giây — chọn A, B hoặc C
+  • Đúng  → +10 điểm
+  • Sai   →  0 điểm
+  • Sai 3 câu liên tiếp → −10 điểm
+
+  Đạt % đúng đủ cao → nhận phần thưởng PT1–PT5 🎁
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  BƯỚC 3 — CÀI ĐẶT (UPLOAD CÂU HỎI & PHẦN THƯỞNG)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Từ màn hình chính → bấm  ⚙️ Cài Đặt
+  2. Nhập mật khẩu:  1234  → bấm Xác Nhận
+
+  📚 Tab "Câu Hỏi" — Tải câu hỏi lên:
+     • Bấm ô VIE  → chọn file câu hỏi tiếng Việt (.json)
+     • Bấm ô ENG  → chọn file câu hỏi tiếng Anh (.json)  [tuỳ chọn]
+     • Có thể tải nhiều file cùng lúc — game tự gộp lại
+
+  🎁 Tab "Phần Thưởng" — Tải phần thưởng lên:
+     • Bấm "+ Tải file Phần Thưởng"
+     • Chọn các file PT1.json, PT2.json … PT5.json
+     • (Lưu ý: tên file phải chứa chữ PT1, PT2, PT3, PT4, PT5)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⚠️  SAO LƯU DỮ LIỆU — RẤT QUAN TRỌNG!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Game lưu dữ liệu trong trình duyệt.
+  Nếu xóa lịch sử / cache trình duyệt → MẤT HẾT dữ liệu!
+
+  Cách sao lưu (làm trước khi xóa cache):
+  1. Vào ⚙️ Cài Đặt  →  mật khẩu 1234
+  2. Chọn tab  💾 Dữ Liệu
+  3. Bấm  "📥 Tải file sao lưu (.txt)"
+  4. Lưu file .txt vừa tải về vào máy / USB / Google Drive
+
+  Cách khôi phục:
+  1. Vào ⚙️ Cài Đặt  →  mật khẩu 1234
+  2. Chọn tab  💾 Dữ Liệu
+  3. Bấm  "📤 Khôi phục từ file"  → chọn file .txt đã sao lưu
+  ⚠️ Khôi phục sẽ GHI ĐÈ toàn bộ dữ liệu hiện tại!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  LƯU Ý THÊM
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  • Game OFFLINE hoàn toàn — không có bảng xếp hạng toàn cầu.
+    Điểm số chỉ lưu trên máy đang chơi.
+
+  • Nếu chơi trên nhiều máy khác nhau → dữ liệu không tự đồng bộ.
+    Muốn chuyển máy: sao lưu ở máy cũ → khôi phục ở máy mới.
+
+  • Túi Quà 🎒 lưu voucher tích lũy theo thời gian.
+    Voucher hết hạn sau 90 ngày kể từ ngày nhận.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ❤️  Made with love by Papa Bự
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

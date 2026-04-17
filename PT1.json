@@ -1,0 +1,56 @@
+[
+  {
+    "emoji": " 🏃‍♂️ ",
+    "title": "Nhảy dây 20 cái",
+    "message": "Hãy ra ngoài nhảy dây 20 cái! Con sẽ thấy khỏe khoắn hơn hẳn và khi quay lại chắc chắn sẽ trả lời được nhiều câu hỏi hóc búa hơn đấy!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "18:00" },
+      { "type": "weekend", "from": "06:00", "to": "18:00" }
+    ]
+  },
+  {
+    "emoji": " 🏀 ",
+    "title": "Ném 10 quả bóng vào rổ",
+    "message": "Ra sân ném ngay 5 quả bóng vào rổ nào! Vận động tay chân một chút sẽ giúp con chọn đáp án chuẩn xác hơn nhiều!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "18:00" },
+      { "type": "weekend", "from": "06:00", "to": "18:00" }
+    ]
+  },
+  {
+    "emoji": " 🐒 ",
+    "title": "Đu xà 30 giây",
+    "message": "Đu xà 30 giây cho giãn gân cốt nào! Vừa giúp con thư giãn vừa hỗ trợ tăng chiều cao cực tốt đó!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "21:30" },
+      { "type": "weekend", "from": "06:00", "to": "21:30" }
+    ]
+  },
+  {
+    "emoji": " 🦾 ",
+    "title": "Hít đất 10 cái",
+    "message": "Nằm xuống chống đẩy 10 cái nào! Rèn luyện cơ bắp một chút để trở thành siêu nhân bảo vệ gia đình nhé!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "21:30" },
+      { "type": "weekend", "from": "06:00", "to": "21:30" }
+    ]
+  },
+  {
+    "emoji": " 🐸 ",
+    "title": "Nhảy lò cò từ bếp ra cửa",
+    "message": "Thử thách vui: Nhảy lò cò từ trong bếp ra ngoài cửa rồi quay vào! Nhớ giữ thăng bằng thật tốt nha!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "21:00" },
+      { "type": "weekend", "from": "06:00", "to": "21:00" }
+    ]
+  },
+  {
+    "emoji": " 🥋 ",
+    "title": "Ôn một bài quyền Karate",
+    "message": "Tới giờ luyện công: Hãy ôn lại một bài quyền Karate thật dũng mãnh và chuẩn xác nào!",
+    "schedules": [
+      { "type": "weekday", "from": "07:00", "to": "21:00" },
+      { "type": "weekend", "from": "06:00", "to": "21:30" }
+    ]
+  }
+]
