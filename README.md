@@ -23,7 +23,7 @@ Trong quá trình phát triển, **Su và Mo** chính là những người thẩ
 
 Nội dung câu hỏi trải rộng trên nhiều lĩnh vực kiến thức - từ khoa học, lịch sử, địa lý đến văn hóa, nghệ thuật và kỹ năng sống - được biên soạn phù hợp với học sinh tiểu học tại Việt Nam. Bên cạnh đó, một phần nội dung còn được cá nhân hóa thêm bằng cách lồng ghép các chi tiết từ những cuốn sách, bộ truyện hay bộ phim mà các con yêu thích - giúp việc học trở nên thân quen và thú vị hơn.
 
-> **Lưu ý:** Vì ngân hàng câu hỏi được tạo hoàn toàn bởi AI, đôi khi sẽ có những sự trùng lặp nhất định - nhưng đây cũng là cách để các con ôn tập và ghi nhớ kiến thức tốt hơn.
+> **Lưu ý:** Vì ngân hàng câu hỏi được tạo hoàn toàn bởi AI, đôi khi sẽ có những sự trùng lặp nhất định, hoặc nội dung câu hỏi/đáp án chưa hoàn toàn chính xác.
 
 ### ✨ Tính tùy biến - Điểm chạm khác biệt
 
