@@ -2351,18 +2351,6 @@
     "category": "Địa lý và Toán thường thức"
   },
   {
-    "id": 223,
-    "question": "Cái gì có răng mà không biết cắn?",
-    "answers": [
-      "Con chó",
-      "Cái kéo",
-      "Cái lược"
-    ],
-    "correct": 2,
-    "category": "Đố mẹo & Chơi chữ"
-  },
-  
-  {
     "id": 225,
     "question": "Để xóa một ký tự vừa gõ sai trên máy tính, em dùng phím nào?",
     "answers": [
@@ -2773,7 +2761,7 @@
     "id": 262,
     "question": "Vị vua nào của Việt Nam đã chỉ huy quân Tây Sơn đại phá quân Thanh vào mùa xuân năm Kỷ Dậu (1789)?",
     "answers": [
-      "Quang Trung (Nguyễn Huệ)",
+      "Quang Trung",
       "Lê Lợi",
       "Gia Long"
     ],
@@ -4348,17 +4336,6 @@
     ],
     "correct": 0,
     "category": "Giải trí & Nghệ thuật"
-  },
-  {
-    "id": 413,
-    "question": "Khí gas mà chúng ta sử dụng để nấu nướng hàng ngày thường có mùi hôi là do đâu?",
-    "answers": [
-      "Mùi tự nhiên của gas",
-      "Do gas bị hỏng",
-      "Người ta chủ động thêm mùi vào để dễ phát hiện khi bị rò rỉ"
-    ],
-    "correct": 2,
-    "category": "Khoa học phổ thông"
   },
   {
     "id": 414,
@@ -7227,17 +7204,6 @@
     "category": "Văn hóa & Ẩm thực Việt Nam"
   },
   {
-    "id": 680,
-    "question": "Trong truyện tranh, bong bóng thoại dùng để làm gì?",
-    "answers": [
-      "Trang trí",
-      "Thể hiện lời nói hoặc suy nghĩ của nhân vật",
-      "Cho biết thời gian"
-    ],
-    "correct": 1,
-    "category": "Giải trí & Nghệ thuật"
-  },
-  {
     "id": 681,
     "question": "Anime là từ chỉ loại phim hoạt hình của nước nào?",
     "answers": [
@@ -7409,17 +7375,6 @@
       "Cái cột điện",
       "Cái đinh",
       "Cái bàn"
-    ],
-    "correct": 1,
-    "category": "Đố mẹo & Chơi chữ"
-  },
-  {
-    "id": 697,
-    "question": "Con gì ban ngày không thấy, ban đêm mới thấy?",
-    "answers": [
-      "Con mèo",
-      "Ngôi sao",
-      "Con dơi"
     ],
     "correct": 1,
     "category": "Đố mẹo & Chơi chữ"
@@ -10269,7 +10224,7 @@
     "answers": [
       "TP. Hồ Chí Minh",
       "Hà Nội",
-      "Đồng bằng sông Hồng nói chung"
+      "Đà Nẵng"
     ],
     "correct": 1,
     "category": "Địa lý và Toán thường thức"
@@ -11121,17 +11076,7 @@
     "correct": 0,
     "category": "Khoa học phổ thông"
   },
-  {
-    "id": 1036,
-    "question": "Âm thanh truyền nhanh hơn trong môi trường nào?",
-    "answers": [
-      "Không khí",
-      "Chân không",
-      "Nước hoặc chất rắn"
-    ],
-    "correct": 2,
-    "category": "Khoa học phổ thông"
-  },
+  
   {
     "id": 1037,
     "question": "Ánh sáng trắng đi qua lăng kính sẽ tạo ra hiện tượng gì?",
