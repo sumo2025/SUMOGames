@@ -208,17 +208,7 @@
     "correct": 0,
     "category": "Kỹ năng sinh tồn và sơ cứu"
   },
-  {
-    "id": 20,
-    "question": "Cây gì không có lá, không có hoa, nhưng lại có quả treo lủng lẳng (đố vui về đồ vật)?",
-    "answers": [
-      "Cây cột điện",
-      "Cây nến",
-      "Cái giá treo đồ"
-    ],
-    "correct": 0,
-    "category": "Đố mẹo & Chơi chữ"
-  },
+  
   {
     "id": 21,
     "question": "Để bảo mật thông tin cá nhân trên mạng, em không nên cho người lạ biết điều gì?",
@@ -439,17 +429,7 @@
     "correct": 0,
     "category": "Khoa học và Lịch sử"
   },
-  {
-    "id": 41,
-    "question": "Cây gì càng cắt càng dài?",
-    "answers": [
-      "Cây tre",
-      "Cây nến",
-      "Cái quần"
-    ],
-    "correct": 2,
-    "category": "Đố mẹo & Chơi chữ"
-  },
+  
   {
     "id": 42,
     "question": "Trong 'Mười vạn câu hỏi vì sao', con ve sầu kêu để làm gì?",
@@ -538,17 +518,7 @@
     "correct": 0,
     "category": "Địa lý và Toán thường thức"
   },
-  {
-    "id": 50,
-    "question": "Quả gì năm múi bốn khe, con chuột không dám bén mảng?",
-    "answers": [
-      "Quả khế",
-      "Quả mướp",
-      "Quả chuối"
-    ],
-    "correct": 0,
-    "category": "Đố mẹo & Chơi chữ"
-  },
+  
   {
     "id": 51,
     "question": "Trong 'Thần đồng đất Việt', Mẹo là nhân vật có đặc điểm gì?",
@@ -923,17 +893,7 @@
     "correct": 2,
     "category": "Địa lý và Toán thường thức"
   },
-  {
-    "id": 85,
-    "question": "Quả gì không có cái, chỉ có đực?",
-    "answers": [
-      "Quả dưa hấu",
-      "Quả chanh",
-      "Quả bồ kết"
-    ],
-    "correct": 2,
-    "category": "Đố mẹo & Chơi chữ"
-  },
+  
   {
     "id": 87,
     "question": "Nút 'Enter' trên bàn phím thường có tác dụng gì?",
@@ -1088,17 +1048,7 @@
     "correct": 0,
     "category": "Địa lý và Toán thường thức"
   },
-  {
-    "id": 101,
-    "question": "Con gì không có cánh mà lại biết bay?",
-    "answers": [
-      "Con chim",
-      "Con cá",
-      "Con diều"
-    ],
-    "correct": 2,
-    "category": "Đố mẹo & Chơi chữ"
-  },
+  
   {
     "id": 102,
     "question": "Trong Doraemon, món bảo bối 'Khăn trùm thời gian' có tác dụng gì?",
@@ -1209,17 +1159,7 @@
     "correct": 0,
     "category": "Lịch sử các đồ vật quanh em"
   },
-  {
-    "id": 112,
-    "question": "Con gì có mũi mà không có miệng, có lưỡi mà không có răng (đố về đồ vật)?",
-    "answers": [
-      "Cái giày",
-      "Cái kéo",
-      "Cái thìa"
-    ],
-    "correct": 0,
-    "category": "Đố mẹo & Chơi chữ"
-  },
+  
   {
     "id": 113,
     "question": "Bộ phận nào của cơ thể giúp em nhận biết được các mùi hương khác nhau?",
@@ -2045,17 +1985,7 @@
     "correct": 2,
     "category": "Địa lý và Toán thường thức"
   },
-  {
-    "id": 188,
-    "question": "Cái gì có miệng mà không có môi, có bụng mà không có rốn?",
-    "answers": [
-      "Cái lọ hoa",
-      "Cái trống",
-      "Cái ấm đun nước"
-    ],
-    "correct": 2,
-    "category": "Đố mẹo & Chơi chữ"
-  },
+  
   {
     "id": 189,
     "question": "Trong 'Thần đồng đất Việt', Sửu Ê là nhân vật có tính cách như thế nào?",
@@ -2353,17 +2283,7 @@
     "correct": 0,
     "category": "Khoa học và Lịch sử"
   },
-  {
-    "id": 216,
-    "question": "Cái gì có cổ mà không có đầu, có hai cánh tay mà không có bàn tay?",
-    "answers": [
-      "Cái ghế",
-      "Con vịt",
-      "Cái áo"
-    ],
-    "correct": 2,
-    "category": "Đố mẹo & Chơi chữ"
-  },
+  
   {
     "id": 217,
     "question": "Việc phân loại rác hữu cơ (thức ăn thừa, lá cây) giúp tạo ra thứ gì có lợi cho cây trồng?",
@@ -3102,17 +3022,7 @@
     "correct": 2,
     "category": "Địa lý và Toán thường thức"
   },
-  {
-    "id": 285,
-    "question": "Cây gì không có lá, không có cành, chỉ có một bông hoa duy nhất?",
-    "answers": [
-      "Cây nến",
-      "Cây tre",
-      "Cây cau"
-    ],
-    "correct": 0,
-    "category": "Đố mẹo & Chơi chữ"
-  },
+  
   {
     "id": 286,
     "question": "Trong 'Thần đồng đất Việt', Trạng Tí đã giúp dân làng chống lại bọn cướp bằng cách dùng thứ gì để giả làm súng?",
@@ -3344,17 +3254,7 @@
     "correct": 2,
     "category": "Khoa học và Lịch sử"
   },
-  {
-    "id": 307,
-    "question": "Quả gì không có hột mà có ruột, không có lá mà có cành (đố về đồ vật)?",
-    "answers": [
-      "Quả cân",
-      "Quả bóng",
-      "Quả tim"
-    ],
-    "correct": 0,
-    "category": "Đố mẹo & Chơi chữ"
-  },
+  
   {
     "id": 308,
     "question": "Bộ phận nào trên khuôn mặt giúp bảo vệ đôi mắt khỏi mồ hôi chảy từ trán xuống?",
@@ -3421,17 +3321,7 @@
     "correct": 0,
     "category": "Địa lý và Toán thường thức"
   },
-  {
-    "id": 314,
-    "question": "Cái gì có hai chân nhưng không biết đi, chỉ biết nhảy?",
-    "answers": [
-      "Con thỏ",
-      "Con ếch",
-      "Cái com-pa"
-    ],
-    "correct": 2,
-    "category": "Đố mẹo & Chơi chữ"
-  },
+    
   {
     "id": 316,
     "question": "Cổng kết nối phổ biến nhất hiện nay trên máy tính để cắm chuột, bàn phím hay USB là gì?",
@@ -3685,17 +3575,7 @@
     "correct": 0,
     "category": "Khoa học và Lịch sử"
   },
-  {
-    "id": 339,
-    "question": "Cái gì có cánh mà không biết bay, có mũi mà không biết thở (đố về đồ vật)?",
-    "answers": [
-      "Chiếc máy bay",
-      "Con diều",
-      "Cái quạt"
-    ],
-    "correct": 2,
-    "category": "Đố mẹo & Chơi chữ"
-  },
+  
   {
     "id": 340,
     "question": "Bộ phận nào trên cơ thể giúp con người nghe được âm thanh xung quanh?",
@@ -3740,17 +3620,7 @@
     "correct": 2,
     "category": "Văn hóa & Ẩm thực Việt Nam"
   },
-  {
-    "id": 344,
-    "question": "Cái gì không có chân mà đi khắp thế gian?",
-    "answers": [
-      "Con gió",
-      "Con cá",
-      "Đồng tiền"
-    ],
-    "correct": 2,
-    "category": "Đố mẹo & Chơi chữ"
-  },
+  
   {
     "id": 345,
     "question": "Trong truyện ' Robinson Crusoe', người bạn đồng hành của Robinson trên đảo tên là gì?",
@@ -3828,17 +3698,7 @@
     "correct": 2,
     "category": "Địa lý và Toán thường thức"
   },
-  {
-    "id": 352,
-    "question": "Quả gì năm mắt bảy đuôi, nửa đêm thức dậy đuổi người ta đi?",
-    "answers": [
-      "Quả na",
-      "Con gà trống",
-      "Cây chổi"
-    ],
-    "correct": 2,
-    "category": "Đố mẹo & Chơi chữ"
-  },
+  
   {
     "id": 353,
     "question": "Phím tắt nào thường được dùng để sao chép (copy) một đoạn văn bản trên máy tính?",
@@ -4323,6 +4183,7 @@
     "correct": 2,
     "category": "Địa lý và Toán thường thức"
   },
+  
   {
     "id": 398,
     "question": "Phần mềm dùng để duyệt web (như Chrome, Safari) được gọi là gì?",
@@ -4851,17 +4712,7 @@
     "correct": 2,
     "category": "Văn hóa & Ẩm thực Việt Nam"
   },
-  {
-    "id": 446,
-    "question": "Cây gì có hoa mà không có lá, có quả mà không có nhân (đố về đồ vật)?",
-    "answers": [
-      "Cây cột điện",
-      "Cây nến",
-      "Cây cân"
-    ],
-    "correct": 2,
-    "category": "Đố mẹo & Chơi chữ"
-  },
+  
   {
     "id": 447,
     "question": "Âm thanh có thể truyền đi nhanh nhất trong môi trường nào?",
@@ -5060,17 +4911,7 @@
     "correct": 1,
     "category": "Lịch sử và Địa lý thế giới"
   },
-  {
-    "id": 465,
-    "question": "Cái gì chứa nhiều nước nhất mà không hề bị ướt?",
-    "answers": [
-      "Đám mây",
-      "Bản đồ",
-      "Quả dưa hấu"
-    ],
-    "correct": 1,
-    "category": "Đố mẹo & Chơi chữ"
-  },
+  
   {
     "id": 466,
     "question": "Hành động nào giúp giảm ô nhiễm tiếng ồn trong đô thị?",
@@ -5511,17 +5352,7 @@
     "correct": 0,
     "category": "Kỹ năng sinh tồn và sơ cứu"
   },
-  {
-    "id": 506,
-    "question": "Cái gì có hai chân mà không biết đi, có một chân mà không biết đứng?",
-    "answers": [
-      "Con gà",
-      "Cái com-pa",
-      "Cây gậy"
-    ],
-    "correct": 1,
-    "category": "Đố mẹo & Chơi chữ"
-  },
+  
   {
     "id": 507,
     "question": "Trong soạn thảo văn bản, tổ hợp phím 'Ctrl + S' dùng để làm gì?",
@@ -5579,7 +5410,7 @@
   },
   {
     "id": 512,
-    "question": "Khoảng cách từ khung thành đến điểm phạt đền (11m) trong bóng đá là bao nhiêu mét?",
+    "question": "Khoảng cách từ khung thành đến điểm phạt đền trong bóng đá là bao nhiêu mét?",
     "answers": [
       "9 mét",
       "11 mét",
@@ -5632,17 +5463,7 @@
     "correct": 1,
     "category": "Lịch sử các đồ vật quanh em"
   },
-  {
-    "id": 517,
-    "question": "Cái gì càng cất đi càng thấy?",
-    "answers": [
-      "Tiền bạc",
-      "Dấu chân",
-      "Bí mật"
-    ],
-    "correct": 1,
-    "category": "Đố mẹo & Chơi chữ"
-  },
+  
   {
     "id": 518,
     "question": "Phím tắt 'Ctrl + Z' có tác dụng gì khi em đang thao tác trên máy tính?",
@@ -5742,17 +5563,7 @@
     "correct": 1,
     "category": "Địa lý và Toán thường thức"
   },
-  {
-    "id": 527,
-    "question": "Cái gì có miệng mà không nói, có giường mà không ngủ, có mũi mà không biết ngửi (đố về tự nhiên)?",
-    "answers": [
-      "Ngọn núi",
-      "Con sông",
-      "Đám mây"
-    ],
-    "correct": 1,
-    "category": "Đố mẹo & Chơi chữ"
-  },
+ 
   {
     "id": 528,
     "question": "Trong địa chỉ trang web, cụm từ 'www' viết tắt của từ gì?",
@@ -6105,17 +5916,7 @@
     "correct": 2,
     "category": "Địa lý và Toán thường thức"
   },
-  {
-    "id": 560,
-    "question": "Hoa gì không có lá, không có cành, chỉ có ở trên mặt nước khi trời mưa?",
-    "answers": [
-      "Hoa súng",
-      "Hoa bóng bong (bong bóng nước)",
-      "Hoa sen"
-    ],
-    "correct": 1,
-    "category": "Đố mẹo & Chơi chữ"
-  },
+  
   {
     "id": 561,
     "question": "Trong 'Thần đồng đất Việt', nhân vật Mẹo là con trai của ai?",
@@ -12088,6 +11889,17 @@
       "Nhà Trần / Triều đại phong kiến Việt Nam"
     ],
     "correct": 0,
+    "category": "Sách khoa học và phiêu lưu + Sách thiếu nhi"
+  },
+  {
+    "id": 1105,
+    "question": "Trạng Tí thường dùng tài năng gì để giải quyết vấn đề?",
+    "answers": [
+      "Phép thuật",
+      "Sức mạnh cơ bắp",
+      "Trí tuệ và sự thông minh"
+    ],
+    "correct": 2,
     "category": "Sách khoa học và phiêu lưu + Sách thiếu nhi"
   },
   {
