@@ -220,101 +220,6 @@ body { font-family: var(--font-body); background: var(--bg-dark); color: var(--t
 /* MODALS */
 .modal-overlay { display:none; position:fixed; z-index:10000; inset:0; background:rgba(0,0,0,0.85); flex-direction:column; justify-content:center; align-items:center; padding:20px; }
 .modal-box { background:var(--bg-card); border:3px solid var(--gold); border-radius:24px; padding:30px; max-width:450px; width: 100%; text-align:center; box-shadow: 0 0 50px rgba(255,215,0,0.4); animation: bounceIn 0.4s ease; }
-
-/* ─── RESPONSIVE: TABLET & MOBILE OPTIMIZATIONS ─── */
-
-/* iPad / Tablet (768px - 1024px) */
-@media (max-width: 1024px) and (min-width: 601px) {
-  .card { padding: 22px 20px; }
-  .question-card { padding: 20px; }
-  .answer-btn { padding: 12px 14px; font-size: 1rem; }
-  .game-header { flex-wrap: wrap; gap: 8px; }
-  .score-board { flex-wrap: wrap; }
-  .lb-row { grid-template-columns: 36px 1fr 90px 80px 65px; padding: 10px 12px; gap: 8px; }
-  .home-btns .btn { max-width: 200px; height: 48px; font-size: 1rem; }
-  .tab-btn { min-width: 100px; font-size: 0.85rem; }
-  .about-card { max-width: 500px; padding: 22px 24px 36px; }
-  .grid-3-cols { grid-template-columns: repeat(2, 1fr); }
-  .modal-box { padding: 24px 20px; }
-}
-
-/* Mobile (max 600px) */
-@media (max-width: 600px) {
-  body { font-size: 15px; }
-  .card { padding: 16px 14px; border-radius: 18px; }
-  .logo-emoji { font-size: 52px; }
-  .logo-title { font-size: clamp(1.8rem, 8vw, 2.8rem); }
-  .logo-sub { font-size: clamp(0.8rem, 3vw, 1rem); }
-  .logo-wrap { margin-bottom: 8px; }
-  
-  /* Game screen mobile */
-  .game-header { margin-bottom: 10px; }
-  .player-badge { font-size: 0.85rem; padding: 6px 10px; }
-  .score-item { padding: 4px 8px; }
-  .score-val { font-size: 1.1rem; }
-  .score-lbl { font-size: 0.62rem; }
-  .timer-circle { width: 56px; height: 56px; font-size: 1.4rem; border-width: 3px; }
-  .timer-bar-wrap { height: 10px; }
-  .question-card { padding: 16px 14px; border-radius: 18px; margin-bottom: 10px; }
-  .q-text { font-size: clamp(1rem, 4vw, 1.2rem); }
-  .answer-btn { padding: 11px 12px; font-size: 0.95rem; gap: 10px; border-radius: 13px; }
-  .answer-btn .letter { min-width: 30px; height: 30px; font-size: 0.85rem; }
-  
-  /* Home screen mobile */
-  .form-input { font-size: 1rem; padding: 10px 14px; }
-  .choice-btn { font-size: 0.95rem; padding: 8px 6px; min-width: 65px; }
-  .home-btns .btn { max-width: 220px; height: 46px; }
-  .home-btns { gap: 8px; }
-  
-  /* Leaderboard mobile */
-  .lb-title { font-size: 1.7rem; }
-  .lb-row { grid-template-columns: 32px 1fr 75px 70px 55px; padding: 9px 10px; gap: 5px; font-size: 0.85rem; }
-  .lb-row.header span { font-size: 0.7rem; }
-  .lb-score { font-size: 1rem; }
-  
-  /* Result screen mobile */
-  .result-emoji { font-size: 72px; }
-  .result-title { font-size: clamp(1.8rem, 7vw, 2.8rem); }
-  .result-msg { font-size: 1.05rem; padding: 16px 14px; }
-  .stat-val { font-size: 1.6rem; }
-  .stat-box { padding: 12px 14px; min-width: 80px; }
-  
-  /* Admin/settings mobile */
-  .admin-title { font-size: 1.5rem; }
-  .tab-btn { font-size: 0.78rem; padding: 7px 6px; min-width: 70px; }
-  .bank-grid, .reward-grid { grid-template-columns: 1fr 1fr; }
-  .res-grid { grid-template-columns: repeat(3, 1fr); }
-  
-  /* About mobile */
-  .about-card { padding: 18px 16px 30px; border-radius: 18px; }
-  .about-sumo { font-size: 56px; }
-  .about-brand { font-size: 1.7rem; }
-  .about-info li { font-size: 0.88rem; }
-  .about-info .lbl { min-width: 110px; }
-  
-  /* Modal mobile */
-  .modal-box { padding: 22px 16px; border-radius: 18px; margin: 0 4px; }
-  
-  /* Inventory modal mobile */
-  #inventoryModal > div { padding: 12px 8px; }
-  #inventoryModal .card { padding: 14px 12px; }
-}
-
-/* Very small screens */
-@media (max-width: 380px) {
-  .lb-row { grid-template-columns: 28px 1fr 65px 60px 48px; padding: 8px 8px; gap: 3px; font-size: 0.78rem; }
-  .home-btns .btn { max-width: 240px; font-size: 0.95rem; }
-  .score-board { gap: 6px; }
-}
-
-/* Touch device improvements (iPad iOS fix) */
-@supports (-webkit-touch-callout: none) {
-  .modal-overlay { /* iOS Safari fix */ }
-  #inventoryModal > div { 
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-  }
-}
 </style>
 </head>
 <body>
@@ -325,7 +230,7 @@ body { font-family: var(--font-body); background: var(--bg-dark); color: var(--t
 <div id="infoModal" class="modal-overlay" style="z-index: 10001;">
   <div class="modal-box" style="border-color: #74b9ff;">
     <div style="font-size: 40px; margin-bottom: 10px;">💡</div>
-    <p id="infoModalText" style="color:#c8d0e0; font-size:1.05rem; line-height:1.7; margin-bottom:20px; font-weight: 500; text-align: left;"></p>
+    <p id="infoModalText" style="color:#fff; font-size:1.05rem; line-height:1.6; margin-bottom:20px; font-weight: 600; text-align: left;"></p>
     <button class="btn btn-primary" style="background: linear-gradient(135deg, #74b9ff, #0984e3); color: #fff;" onclick="document.getElementById('infoModal').style.display='none'">Đã hiểu</button>
   </div>
 </div>
@@ -422,13 +327,9 @@ body { font-family: var(--font-body); background: var(--bg-dark); color: var(--t
   </div>
 </div>
 
-<div id="inventoryModal" class="modal-overlay" style="padding: 0; overflow: hidden; justify-content: flex-start; align-items: stretch;">
-    <div style="width:100%; height:100%; overflow-y:auto; -webkit-overflow-scrolling:touch; padding: 20px 10px; box-sizing:border-box; display:flex; flex-direction:column; align-items:center;">
+<div id="inventoryModal" class="modal-overlay" style="padding: 20px 10px; overflow-y:auto; justify-content: flex-start;">
     <div class="card" style="margin: auto; width:100%; max-width:800px;"> 
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; flex-wrap:wrap; gap:8px;">
-            <h2 style="color:var(--gold); font-family:var(--font-display); font-size:clamp(1.3rem,4vw,1.8rem); margin:0; flex:1; text-align:center;">🎒 Túi Quà Của <span id="invPlayerName"></span></h2>
-            <button class="btn btn-danger btn-sm" style="flex-shrink:0; height:38px; padding:0 14px; font-size:0.85rem;" onclick="document.getElementById('inventoryModal').style.display='none'">✕ Đóng</button>
-        </div>
+        <h2 style="color:var(--gold); font-family:var(--font-display); text-align:center; margin-bottom:15px; font-size:1.8rem;">🎒 Túi Quà Của <span id="invPlayerName"></span></h2>
         
         <div id="invAlerts" style="display:none; background:rgba(255,71,87,0.15); color:var(--red); border:1px solid var(--red); padding:10px; border-radius:10px; text-align:center; font-weight:700; margin-bottom:15px; font-size:0.9rem;"></div>
 
@@ -492,7 +393,6 @@ body { font-family: var(--font-body); background: var(--bg-dark); color: var(--t
 
         <button class="btn btn-danger btn-full" onclick="document.getElementById('inventoryModal').style.display='none'">Đóng túi quà</button>
     </div>
-    </div><!-- end scroll wrapper -->
 </div>
 
 <div class="screen active" id="screen-home">
@@ -692,7 +592,7 @@ body { font-family: var(--font-body); background: var(--bg-dark); color: var(--t
     <div class="about-brand">SUMO GAMES</div>
     <div class="about-love">💌 From Papa with Love</div>
     <ul class="about-info">
-      <li><span class="lbl">📦 Version:</span><span class="val">1.8.2</span></li>
+      <li><span class="lbl">📦 Version:</span><span class="val">1.8.3</span></li>
       <li><span class="lbl">📅 Release date:</span><span class="val">Apr 18, 2026</span></li>
       <li><span class="lbl">👨‍💻 Developed by:</span><span class="val">Papa Bự 🦁 - Pavel.Hai@gmail.com</span></li>
       <li><span class="lbl">🎮 Game mode:</span><span class="val">Triệu Phú Tri Thức</span></li>
@@ -922,9 +822,8 @@ function processRedemption(playerName, itemName, den, tier) {
 }
 
 (function initApp() {
-  const sVIE = localStorage.getItem('sumogames_bankVIE'); if (sVIE) bankVIE = [...BUILTIN_VIE, ...JSON.parse(sVIE)];
-  const sENG = localStorage.getItem('sumogames_bankENG'); if (sENG) bankENG = [...BUILTIN_ENG, ...JSON.parse(sENG)];
-  ['PT1','PT2','PT3','PT4','PT5'].forEach(tier => { const saved = localStorage.getItem('sumogames_reward_' + tier); if (saved) customRewards[tier] = JSON.parse(saved); });
+  // Dữ liệu bankVIE/bankENG/customRewards đã được nạp bởi SUMO_UPDATE.applyLoadedData()
+  // phía dưới script (chạy trước DOMContentLoaded). Chỉ cần load dữ liệu người chơi.
   loadPlayersData();
 })();
 
@@ -1779,60 +1678,197 @@ function importGameData(event) {
   }; reader.readAsText(file);
 }
 
-// ════════════════════════════════════════
-//  AUTO-LOAD DỮ LIỆU MẶC ĐỊNH KHI MỞ FILE
-// ════════════════════════════════════════
-async function sumoAutoLoadDefaultData() {
-    // Đã thay đổi kiểm tra ở đây: Không kiểm tra bankVIE nữa, mà dùng 1 biến cờ độc lập
-    if (localStorage.getItem('sumogames_auto_loaded') === 'true') return;
-    
-    // Ngay lập tức đánh dấu là đã tự động nạp (Dù có thành công hay thất bại thì lần sau cũng không chạy lại nữa)
-    localStorage.setItem('sumogames_auto_loaded', 'true'); 
+// ════════════════════════════════════════════════════════════════
+//  AUTO-UPDATE TỪ GITHUB — v1.8.3
+//  Cơ chế: mỗi lần mở trang, fetch "hash" nhẹ từ GitHub để
+//  kiểm tra xem dữ liệu có thay đổi không. Nếu hash mới khác
+//  hash cũ → tải lại toàn bộ JSON tương ứng → lưu vào
+//  localStorage → reload trang. Nếu hash giống → không làm gì.
+//
+//  File meta.json trên GitHub cần có dạng:
+//  { "VIE":"abc123","ENG":"def456","PT1":"...","PT2":"...","PT3":"...","PT4":"...","PT5":"..." }
+//  (giá trị hash tự do, ví dụ: date "2026-04-18" hoặc sha ngắn)
+//
+//  Nếu không có meta.json, fallback: so sánh Content-Length / Last-Modified
+//  header của từng file, hoặc reload khi khởi động lần đầu.
+// ════════════════════════════════════════════════════════════════
 
-    console.log("Sumo Games: Khởi tạo dữ liệu mặc định...");
-    let loaded = false;
+const SUMO_UPDATE = (() => {
+  // ── CẤU HÌNH — chỉ cần đổi BASE_URL khi chuyển repo ──────────
+  const BASE_URL = './';   // Dùng đường dẫn tương đối → hoạt động cả
+                            // local file:// lẫn GitHub Pages / bất kỳ host
+  const META_FILE  = 'meta.json';
+  const LS_HASH    = 'sumogames_data_hash'; // lưu hash JSON đã biết
+  const LS_LOADED  = 'sumogames_first_load_done'; // flag lần đầu
+  const CHECK_INTERVAL_MS = 0; // 0 = kiểm tra mỗi lần mở trang
+
+  // Danh sách file cần theo dõi
+  const FILES = {
+    VIE: { lsKey: 'sumogames_bankVIE',       parse: d => Array.isArray(d) ? d : null },
+    ENG: { lsKey: 'sumogames_bankENG',       parse: d => Array.isArray(d) ? d : null },
+    PT1: { lsKey: 'sumogames_reward_PT1',    parse: d => d.rewards ?? (Array.isArray(d) ? d : null) },
+    PT2: { lsKey: 'sumogames_reward_PT2',    parse: d => d.rewards ?? (Array.isArray(d) ? d : null) },
+    PT3: { lsKey: 'sumogames_reward_PT3',    parse: d => d.rewards ?? (Array.isArray(d) ? d : null) },
+    PT4: { lsKey: 'sumogames_reward_PT4',    parse: d => d.rewards ?? (Array.isArray(d) ? d : null) },
+    PT5: { lsKey: 'sumogames_reward_PT5',    parse: d => d.rewards ?? (Array.isArray(d) ? d : null) },
+  };
+
+  // Lấy cache-buster: timestamp làm tròn theo phút (tránh edge-case giây)
+  function bust() { return `?t=${Math.floor(Date.now()/60000)}`; }
+
+  // Fetch JSON, bỏ qua lỗi mạng / 404
+  async function safeFetch(url) {
     try {
-        const filesCauHoi = {
-            'sumogames_bankVIE': './VIE.json',
-            'sumogames_bankENG': './ENG.json'
-        };
-        for (const [key, path] of Object.entries(filesCauHoi)) {
-            try {
-                const res = await fetch(path);
-                if (res.ok) {
-                    const data = await res.json();
-                    if (Array.isArray(data) && data.length > 0) {
-                        localStorage.setItem(key, JSON.stringify(data));
-                        console.log(`Sumo Games: Đã nạp ${data.length} câu từ ${path}`);
-                        loaded = true;
-                    }
-                }
-            } catch(e) { /* File không tồn tại → bỏ qua */ }
-        }
+      const res = await fetch(url, { cache: 'no-store' });
+      if (!res.ok) return null;
+      return await res.json();
+    } catch { return null; }
+  }
 
-        for (let i = 1; i <= 5; i++) {
-            try {
-                const res = await fetch(`./PT${i}.json`);
-                if (res.ok) {
-                    const data = await res.json();
-                    const rewardsArray = data.rewards ? data.rewards : data;
-                    localStorage.setItem(`sumogames_reward_PT${i}`, JSON.stringify(rewardsArray));
-                    console.log(`Sumo Games: Đã nạp PT${i}.json (${rewardsArray.length} mục)`);
-                    loaded = true;
-                }
-            } catch(e) { /* File không tồn tại → bỏ qua */ }
-        }
+  // Lưu dữ liệu một file vào localStorage, trả về true nếu thành công
+  function saveFile(name, rawData) {
+    const cfg = FILES[name];
+    if (!cfg) return false;
+    const parsed = cfg.parse(rawData);
+    if (!parsed) return false;
+    try {
+      localStorage.setItem(cfg.lsKey, JSON.stringify(parsed));
+      console.log(`🎮 Sumo Games: Đã cập nhật ${name} (${Array.isArray(parsed) ? parsed.length : '?'} mục)`);
+      return true;
+    } catch { return false; }
+  }
 
-        if (loaded) {
-            console.log("Sumo Games: Hoàn tất nạp dữ liệu mặc định. Tải lại trang...");
-            window.location.reload();
-        }
-    } catch (error) {
-        console.warn("Sumo Games: Lỗi khi chạy Auto Load:", error);
+  // Đồng bộ dữ liệu vào bankVIE/bankENG/customRewards sau khi lưu
+  function applyLoadedData() {
+    const sVIE = localStorage.getItem('sumogames_bankVIE');
+    const sENG = localStorage.getItem('sumogames_bankENG');
+    if (sVIE) try { bankVIE = [...BUILTIN_VIE, ...JSON.parse(sVIE)]; } catch {}
+    if (sENG) try { bankENG = [...BUILTIN_ENG, ...JSON.parse(sENG)]; } catch {}
+    ['PT1','PT2','PT3','PT4','PT5'].forEach(tier => {
+      const s = localStorage.getItem('sumogames_reward_' + tier);
+      if (s) try { customRewards[tier] = JSON.parse(s); } catch {}
+    });
+  }
+
+  // ── CHIẾN LƯỢC 1: Dùng meta.json làm file hash manifest ────────
+  async function checkViaManifest() {
+    const meta = await safeFetch(BASE_URL + META_FILE + bust());
+    if (!meta || typeof meta !== 'object') return false;
+
+    const oldHash  = JSON.parse(localStorage.getItem(LS_HASH) || '{}');
+    const toUpdate = Object.keys(FILES).filter(name => {
+      const key = name; // VIE, ENG, PT1…
+      return meta[key] && meta[key] !== oldHash[key];
+    });
+
+    if (toUpdate.length === 0) {
+      console.log('🎮 Sumo Games: Dữ liệu đã cập nhật mới nhất.');
+      return false; // không cần reload
     }
-}
 
-window.addEventListener('DOMContentLoaded', sumoAutoLoadDefaultData);
+    console.log(`🎮 Sumo Games: Phát hiện ${toUpdate.length} file mới → đang tải...`);
+    let anyUpdated = false;
+    for (const name of toUpdate) {
+      const fileName = name.startsWith('PT') ? `${name}.json` : `${name}.json`;
+      const raw = await safeFetch(BASE_URL + fileName + bust());
+      if (raw && saveFile(name, raw)) {
+        oldHash[name] = meta[name]; // cập nhật hash đã biết
+        anyUpdated = true;
+      }
+    }
+
+    if (anyUpdated) {
+      localStorage.setItem(LS_HASH, JSON.stringify(oldHash));
+    }
+    return anyUpdated;
+  }
+
+  // ── CHIẾN LƯỢC 2: Fallback — tải tất cả file, so sánh bằng
+  //    độ dài dữ liệu (không cần meta.json) ─────────────────────
+  async function checkViaContentLength() {
+    const oldHash = JSON.parse(localStorage.getItem(LS_HASH) || '{}');
+    let anyUpdated = false;
+
+    for (const [name] of Object.entries(FILES)) {
+      const fileName = name.startsWith('PT') ? `${name}.json` : `${name}.json`;
+      try {
+        // HEAD request để lấy Content-Length mà không tải body
+        const head = await fetch(BASE_URL + fileName + bust(), { method: 'HEAD', cache: 'no-store' });
+        if (!head.ok) continue;
+        const len = head.headers.get('Content-Length') || head.headers.get('Last-Modified') || '';
+        if (len && len === oldHash[name]) continue; // không đổi
+
+        // Có thể đã đổi → tải thực
+        const raw = await safeFetch(BASE_URL + fileName + bust());
+        if (raw && saveFile(name, raw)) {
+          oldHash[name] = len;
+          anyUpdated = true;
+        }
+      } catch { /* bỏ qua file không tồn tại */ }
+    }
+
+    if (anyUpdated) localStorage.setItem(LS_HASH, JSON.stringify(oldHash));
+    return anyUpdated;
+  }
+
+  // ── MAIN: chạy khi DOMContentLoaded ────────────────────────────
+  async function run() {
+    const isFirstLoad = !localStorage.getItem(LS_LOADED);
+
+    // Lần đầu tiên mở trang: tải tất cả file ngay, không kiểm tra hash
+    if (isFirstLoad) {
+      console.log('🎮 Sumo Games: Lần đầu khởi tạo — đang tải dữ liệu...');
+      let anyLoaded = false;
+      for (const [name] of Object.entries(FILES)) {
+        const fileName = `${name}.json`;
+        const raw = await safeFetch(BASE_URL + fileName + bust());
+        if (raw && saveFile(name, raw)) anyLoaded = true;
+      }
+      localStorage.setItem(LS_LOADED, '1');
+      if (anyLoaded) {
+        console.log('🎮 Sumo Games: Khởi tạo xong — reload trang...');
+        window.location.reload();
+      }
+      return;
+    }
+
+    // Các lần sau: thử manifest trước, fallback sang content-length
+    let updated = false;
+    try {
+      updated = await checkViaManifest();
+    } catch {
+      try { updated = await checkViaContentLength(); } catch {}
+    }
+
+    if (updated) {
+      // Hiển thị thông báo nhỏ trước khi reload
+      showUpdateToast();
+      setTimeout(() => window.location.reload(), 1800);
+    }
+  }
+
+  // Toast thông báo cập nhật (hiện 1.5 giây rồi reload)
+  function showUpdateToast() {
+    const toast = document.createElement('div');
+    toast.innerHTML = '🔄 Đang cập nhật dữ liệu mới nhất...';
+    toast.style.cssText = [
+      'position:fixed', 'bottom:24px', 'left:50%', 'transform:translateX(-50%)',
+      'background:rgba(255,215,0,0.95)', 'color:#000', 'font-weight:800',
+      'padding:12px 24px', 'border-radius:50px', 'font-size:1rem',
+      'z-index:99999', 'box-shadow:0 4px 20px rgba(0,0,0,.4)',
+      'animation:fadeUp .3s ease', 'font-family:var(--font-body)',
+    ].join(';');
+    document.body.appendChild(toast);
+  }
+
+  return { run, applyLoadedData };
+})();
+
+// Áp dụng dữ liệu đã lưu trong localStorage vào bộ nhớ (chạy ngay)
+SUMO_UPDATE.applyLoadedData();
+
+// Kiểm tra cập nhật sau khi DOM sẵn sàng
+window.addEventListener('DOMContentLoaded', SUMO_UPDATE.run);
 </script>
 </body>
 </html>
