@@ -220,6 +220,101 @@ body { font-family: var(--font-body); background: var(--bg-dark); color: var(--t
 /* MODALS */
 .modal-overlay { display:none; position:fixed; z-index:10000; inset:0; background:rgba(0,0,0,0.85); flex-direction:column; justify-content:center; align-items:center; padding:20px; }
 .modal-box { background:var(--bg-card); border:3px solid var(--gold); border-radius:24px; padding:30px; max-width:450px; width: 100%; text-align:center; box-shadow: 0 0 50px rgba(255,215,0,0.4); animation: bounceIn 0.4s ease; }
+
+/* ─── RESPONSIVE: TABLET & MOBILE OPTIMIZATIONS ─── */
+
+/* iPad / Tablet (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 601px) {
+  .card { padding: 22px 20px; }
+  .question-card { padding: 20px; }
+  .answer-btn { padding: 12px 14px; font-size: 1rem; }
+  .game-header { flex-wrap: wrap; gap: 8px; }
+  .score-board { flex-wrap: wrap; }
+  .lb-row { grid-template-columns: 36px 1fr 90px 80px 65px; padding: 10px 12px; gap: 8px; }
+  .home-btns .btn { max-width: 200px; height: 48px; font-size: 1rem; }
+  .tab-btn { min-width: 100px; font-size: 0.85rem; }
+  .about-card { max-width: 500px; padding: 22px 24px 36px; }
+  .grid-3-cols { grid-template-columns: repeat(2, 1fr); }
+  .modal-box { padding: 24px 20px; }
+}
+
+/* Mobile (max 600px) */
+@media (max-width: 600px) {
+  body { font-size: 15px; }
+  .card { padding: 16px 14px; border-radius: 18px; }
+  .logo-emoji { font-size: 52px; }
+  .logo-title { font-size: clamp(1.8rem, 8vw, 2.8rem); }
+  .logo-sub { font-size: clamp(0.8rem, 3vw, 1rem); }
+  .logo-wrap { margin-bottom: 8px; }
+  
+  /* Game screen mobile */
+  .game-header { margin-bottom: 10px; }
+  .player-badge { font-size: 0.85rem; padding: 6px 10px; }
+  .score-item { padding: 4px 8px; }
+  .score-val { font-size: 1.1rem; }
+  .score-lbl { font-size: 0.62rem; }
+  .timer-circle { width: 56px; height: 56px; font-size: 1.4rem; border-width: 3px; }
+  .timer-bar-wrap { height: 10px; }
+  .question-card { padding: 16px 14px; border-radius: 18px; margin-bottom: 10px; }
+  .q-text { font-size: clamp(1rem, 4vw, 1.2rem); }
+  .answer-btn { padding: 11px 12px; font-size: 0.95rem; gap: 10px; border-radius: 13px; }
+  .answer-btn .letter { min-width: 30px; height: 30px; font-size: 0.85rem; }
+  
+  /* Home screen mobile */
+  .form-input { font-size: 1rem; padding: 10px 14px; }
+  .choice-btn { font-size: 0.95rem; padding: 8px 6px; min-width: 65px; }
+  .home-btns .btn { max-width: 220px; height: 46px; }
+  .home-btns { gap: 8px; }
+  
+  /* Leaderboard mobile */
+  .lb-title { font-size: 1.7rem; }
+  .lb-row { grid-template-columns: 32px 1fr 75px 70px 55px; padding: 9px 10px; gap: 5px; font-size: 0.85rem; }
+  .lb-row.header span { font-size: 0.7rem; }
+  .lb-score { font-size: 1rem; }
+  
+  /* Result screen mobile */
+  .result-emoji { font-size: 72px; }
+  .result-title { font-size: clamp(1.8rem, 7vw, 2.8rem); }
+  .result-msg { font-size: 1.05rem; padding: 16px 14px; }
+  .stat-val { font-size: 1.6rem; }
+  .stat-box { padding: 12px 14px; min-width: 80px; }
+  
+  /* Admin/settings mobile */
+  .admin-title { font-size: 1.5rem; }
+  .tab-btn { font-size: 0.78rem; padding: 7px 6px; min-width: 70px; }
+  .bank-grid, .reward-grid { grid-template-columns: 1fr 1fr; }
+  .res-grid { grid-template-columns: repeat(3, 1fr); }
+  
+  /* About mobile */
+  .about-card { padding: 18px 16px 30px; border-radius: 18px; }
+  .about-sumo { font-size: 56px; }
+  .about-brand { font-size: 1.7rem; }
+  .about-info li { font-size: 0.88rem; }
+  .about-info .lbl { min-width: 110px; }
+  
+  /* Modal mobile */
+  .modal-box { padding: 22px 16px; border-radius: 18px; margin: 0 4px; }
+  
+  /* Inventory modal mobile */
+  #inventoryModal > div { padding: 12px 8px; }
+  #inventoryModal .card { padding: 14px 12px; }
+}
+
+/* Very small screens */
+@media (max-width: 380px) {
+  .lb-row { grid-template-columns: 28px 1fr 65px 60px 48px; padding: 8px 8px; gap: 3px; font-size: 0.78rem; }
+  .home-btns .btn { max-width: 240px; font-size: 0.95rem; }
+  .score-board { gap: 6px; }
+}
+
+/* Touch device improvements (iPad iOS fix) */
+@supports (-webkit-touch-callout: none) {
+  .modal-overlay { /* iOS Safari fix */ }
+  #inventoryModal > div { 
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}
 </style>
 </head>
 <body>
@@ -230,7 +325,7 @@ body { font-family: var(--font-body); background: var(--bg-dark); color: var(--t
 <div id="infoModal" class="modal-overlay" style="z-index: 10001;">
   <div class="modal-box" style="border-color: #74b9ff;">
     <div style="font-size: 40px; margin-bottom: 10px;">💡</div>
-    <p id="infoModalText" style="color:#fff; font-size:1.05rem; line-height:1.6; margin-bottom:20px; font-weight: 600; text-align: left;"></p>
+    <p id="infoModalText" style="color:#c8d0e0; font-size:1.05rem; line-height:1.7; margin-bottom:20px; font-weight: 500; text-align: left;"></p>
     <button class="btn btn-primary" style="background: linear-gradient(135deg, #74b9ff, #0984e3); color: #fff;" onclick="document.getElementById('infoModal').style.display='none'">Đã hiểu</button>
   </div>
 </div>
@@ -327,9 +422,13 @@ body { font-family: var(--font-body); background: var(--bg-dark); color: var(--t
   </div>
 </div>
 
-<div id="inventoryModal" class="modal-overlay" style="padding: 20px 10px; overflow-y:auto; justify-content: flex-start;">
+<div id="inventoryModal" class="modal-overlay" style="padding: 0; overflow: hidden; justify-content: flex-start; align-items: stretch;">
+    <div style="width:100%; height:100%; overflow-y:auto; -webkit-overflow-scrolling:touch; padding: 20px 10px; box-sizing:border-box; display:flex; flex-direction:column; align-items:center;">
     <div class="card" style="margin: auto; width:100%; max-width:800px;"> 
-        <h2 style="color:var(--gold); font-family:var(--font-display); text-align:center; margin-bottom:15px; font-size:1.8rem;">🎒 Túi Quà Của <span id="invPlayerName"></span></h2>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; flex-wrap:wrap; gap:8px;">
+            <h2 style="color:var(--gold); font-family:var(--font-display); font-size:clamp(1.3rem,4vw,1.8rem); margin:0; flex:1; text-align:center;">🎒 Túi Quà Của <span id="invPlayerName"></span></h2>
+            <button class="btn btn-danger btn-sm" style="flex-shrink:0; height:38px; padding:0 14px; font-size:0.85rem;" onclick="document.getElementById('inventoryModal').style.display='none'">✕ Đóng</button>
+        </div>
         
         <div id="invAlerts" style="display:none; background:rgba(255,71,87,0.15); color:var(--red); border:1px solid var(--red); padding:10px; border-radius:10px; text-align:center; font-weight:700; margin-bottom:15px; font-size:0.9rem;"></div>
 
@@ -393,6 +492,7 @@ body { font-family: var(--font-body); background: var(--bg-dark); color: var(--t
 
         <button class="btn btn-danger btn-full" onclick="document.getElementById('inventoryModal').style.display='none'">Đóng túi quà</button>
     </div>
+    </div><!-- end scroll wrapper -->
 </div>
 
 <div class="screen active" id="screen-home">
