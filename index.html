@@ -1378,7 +1378,13 @@ function processFractionRedemption(playerName, itemName, tier, wholeGifts, allFr
 //  LEADERBOARD & HISTORY DATA
 // ════════════════════════════════════════
 function saveScore(name, score, correct, total, level, hasReward) {
-  let lb = JSON.parse(localStorage.getItem('sumogames_lb') || '[]');
+  // BUG FIX: must use lsGet() (checksum-aware) not localStorage.getItem() directly.
+  // After Fix 3, sumogames_lb is stored as {d:..., h:...} — raw getItem() returns
+  // that wrapper object, causing JSON.parse to produce an object (not array),
+  // making lb.push() throw TypeError and silently aborting endGame before showScreen().
+  const _rawLb = lsGet('sumogames_lb');
+  let lb = _rawLb ? JSON.parse(_rawLb) : [];
+  if (!Array.isArray(lb)) lb = []; // safety: handle any corrupt legacy data
   lb.push({ name: name, score: score, correct: correct, total: total, level: level === 'kho' ? 'Khó' : 'Dễ', date: getCurrentDateTimeStr(), timestamp: Date.now(), hasReward: hasReward });
   if (lb.length > 1000) lb.shift(); 
   lsSet('sumogames_lb', JSON.stringify(lb));
