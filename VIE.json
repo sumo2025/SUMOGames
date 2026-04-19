@@ -1901,7 +1901,7 @@
     "id": 180,
     "question": "Trong 'Mười vạn câu hỏi vì sao', tại sao chim bồ câu lại có thể tìm được đường về nhà dù ở rất xa?",
     "answers": [
-      "Nhờ nhìn bản đồ",
+      "Nhờ có mắt rất tinh",
       "Nhờ ngửi mùi thức ăn",
       "Nhờ khả năng cảm nhận từ trường của Trái Đất"
     ],
@@ -1988,7 +1988,7 @@
   
   {
     "id": 189,
-    "question": "Trong 'Thần đồng đất Việt', Sửu Ê là nhân vật có tính cách như thế nào?",
+    "question": "Trong 'Thần đồng đất Việt', Sửu là nhân vật có tính cách như thế nào?",
     "answers": [
       "Ham chơi và nghịch ngợm",
       "Tham ăn và hay khoe khoang",
@@ -3359,7 +3359,7 @@
     "id": 320,
     "question": "Con vật nào có khả năng tự mọc lại đuôi sau khi bị đứt?",
     "answers": [
-      "Thạch sùng (Thằn lằn)",
+      "Thạch sùng",
       "Con rắn",
       "Con cá"
     ],
@@ -5354,17 +5354,7 @@
     "correct": 1,
     "category": "Tự nhiên và Xã hội"
   },
-  {
-    "id": 509,
-    "question": "Môn nghệ thuật sân khấu truyền thống thường biểu diễn ở các sân đình tại miền Bắc Việt Nam là gì?",
-    "answers": [
-      "Múa Rối nước",
-      "Chèo",
-      "Cải lương"
-    ],
-    "correct": 1,
-    "category": "Giải trí & Nghệ thuật"
-  },
+  
   {
     "id": 510,
     "question": "Tại sao quả bóng bay chứa khí Heli lại có thể bay lên cao?",
@@ -6050,17 +6040,7 @@
     "correct": 1,
     "category": "Thế giới Số & Công nghệ"
   },
-  {
-    "id": 575,
-    "question": "Loài cây nào có lá khép lại khi chúng ta chạm tay vào?",
-    "answers": [
-      "Cây dương xỉ",
-      "Cây xấu hổ (cây trinh nữ)",
-      "Cây lá lốt"
-    ],
-    "correct": 1,
-    "category": "Tự nhiên và Xã hội"
-  },
+  
   {
     "id": 576,
     "question": "Vật dụng nào từng được dùng để thắp sáng nhà cửa trước khi bóng đèn điện ra đời?",
@@ -6824,17 +6804,7 @@
     "correct": 1,
     "category": "Khoa học phổ thông"
   },
-  {
-    "id": 649,
-    "question": "Người anh hùng dân tộc nào đã hy sinh khi lấy thân mình lấp lỗ châu mai?",
-    "answers": [
-      "Phan Đình Giót",
-      "Tô Vĩnh Diện",
-      "Bế Văn Đàn"
-    ],
-    "correct": 0,
-    "category": "Khoa học và Lịch sử"
-  },
+  
   {
     "id": 650,
     "question": "Loài vật nào được coi là thông minh nhất dưới đại dương và thường cứu giúp con người?",
@@ -6906,7 +6876,7 @@
     "question": "App là viết tắt của từ nào trong tiếng Anh?",
     "answers": [
       "Apple",
-      "Application (ứng dụng)",
+      "Application",
       "Appear"
     ],
     "correct": 1,
@@ -6938,7 +6908,7 @@
     "id": 659,
     "question": "Drone (flycam) là thiết bị gì?",
     "answers": [
-      "Xe đạp điện",
+      "Xe ô tô bay",
       "Máy bay điều khiển từ xa không người lái",
       "Tàu ngầm mini"
     ],
@@ -7007,17 +6977,6 @@
       "Chỉ thịt lợn",
       "Nhân thịt, rau củ cuộn trong bánh tráng rồi chiên giòn",
       "Chỉ rau củ hấp"
-    ],
-    "correct": 1,
-    "category": "Văn hóa & Ẩm thực Việt Nam"
-  },
-  {
-    "id": 666,
-    "question": "Múa rối nước là loại hình nghệ thuật đặc trưng của vùng nào?",
-    "answers": [
-      "Đồng bằng sông Cửu Long",
-      "Đồng bằng sông Hồng (miền Bắc)",
-      "Tây Nguyên"
     ],
     "correct": 1,
     "category": "Văn hóa & Ẩm thực Việt Nam"
@@ -7425,9 +7384,9 @@
     "id": 708,
     "question": "Xe đạp được phát minh đầu tiên vào thế kỷ nào?",
     "answers": [
-      "Thế kỷ 15",
+      "Thế kỷ 18",
       "Thế kỷ 19",
-      "Thế kỷ 21"
+      "Thế kỷ 20"
     ],
     "correct": 1,
     "category": "Lịch sử các đồ vật quanh em"
@@ -7480,7 +7439,7 @@
     "id": 713,
     "question": "Bưu thiếp (postcard) dùng để làm gì trước khi có điện thoại?",
     "answers": [
-      "Đựng tiền",
+      "Làm danh thiếp",
       "Gửi tin nhắn và hình ảnh qua bưu điện",
       "Làm bookmark đánh dấu sách"
     ],
@@ -7493,7 +7452,7 @@
     "answers": [
       "5 phút",
       "30-60 phút",
-      "3 tiếng"
+      "90 phút"
     ],
     "correct": 1,
     "category": "Thể thao & Sức khỏe"
@@ -7590,31 +7549,21 @@
     "id": 723,
     "question": "Yoga có lợi ích gì cho sức khỏe?",
     "answers": [
-      "Tăng cân nhanh",
+      "Tăng cân nhanh, không cần ăn nhiều",
       "Tăng sự dẻo dai, cân bằng và giảm căng thẳng",
       "Chỉ giúp ngủ ngon"
     ],
     "correct": 1,
     "category": "Thể thao & Sức khỏe"
   },
-  {
-    "id": 724,
-    "question": "Môn thể thao nào có vận động viên mang mũ và găng tay bảo hộ?",
-    "answers": [
-      "Bóng đá",
-      "Bóng chày",
-      "Quyền Anh (Boxing)"
-    ],
-    "correct": 2,
-    "category": "Thể thao & Sức khỏe"
-  },
+  
   {
     "id": 725,
     "question": "Tại sao cần rửa tay trước khi ăn?",
     "answers": [
-      "Để tay không bị bẩn đĩa",
-      "Loại bỏ vi khuẩn tránh bệnh đường tiêu hóa",
-      "Vì thức ăn sẽ ngon hơn"
+      "Để tay không làm bẩn bát, đĩa",
+      "Loại bỏ vi khuẩn, tránh bệnh đường tiêu hóa",
+      "Vì giúp ăn được nhiều hơn"
     ],
     "correct": 1,
     "category": "Thể thao & Sức khỏe"
@@ -7854,7 +7803,7 @@
     "id": 747,
     "question": "Đánh răng đúng cách giúp ích gì?",
     "answers": [
-      "Giúp mắt sáng hơn",
+      "Giúp ăn được nhiều hơn",
       "Ngăn sâu răng và giữ răng chắc khoẻ",
       "Giúp tiêu hoá tốt hơn"
     ],
@@ -7911,7 +7860,7 @@
     "answers": [
       "Gió mạnh và bão lớn",
       "Lạnh và có thể có sương mù",
-      "Nóng bức và mưa nhiều"
+      "Băng giá và tuyết rơi dày"
     ],
     "correct": 1,
     "category": "Tự nhiên và Xã hội"
@@ -11911,17 +11860,7 @@
     "correct": 2,
     "category": "Sách khoa học và phiêu lưu + Sách thiếu nhi"
   },
-  {
-    "id": 1118,
-    "question": "Sinh vật biển khổng lồ nào xuất hiện đáng sợ trong truyện?",
-    "answers": [
-      "Cá mập trắng lớn",
-      "Mực khổng lồ (bạch tuộc khổng lồ)",
-      "Cá voi sát thủ"
-    ],
-    "correct": 1,
-    "category": "Sách khoa học và phiêu lưu + Sách thiếu nhi"
-  },
+  
   {
     "id": 1119,
     "question": "Giáo sư Aronnax trong truyện 'Hai vạn dặm dưới đáy biển' thuộc quốc tịch nào?",
