@@ -85,7 +85,7 @@ body { font-family: var(--font-body); background: var(--bg-dark); color: var(--t
 .btn-full { width: 100%; justify-content: center; }
 .home-btns { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
 .home-btns > .btn { width: 100%; max-width: 220px; font-size: 1.05rem; }
-/* Container cho 4 button phụ — width theo context (mobile: 100%, desktop: 220px) */
+/* Container cho 4 button phụ - width theo context (mobile: 100%, desktop: 220px) */
 .home-btns-secondary { width: 100%; max-width: 220px; }
 
 /* GAME UI */
@@ -907,7 +907,7 @@ let customRewards = { PT1: null, PT2: null, PT3: null, PT4: null, PT5: null };
 const ADMIN_PIN = "1234";
 // ── SECURITY: sanitize strings before inserting into innerHTML ──
 // ── SECURITY: File upload validation ──────────────────
-// Validates JSON structure before saving — existing PT/bank files are unaffected
+// Validates JSON structure before saving - existing PT/bank files are unaffected
 function validateQuestionFile(arr) {
     if (!Array.isArray(arr) || arr.length === 0 || arr.length > 5000) return false;
     return arr.every(q =>
@@ -937,7 +937,7 @@ function safeParseJSON(str) {
 }
 
 // ── SECURITY: localStorage tamper detection ───────────
-// djb2 hash — lightweight, no external dependency
+// djb2 hash - lightweight, no external dependency
 // Salt prevents trivial recalculation from source code alone
 const _LS_SALT = 'sg_' + (navigator.userAgent.length % 97).toString(16);
 
@@ -971,7 +971,7 @@ function lsGet(key) {
             }
             return parsed.d; // return raw string; caller parses if needed
         }
-        // Legacy format (no hash) — migrate on next write, return as-is
+        // Legacy format (no hash) - migrate on next write, return as-is
         return raw;
     } catch {
         return raw; // not JSON-wrapped, legacy
@@ -1270,7 +1270,7 @@ function checkStreak() {
     gameState.score = Math.max(0, gameState.score - 10);
     gameState.wrongStreak = 0;
     updateScoreUI();
-    // Chỉ hiện toast khi đang ở màn hình game — tạo động, tự xóa
+    // Chỉ hiện toast khi đang ở màn hình game - tạo động, tự xóa
     if (document.getElementById('screen-game').classList.contains('active')) {
       const toast = document.createElement('div');
       toast.textContent = '⚠️ Sai 3 lần liên tiếp! -10 điểm';
@@ -1355,9 +1355,9 @@ function endGame() {
   if (customRewardObj) {
       hasReward = true;
       let rTitle = customRewardObj.title || "Phần thưởng";
-      // Sanitize before inserting into innerHTML — PT file content could be untrusted
+      // Sanitize before inserting into innerHTML - PT file content could be untrusted
       let rMsg = (customRewardObj.message || '').replace(/{name}/g, esc(name)).replace(/{pct}/g, pct).replace(/{score}/g, gameState.score);
-      // Allow only safe HTML in message (br, strong, em, span) — strip the rest
+      // Allow only safe HTML in message (br, strong, em, span) - strip the rest
       rMsg = rMsg.replace(/<(?!\/?(br|strong|em|span)(\s[^>]*)?>)[^>]*>/gi, '');
 
       msg += `<div class="custom-reward-box">
@@ -1383,7 +1383,7 @@ function endGame() {
           
           if (wholeGifts < 1) {
               let pctDone = Math.round(totalDecimal * 100);
-              msg += `<span style="color:var(--gold); display:block; margin-top:10px; font-weight:700;">🎫 Đã tích lũy: ${pctDone}% — Tiếp tục tích thêm để đổi quà nguyên nhé!</span>`; 
+              msg += `<span style="color:var(--gold); display:block; margin-top:10px; font-weight:700;">🎫 Đã tích lũy: ${pctDone}% - Tiếp tục tích thêm để đổi quà nguyên nhé!</span>`; 
           } else { 
               setTimeout(() => {
                   spawnHearts();
@@ -1502,7 +1502,7 @@ function processFractionRedemption(playerName, itemName, tier, wholeGifts, allFr
 // ════════════════════════════════════════
 function saveScore(name, score, correct, total, level, hasReward) {
   // BUG FIX: must use lsGet() (checksum-aware) not localStorage.getItem() directly.
-  // After Fix 3, sumogames_lb is stored as {d:..., h:...} — raw getItem() returns
+  // After Fix 3, sumogames_lb is stored as {d:..., h:...} - raw getItem() returns
   // that wrapper object, causing JSON.parse to produce an object (not array),
   // making lb.push() throw TypeError and silently aborting endGame before showScreen().
   const _rawLb = lsGet('sumogames_lb');
@@ -1943,7 +1943,7 @@ function importGameData(event) {
 }
 
 // ════════════════════════════════════════════════════════════════
-//  AUTO-UPDATE TỪ GITHUB — v1.8.3
+//  AUTO-UPDATE TỪ GITHUB - v1.8.3
 //  Cơ chế: mỗi lần mở trang, fetch "hash" nhẹ từ GitHub để
 //  kiểm tra xem dữ liệu có thay đổi không. Nếu hash mới khác
 //  hash cũ → tải lại toàn bộ JSON tương ứng → lưu vào
@@ -1958,7 +1958,7 @@ function importGameData(event) {
 // ════════════════════════════════════════════════════════════════
 
 const SUMO_UPDATE = (() => {
-  // ── CẤU HÌNH — chỉ cần đổi BASE_URL khi chuyển repo ──────────
+  // ── CẤU HÌNH - chỉ cần đổi BASE_URL khi chuyển repo ──────────
   const BASE_URL = './';   // Dùng đường dẫn tương đối → hoạt động cả
                             // local file:// lẫn GitHub Pages / bất kỳ host
   const META_FILE  = 'meta.json';
@@ -2047,7 +2047,7 @@ const SUMO_UPDATE = (() => {
     return anyUpdated;
   }
 
-  // ── CHIẾN LƯỢC 2: Fallback — tải tất cả file, so sánh bằng
+  // ── CHIẾN LƯỢC 2: Fallback - tải tất cả file, so sánh bằng
   //    độ dài dữ liệu (không cần meta.json) ─────────────────────
   async function checkViaContentLength() {
     const oldHash = JSON.parse(localStorage.getItem(LS_HASH) || '{}');
@@ -2081,7 +2081,7 @@ const SUMO_UPDATE = (() => {
 
     // Lần đầu tiên mở trang: tải tất cả file ngay, không kiểm tra hash
     if (isFirstLoad) {
-      console.log('🎮 Sumo Games: Lần đầu khởi tạo — đang tải dữ liệu...');
+      console.log('🎮 Sumo Games: Lần đầu khởi tạo - đang tải dữ liệu...');
       let anyLoaded = false;
       for (const [name] of Object.entries(FILES)) {
         const fileName = `${name}.json`;
@@ -2090,7 +2090,7 @@ const SUMO_UPDATE = (() => {
       }
       localStorage.setItem(LS_LOADED, '1');
       if (anyLoaded) {
-        console.log('🎮 Sumo Games: Khởi tạo xong — reload trang...');
+        console.log('🎮 Sumo Games: Khởi tạo xong - reload trang...');
         window.location.reload();
       }
       return;
@@ -2144,14 +2144,14 @@ window.addEventListener('DOMContentLoaded', SUMO_UPDATE.run);
 <div id="installGuideModal" class="modal-overlay" style="display:none; z-index:10010; overflow-y:auto; align-items:center; padding:20px 10px;">
   <div class="modal-box" style="max-width:480px; text-align:left; padding:28px; margin:auto;">
     <h2 style="font-family:var(--font-display); color:var(--gold); font-size:1.4rem; margin-bottom:6px; text-align:center;">📲 Thêm Vào Màn Hình Chính</h2>
-    <p style="color:var(--text-dim); font-size:0.85rem; text-align:center; margin-bottom:20px;">Chạy như ứng dụng thật — không có thanh địa chỉ!</p>
+    <p style="color:var(--text-dim); font-size:0.85rem; text-align:center; margin-bottom:20px;">Chạy như ứng dụng thật - không có thanh địa chỉ!</p>
     <div style="background:rgba(30,144,255,0.1); border:1px solid rgba(30,144,255,0.35); border-radius:14px; padding:16px; margin-bottom:14px;">
       <div style="font-weight:800; color:#74b9ff; font-size:1rem; margin-bottom:10px;">🍎 iPhone / iPad (Safari)</div>
       <ol style="color:#fff; font-size:0.9rem; line-height:2; padding-left:20px; margin:0;">
         <li>Mở link bằng trình duyệt <strong style="color:#74b9ff;">Safari</strong></li>
         <li>Bấm nút <strong style="color:#74b9ff;">Chia sẻ</strong> <span style="font-size:1.1rem;">⎙</span> ở thanh dưới</li>
         <li>Cuộn xuống, chọn <strong style="color:#74b9ff;">"Thêm vào Màn hình chính"</strong></li>
-        <li>Đặt tên rồi bấm <strong style="color:#74b9ff;">Thêm</strong> — xong! 🎉</li>
+        <li>Đặt tên rồi bấm <strong style="color:#74b9ff;">Thêm</strong> - xong! 🎉</li>
       </ol>
       <p style="color:rgba(116,185,255,0.7); font-size:0.78rem; margin-top:8px; margin-bottom:0;">⚠️ Chỉ hoạt động trên Safari. Chrome/Firefox trên iOS không hỗ trợ.</p>
     </div>
@@ -2161,7 +2161,7 @@ window.addEventListener('DOMContentLoaded', SUMO_UPDATE.run);
         <li>Mở link bằng trình duyệt <strong style="color:#2ED573;">Chrome</strong></li>
         <li>Bấm menu <strong style="color:#2ED573;">⋮</strong> (3 chấm, góc trên phải)</li>
         <li>Chọn <strong style="color:#2ED573;">"Thêm vào Màn hình chính"</strong></li>
-        <li>Bấm <strong style="color:#2ED573;">Thêm</strong> — icon xuất hiện ngay! 🎉</li>
+        <li>Bấm <strong style="color:#2ED573;">Thêm</strong> - icon xuất hiện ngay! 🎉</li>
       </ol>
       <p style="color:rgba(46,213,115,0.7); font-size:0.78rem; margin-top:8px; margin-bottom:0;">💡 Chrome có thể tự hiện banner "Cài đặt ứng dụng" ở thanh dưới.</p>
     </div>
