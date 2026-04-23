@@ -134,8 +134,8 @@ body { font-family: var(--font-body); background: var(--bg-dark); color: var(--t
 .result-emoji { font-size: 68px; margin-bottom: 4px; animation: bounceIn 0.6s ease; display: block; }
 .result-title { font-family: var(--font-display); font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 800; background: linear-gradient(135deg, #FFD700, #FF8C00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; animation: bounceIn 0.7s 0.1s both ease; }
 .result-msg { font-size: 1rem; line-height: 1.6; color: #fff; max-width: 520px; margin: 0 auto 14px; font-weight: 700; font-family: var(--font-display); background: rgba(255,255,255,0.06); border-radius: 16px; padding: 14px 18px; border: 2px solid rgba(255,215,0,0.2); animation: fadeUp 0.6s 0.2s both ease; }
-.result-msg .msg-highlight { color: var(--gold); font-size: 1.05rem; display: block; margin-bottom: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.custom-reward-box { background: rgba(46,213,115,0.15); padding: 14px; border-radius: 12px; border: 2px dashed #2ED573; margin-top: 12px; animation: pulse 2s infinite; }
+.result-msg .msg-highlight { color: var(--gold); font-size: 1.05rem; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.custom-reward-box { background: rgba(46,213,115,0.15); padding: 14px; border-radius: 12px; border: 2px dashed #2ED573; margin-top: 10px; animation: pulse 2s infinite; }
 .result-footer { background: rgba(0,0,0,0.2); border-top: 1px solid rgba(255,255,255,0.1); padding: 10px; margin-top: 12px; border-radius: 12px; font-size: 0.82rem; color: var(--text-dim); text-align: center; line-height: 1.55; }
 .result-footer span { color: var(--gold); font-weight: 800; }
 .result-stats { display: flex; gap: 10px; justify-content: center; margin-bottom: 14px; flex-wrap: wrap; }
@@ -1344,7 +1344,7 @@ function endGame() {
   if (level === 'de') { if (pct >= 92) tier = 'PT5'; else if (pct >= 81) tier = 'PT4'; else if (pct >= 71) tier = 'PT3'; else if (pct >= 60) tier = 'PT2'; } 
   else { if (pct >= 96) tier = 'PT5'; else if (pct >= 86) tier = 'PT4'; else if (pct >= 76) tier = 'PT3'; else if (pct >= 60) tier = 'PT2'; }
 
-  let msg = `<span class="msg-highlight">Bạn đã trả lời đúng ${pct}% câu hỏi!</span><br><br>`;
+  let msg = `<span class="msg-highlight">Bạn đã trả lời đúng ${pct}% câu hỏi!</span>`;
   
   let customRewardObj = (!gameState.isBedtime) ? getCustomRewardObj(tier) : null;
   if (gameState.isBedtime) {
